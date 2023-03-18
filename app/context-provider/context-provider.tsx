@@ -4,18 +4,18 @@ import React, { useState } from 'react';
 // import { EmailNotificationStep } from 'types/EmailNotificationStep';
 
 export const ContextProvider = React.createContext({
-  isOpenPopUpBasket: false,
-  setIsOpenPopUpBasket: (isOpen: boolean) => {},
+  isOrderConfirm: false,
+  setIsOrderConfirm: (isOpen: boolean) => {},
 });
 
 export const ModalProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [isOpenPopUpBasket, setIsOpenPopUpBasket] = useState(false);
+  const [isOrderConfirm, setIsOrderConfirm] = useState(false);
 
   const contextValue = {
-    isOpenPopUpBasket,
-    setIsOpenPopUpBasket,
+    isOrderConfirm,
+    setIsOrderConfirm,
   };
 
   return (

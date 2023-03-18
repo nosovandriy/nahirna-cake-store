@@ -31,7 +31,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
       {selectedCard && (
         <section className="relative">
           {addToCart && (
-            <div className="absolute w-full top-0 z-50 flex h-14 items-center justify-center bg-themeBrown-100">
+            <div className="absolute top-0 z-50 flex h-14 w-full items-center justify-center bg-themeBrown-100">
               <p className="text-themeCaramel">Товар додано у кошик</p>
               <CheckIcon />
             </div>

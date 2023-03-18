@@ -21,7 +21,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
             key={cake.id}
             className="cursor-pointer"
           >
-            <div className=" flex max-h-[421px] h-[421px] max-w-[440px] w-[440px] flex-col items-center justify-center border border-transparent hover:border-themeBrown-20">
+            <div className="flex max-h-[421px] h-[421px] max-w-[440px] w-[440px] flex-col items-center justify-center border border-transparent hover:border-themeBrown-20">
               <div>
                 <Image
                   src={cake.imageTitle}
