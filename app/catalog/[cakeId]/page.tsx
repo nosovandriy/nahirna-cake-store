@@ -13,7 +13,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const { catalog } = useCatalog();
   const selectedCard = catalog.find((item) => item.titleEng === params.cakeId);
 
-  const [addToCart, setAddToCart] = useState(true);
+  const [addToCart, setAddToCart] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {

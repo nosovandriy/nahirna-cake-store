@@ -12,7 +12,7 @@ const navItems: Array<NavItem> = [
   },
   {
     label: "Каталог",
-    page: "catalog",
+    page: "/catalog",
   },
   {
     label: "Відгуки",
@@ -38,9 +38,9 @@ export const MenuItems: React.FC<Props> = ({ className, onClick }) => {
     <>
       {navItems.map((item, index) => (
         <li key={index} className={className}>
-          <a href={item.page} onClick={onClick}>
+          <Link href={item.page} onClick={onClick}>
             {item.label}
-          </a>
+          </Link>
         </li>
       ))}
     </>
