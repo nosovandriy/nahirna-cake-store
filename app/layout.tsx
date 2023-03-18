@@ -1,6 +1,8 @@
 import { Sofia_Sans, Inter } from "next/font/google";
 
 import "@style/globals.scss";
+import Header from "@header/header";
+import Footer from "@footer/footer";
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
@@ -29,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${sofia.variable} flex min-h-screen flex-col`}
       >
+        <Header />
         <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
