@@ -75,7 +75,7 @@
   }
 
   .radioButton {
-    @apply h-4 w-4 border-themeBrown-100 text-themeBrown-100 focus:ring-themeBrown-100;
+    @apply h-4 w-4 border-themeBrown-100 text-themeBrown-100 focus:ring-transparent;
 
   }
 }
