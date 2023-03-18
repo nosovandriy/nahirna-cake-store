@@ -2,7 +2,7 @@
 
 import CatalogItem from "./catalog-item/catalog-item";
 
-// import BreadCrumbs from "@breadcrumb/breadcrumbs";
+import BreadCrumbs from "@breadcrumb/breadcrumbs";
 // import { Check } from "@icons/check";
 // import { Sort } from "./sort/sort";
 
@@ -11,7 +11,7 @@ const Catalog = () => {
 
   return (
     <section>
-      {/* <BreadCrumbs /> */}
+      <BreadCrumbs />
       {/* <Sort /> */}
       <CatalogItem isFullCatalog={isFullCatalog} />
     </section>

@@ -6,6 +6,7 @@ import { Add, Remove } from "@icons/add-remove";
 import ProductCardCarousel from "./carousel/carousel";
 import { useCatalog } from "../hooks/useCatalog";
 import { CheckIcon } from "@icons/close copy 2";
+import BreadCrumbs from "@breadcrumb/breadcrumbs";
 // import { ContextProvider } from "@provider/use-context-provider";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
@@ -36,7 +37,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
             </div>
           )}
 
-          {/* <BreadCrumbs /> */}
+          <BreadCrumbs cakeTitle={selectedCard.title} />
           <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
               <ProductCardCarousel />
