@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply h-screen scroll-smooth;
+  }
+
+  body {
+    @apply mx-auto my-0 max-w-[1440px] bg-themeCaramel px-[68px];
+  }
+
+  a {
+    @apply font-text text-lg font-normal text-themeGray-100 hover:text-themeBrown-100;
+  }
+
+  p {
+    @apply font-text text-base text-themeGray-60;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title text-themeGray-100;
+  }
+
+  h1 {
+    @apply text-[86px] font-medium leading-[103px] text-themeBrown-100;
+  }
+
+  h2 {
+    @apply text-4xl font-bold leading-[34px] text-themeBrown-100;
+  }
+
+  h3 {
+    @apply text-[28px] font-semibold leading-[34px];
+  }
+
+  h4 {
+    @apply font-text text-xl font-medium;
+  }
+
+  li {
+    @apply cursor-pointer;
+  }
+
+  button {
+    @apply font-text;
+  }
+
+  .primaryButton {
+    @apply rounded-full bg-themeBrown-100 py-4 px-14 text-lg font-normal text-themeGray-0 duration-500 hover:bg-themeBrown-50 active:scale-95 active:bg-themeBrown-120;
+  }
+
+  .secondaryButton {
+    @apply flex items-center justify-center rounded-full border border-themeBrown-100 py-4 px-12 text-lg font-normal text-themeGray-100 duration-500 hover:border-themeBrown-50 active:scale-95 active:active:bg-themeBrown-50;
+  }
+
+  .activeSizeButton {
+    @apply leading-6 rounded-full py-2 px-6 text-base font-normal text-themeCaramel duration-500 bg-themeBrown-50 active:scale-95;
+  }
+  .notActiveSizeButton {
+    @apply leading-6 rounded-full border border-themeBrown-20 py-[7px] px-6 text-base font-normal text-themeGray-100 duration-500 hover:border-themeBrown-50 active:scale-95 active:active:bg-themeBrown-50 focus:text-themeCaramel;
+  }
+
+  .formInput {
+    @apply w-full rounded-md border-0 bg-themeCaramel p-4 text-themeGray-100 ring-1 ring-inset ring-themeGray-30 placeholder:text-themeGray-30 focus:ring-1 focus:ring-inset focus:ring-themeBrown-100;
+  }
+  .formLabel {
+    @apply peer-focus:text-sm absolute left-4 -top-5 text-sm text-themeGray-30 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-themeGray-30 peer-focus:-top-5 peer-focus:text-themeGray-30;
+  }
+
+  .radioButton {
+    @apply h-4 w-4 border-themeBrown-100 text-themeBrown-100 focus:ring-themeBrown-100;
+
+  }
+}
