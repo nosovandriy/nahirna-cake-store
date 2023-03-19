@@ -76,6 +76,9 @@
 
   .radioButton {
     @apply h-4 w-4 border-themeBrown-100 text-themeBrown-100 focus:ring-transparent;
+  }
 
+  .galleryButton {
+    @apply absolute top-1/2 -translate-y-1/2 transform rounded-full bg-themeCaramel p-2 bg-opacity-30 hover:bg-themeGray-10 hover:opacity-100;
   }
 }

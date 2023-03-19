@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="col-span-3 col-start-10 self-end mb-[92px]">
         {/* <HeroCarousel /> */}
         <Image
-          src="/assets/hero-small.jpg"
+          src="/assets/hero-small.png"
           alt="cheesecake ternopil Nahirna"
           width={296}
           height={200}

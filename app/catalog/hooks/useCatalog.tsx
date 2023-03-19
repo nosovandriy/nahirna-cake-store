@@ -13,7 +13,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
         "Чізкейк Баунті - це десерт, який поєднує в собі смаки крем сиру та кокоса, що нагадує смак традиційного шоколадного батончика Баунті. Основа приготовлена з шоколадного пісочного сабле власного приготування. Зверху чізкейк покритий шоколадним кремом ганаш.",
       price: 0.7,
       weight: [1200, 1500, 1800, 2000],
-      imageTitle: "/assets/catalog/1/1.jpg",
+      imageTitle: "/assets/catalog/1/title.jpg",
       images: [
         "/assets/catalog/1/1.jpg",
         "/assets/catalog/1/2.jpg",

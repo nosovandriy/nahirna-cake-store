@@ -13,8 +13,6 @@ const Cart = () => {
   const [delivery, setDelivery] = useState(false);
   const { isOrderConfirm, setIsOrderConfirm } = useContext(ContextProvider);
 
-  console.log(isOrderConfirm);
-  
   return (
     <>
       <BreadCrumbs />
