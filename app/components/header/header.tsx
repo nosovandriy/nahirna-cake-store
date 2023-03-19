@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header
-    className="mb-14"
+      className="mb-14"
       // className={classNames("static z-[40] w-full", {
       //   "shadow-xl": navigationShadow,
       // })}
@@ -40,7 +40,9 @@ const Header = () => {
         <div className="md:hidden" onClick={handleShowMobileMenu}>
           <MobileMenu />
         </div>
-        <Logo handleShowMobileMenu={handleShowMobileMenu} />
+        <div className="w-[145px] h-[45px]">
+          <Logo handleShowMobileMenu={handleShowMobileMenu} />
+        </div>
         <ul className="hidden gap-10 lg:flex">
           <MenuItems
             className={

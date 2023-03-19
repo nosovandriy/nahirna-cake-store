@@ -113,14 +113,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { ArrowGallery } from "@icons/arrows-gallery";
 
 interface GallerySliderProps {
   images: string[];
+  imagesAlt: string;
 }
 
-const ProductCardCarousel: React.FC<GallerySliderProps> = ({ images }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+const ProductCardCarousel: React.FC<GallerySliderProps> = ({
+  images,
+  imagesAlt,
+}) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleImageClick = (index: number) => {
     setCurrentImageIndex(index);
@@ -140,43 +144,40 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({ images }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="mb-8 relative">
+      <div className="relative mb-10">
         <Image
           src={images[currentImageIndex]}
-          alt={images[currentImageIndex]}
+          alt={`${imagesAlt} cheesecake`}
           width={632}
           height={465}
-          className="object-cover max-w-[632px] max-h-[465px]"
+          className="max-h-[465px] max-w-[632px] object-cover"
         />
         <button
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-400 rounded-full p-2"
+          className="galleryButton left-2 rotate-180"
           onClick={handlePrevClick}
         >
-          <FiChevronLeft className="h-6 w-6 text-gray-700" />
+          <ArrowGallery />
         </button>
-        <button
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-400 rounded-full p-2"
-          onClick={handleNextClick}
-        >
-          <FiChevronRight className="h-6 w-6 text-gray-700" />
+        <button className="galleryButton right-2" onClick={handleNextClick}>
+          <ArrowGallery />
         </button>
       </div>
-      <div className="flex gap-10 w-full">
+      <div className="flex w-full gap-10">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`flex-shrink-0 bg-gray-200 hover:bg-gray-400 h-[135px] cursor-pointer ${
+            className={`h-[135px] flex-shrink-0 cursor-pointer ${
               index === currentImageIndex ? "opacity-60" : ""
             }`}
             onClick={() => handleImageClick(index)}
           >
             <Image
               src={image}
-              alt={`image-${index}`}
+              alt={`${imagesAlt} cheesecake`}
               width={184}
               height={135}
-              className="object-cover max-w-[184px] max-h-[140px]"
-              />
+              className="max-h-[135px] max-w-[184px] object-cover"
+            />
           </div>
         ))}
       </div>

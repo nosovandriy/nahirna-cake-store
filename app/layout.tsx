@@ -28,10 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${sofia.variable} flex min-h-screen flex-col`}
-      >
+    <html lang="uk" className={`${inter.variable} ${sofia.variable}`}>
+      <body className="flex min-h-screen flex-col">
         <ModalProvider>
           <Header />
           <main className="flex-grow">{children}</main>

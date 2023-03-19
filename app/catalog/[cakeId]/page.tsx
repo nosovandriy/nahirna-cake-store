@@ -7,6 +7,7 @@ import ProductCardCarousel from "./carousel/carousel";
 import { useCatalog } from "../hooks/useCatalog";
 import { CheckIcon } from "@icons/close copy 2";
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
+import NotFoundPage from "@404/404";
 // import { ContextProvider } from "@provider/use-context-provider";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
@@ -26,11 +27,9 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
     setAddToCart(true);
   };
 
-
-
   return (
     <>
-      {selectedCard && (
+      {selectedCard ? (
         <section className="relative">
           {addToCart && (
             <div className="absolute top-0 z-50 flex h-14 w-full items-center justify-center bg-themeBrown-100">
@@ -42,12 +41,17 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
           <BreadCrumbs cakeTitle={selectedCard.title} />
           <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
-              <ProductCardCarousel images={selectedCard.images}/>
+              <ProductCardCarousel
+                images={selectedCard.images}
+                imagesAlt={selectedCard.titleEng}
+              />
             </div>
             <div className="col-span-6 col-start-7 mb-[120px]">
               <h2 className="mb-6 text-themeGray-100">{selectedCard.title}</h2>
               <p className="mb-8 text-2xl font-medium text-themeBrown-100">
-                {`${(selectedCard.price * selectedCard.weight[0]).toFixed()} грн`}
+                {`${(
+                  selectedCard.price * selectedCard.weight[0]
+                ).toFixed()} грн`}
               </p>
               <div className="mb-8 flex gap-4">
                 {selectedCard.weight.map((item, index) => (
@@ -104,6 +108,8 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
             </div>
           </div>
         </section>
+      ) : (
+        <NotFoundPage />
       )}
     </>
   );

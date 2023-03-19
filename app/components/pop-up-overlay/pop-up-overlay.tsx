@@ -47,8 +47,6 @@ export const PopUpOverlay: React.FC<Props> = ({
     transform: isOrderConfirm ? `translateЧ(0%)` : `translateY(100%)`,
   });
 
-  console.log(isOrderConfirm);
-  
   return (
     <>
       {isOrderConfirm && (
