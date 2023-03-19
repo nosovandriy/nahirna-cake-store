@@ -26,6 +26,8 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
     setAddToCart(true);
   };
 
+
+
   return (
     <>
       {selectedCard && (
@@ -40,12 +42,12 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
           <BreadCrumbs cakeTitle={selectedCard.title} />
           <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
-              <ProductCardCarousel />
+              <ProductCardCarousel images={selectedCard.images}/>
             </div>
             <div className="col-span-6 col-start-7 mb-[120px]">
               <h2 className="mb-6 text-themeGray-100">{selectedCard.title}</h2>
               <p className="mb-8 text-2xl font-medium text-themeBrown-100">
-                {`${selectedCard.price * selectedCard.weight[0]} грн`}
+                {`${(selectedCard.price * selectedCard.weight[0]).toFixed()} грн`}
               </p>
               <div className="mb-8 flex gap-4">
                 {selectedCard.weight.map((item, index) => (
