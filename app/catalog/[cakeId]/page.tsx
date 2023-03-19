@@ -6,6 +6,7 @@ import { Add, Remove } from "@icons/add-remove";
 import ProductCardCarousel from "./carousel/carousel";
 import { useCatalog } from "../hooks/useCatalog";
 import { CheckIcon } from "@icons/close copy 2";
+import BreadCrumbs from "@breadcrumb/breadcrumbs";
 // import { ContextProvider } from "@provider/use-context-provider";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
@@ -13,7 +14,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const { catalog } = useCatalog();
   const selectedCard = catalog.find((item) => item.titleEng === params.cakeId);
 
-  const [addToCart, setAddToCart] = useState(true);
+  const [addToCart, setAddToCart] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -32,13 +33,13 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
       {selectedCard && (
         <section className="relative">
           {addToCart && (
-            <div className="absolute w-full top-0 z-50 flex h-14 items-center justify-center bg-themeBrown-100">
+            <div className="absolute top-0 z-50 flex h-14 w-full items-center justify-center bg-themeBrown-100">
               <p className="text-themeCaramel">Товар додано у кошик</p>
               <CheckIcon />
             </div>
           )}
 
-          {/* <BreadCrumbs /> */}
+          <BreadCrumbs cakeTitle={selectedCard.title} />
           <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
               <ProductCardCarousel images={selectedCard.images}/>
