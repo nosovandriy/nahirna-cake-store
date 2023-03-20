@@ -1,12 +1,18 @@
-import { Catalog } from "../../../types/Catalog";
+import { ContextProvider } from "@provider/context-provider";
+import { useContext } from "react";
+import { SortBy } from "@typeSortType";
+import { Catalog } from "@typeCatalog";
 
 
 export function useCatalog(isFullCatalog: boolean = true): {
   catalog: Catalog[];
 } {
+  const { sortTitle } = useContext(ContextProvider);
+
   const fullCatalog = [
     {
       id: '1',
+      popularity: '4',
       title: "Баунті",
       titleEng: "bounty",
       description:
@@ -22,6 +28,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '2',
+      popularity: '8',
       title: "Заморожений чорничний",
       titleEng: "frozen-blueberry",
       description:
@@ -36,6 +43,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '3',
+      popularity: '7',
       title: "Лавандовий",
       titleEng: "lavender",
       description:
@@ -50,6 +58,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '4',
+      popularity: '9',
       title: "Лайм - кокос",
       titleEng: "lime-coconut",
       description:
@@ -65,6 +74,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '5',
+      popularity: '6',
       title: "Лимонно - чорничний",
       titleEng: "lemon-blueberry",
       description:
@@ -78,6 +88,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '6',
+      popularity: '5',
       title: "Малина - пармезан",
       titleEng: "raspberries-parmesan",
       description:
@@ -93,6 +104,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '7',
+      popularity: '10',
       title: "Манго - маракуя",
       titleEng: "mango-passion-fruit",
       description:
@@ -108,6 +120,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '8',
+      popularity: '1',
       title: "Класичний Нью - Йорк",
       titleEng: "classic-New-York",
       description:
@@ -123,6 +136,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '9',
+      popularity: '13',
       title: "П’яна вишня",
       titleEng: "drunk-cherry",
       description:
@@ -138,6 +152,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '10',
+      popularity: '2',
       title: "Снікерс",
       titleEng: "snickers",
       description:
@@ -153,6 +168,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '11',
+      popularity: '3',
       title: "Тропічний шоколад",
       titleEng: "tropical-chocolate",
       description:
@@ -168,6 +184,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '12',
+      popularity: '12',
       title: "Шоколадний з бананами",
       titleEng: "chocolate-with-bananas",
       description:
@@ -183,6 +200,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: '13',
+      popularity: '11',
       title: "Шоколадний ферреро",
       titleEng: "chocolate-ferrero",
       description:
@@ -198,9 +216,28 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
   ];
 
-  const smallCatalog = fullCatalog.slice(0, 6);
+  const sortedData = [...fullCatalog].sort((a, b) => {
+    switch (sortTitle) {
+      case SortBy.popularity:
+        return Number(a.popularity) - Number(b.popularity);
 
-  const catalog = isFullCatalog ? fullCatalog : smallCatalog;
+      case SortBy.title:
+        return a.title.localeCompare(b.title);
+
+      case SortBy.priceAsc:
+        return (a.price * a.weight[0]) - (b.price * b.weight[0]);
+
+      case SortBy.priceDesc:
+        return (b.price * b.weight[0]) - (a.price * a.weight[0]);
+
+      default:
+        return 0;
+    }
+  });
+
+  const smallCatalog = sortedData.slice(0, 6);
+
+  const catalog = isFullCatalog ? sortedData : smallCatalog;
 
   return { catalog };
 }

@@ -1,5 +1,6 @@
 export interface Catalog {
   id: string;
+  popularity: string;
   title: string;
   titleEng: string;
   description: string;

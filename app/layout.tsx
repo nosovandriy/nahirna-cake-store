@@ -3,7 +3,7 @@ import { Sofia_Sans, Inter } from "next/font/google";
 import "@style/globals.scss";
 import Header from "@header/header";
 import Footer from "@footer/footer";
-import { ModalProvider } from "./context-provider/context-provider";
+import { ModalProvider } from "@provider/context-provider";
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],

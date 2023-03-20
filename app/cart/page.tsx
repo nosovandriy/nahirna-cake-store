@@ -11,7 +11,7 @@ import { PopUpOrderDone } from "@pop-up-order-done/pop-up-order-done";
 
 const Cart = () => {
   const [delivery, setDelivery] = useState(false);
-  const { isOrderConfirm, setIsOrderConfirm } = useContext(ContextProvider);
+  const { setIsOrderConfirm } = useContext(ContextProvider);
 
   return (
     <>
@@ -153,36 +153,38 @@ const Cart = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <div
-                  className="flex w-max cursor-pointer items-center"
-                  onClick={() => setDelivery(false)}
+                  className="flex w-max items-center"
                 >
                   <input
                     id="radioButton-pickup"
                     name="push-notifications-pickup"
                     type="radio"
-                    className="radioButton"
+                    className="radioButton cursor-pointer"
                     defaultChecked
+                    onClick={() => setDelivery(false)}
                   />
                   <label
                     htmlFor="radioButton-pickup"
-                    className="ml-2 font-text text-themeGray-60"
+                    className="ml-2 font-text text-themeGray-60 cursor-pointer"
+                    onClick={() => setDelivery(false)}
                   >
                     Самовивіз - Тарнавського, 11 (з 9:00 до 20:00)
                   </label>
                 </div>
                 <div
-                  onClick={() => setDelivery(true)}
-                  className="flex w-max cursor-pointer items-center"
+                  className="flex w-max items-center"
                 >
                   <input
                     id="radioButton-taxi"
                     name="push-notifications-pickup"
                     type="radio"
-                    className="radioButton"
+                    className="radioButton cursor-pointer"
+                    onClick={() => setDelivery(true)}
                   />
                   <label
                     htmlFor="radioButton-taxi"
-                    className="ml-2 font-text text-themeGray-60"
+                    className="ml-2 font-text text-themeGray-60 cursor-pointer"
+                    onClick={() => setDelivery(true)}
                   >
                     Кур’єром по Тернополю
                   </label>
