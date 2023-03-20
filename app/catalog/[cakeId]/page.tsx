@@ -1,21 +1,27 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
 
-// import BreadCrumbs from "@breadcrumb/breadcrumbs";
+import { useEffect, useState } from "react";
+
 import { Add, Remove } from "@icons/add-remove";
-import ProductCardCarousel from "./carousel/carousel";
-import { useCatalog } from "../hooks/useCatalog";
-import { CheckIcon } from "@icons/close copy 2";
+import ProductCardCarousel from "@catalog/[cakeId]/carousel/carousel";
+import { CheckIcon } from "@icons/check";
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
 import NotFoundPage from "@404/404";
-// import { ContextProvider } from "@provider/use-context-provider";
+import { useCatalog } from "@catalog/hooks/useCatalog";
+import SkeletonGallery from "@catalog/catalog-item/skeleton-gallery/skeleton-gallery";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
-  // const { isOpenPopUpBasket, setIsOpenPopUpBasket } = useContext(ContextProvider);
+  const [addToCart, setAddToCart] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   const { catalog } = useCatalog();
   const selectedCard = catalog.find((item) => item.titleEng === params.cakeId);
 
-  const [addToCart, setAddToCart] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,10 +47,14 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
           <BreadCrumbs cakeTitle={selectedCard.title} />
           <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
-              <ProductCardCarousel
-                images={selectedCard.images}
-                imagesAlt={selectedCard.titleEng}
-              />
+              {isLoading ? (
+                <SkeletonGallery />
+              ) : (
+                <ProductCardCarousel
+                  images={selectedCard.images}
+                  imagesAlt={selectedCard.titleEng}
+                />
+              )}
             </div>
             <div className="col-span-6 col-start-7 mb-[120px]">
               <h2 className="mb-6 text-themeGray-100">{selectedCard.title}</h2>

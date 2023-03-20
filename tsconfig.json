@@ -21,9 +21,11 @@
     ],
     "paths": {
       "@*": ["./app/components/*"],
+      "@catalog*": ["./app/catalog/*"],
       "@style*": ["./styles/*"],
       "@image*": ["./public/assets/*"],
-      // "@provider*": ["./app/use-context-provider/*"]
+      "@provider*": ["./app/context-provider/*"],
+      "@type*": ["./types/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

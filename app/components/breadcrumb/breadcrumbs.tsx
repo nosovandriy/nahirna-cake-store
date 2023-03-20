@@ -1,15 +1,10 @@
 "use client";
 
-// import * as React from "react";
 import { Breadcrumbs as MuiBreadcrumbs } from "@mui/material";
 import { Home } from "@icons/home";
 import { ArrowRightSmall } from "@icons/arrow-right-small";
 
-import {
-  useRouter,
-  usePathname,
-  useSelectedLayoutSegments,
-} from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 type Props = {
   cakeTitle?: string;
@@ -21,9 +16,6 @@ const BreadCrumbs: React.FC<Props> = ({ cakeTitle }) => {
   const pathnamesArray = pathname.split("/").filter((item) => item);
   const pageRoute: string = pathnamesArray[0];
   const isFirstLevelPathName = pathnamesArray.length === 1;
-
-  const segment = useSelectedLayoutSegments();
-  console.log(segment);
 
   const pagePathName = (): string => {
     const pageTitle: { [key: string]: string } = {
