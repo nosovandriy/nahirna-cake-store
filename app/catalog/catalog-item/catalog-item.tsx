@@ -14,6 +14,7 @@ type Props = {
 
 const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
   const { catalog } = useCatalog(isFullCatalog);
+  console.log(isFullCatalog);
 
   const [isLoading, setIsLoading] = useState(true);
   const { sortTitle, setSortTitle } = useContext(ContextProvider);
@@ -35,21 +36,23 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
     <section className="mb-[120px] flex flex-col">
       <div className="flex justify-between">
         <h2 className="items-center justify-center">Каталог</h2>
-        <div className="flex items-center justify-start">
-          <p>Сортувати за:</p>
-          <div className="relative">
-            <select
-              className="focus:ring-0 border border-transparent bg-themeCaramel px-4 py-2 pr-8 underline-offset-0  hover:border-transparent focus:border-transparent focus:outline-0"
-              onChange={handleChangeSortTitle}
-              value={sortTitle}
-            >
-              <option>{SortBy.popularity}</option>
-              <option >{SortBy.title}</option>
-              <option>{SortBy.priceAsc}</option>
-              <option>{SortBy.priceDesc}</option>
-            </select>
+        {isFullCatalog && (
+          <div className="flex items-center justify-start">
+            <p>Сортувати за:</p>
+            <div className="relative">
+              <select
+                className="border border-transparent bg-themeCaramel px-4 py-2 pr-8 underline-offset-0 hover:border-transparent  focus:border-transparent focus:outline-0 focus:ring-0"
+                onChange={handleChangeSortTitle}
+                value={sortTitle}
+              >
+                <option>{SortBy.popularity}</option>
+                <option>{SortBy.title}</option>
+                <option>{SortBy.priceAsc}</option>
+                <option>{SortBy.priceDesc}</option>
+              </select>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <div className=" mt-8 -ml-4 mr-4 grid grid-cols-3 gap-x-10 gap-y-14">
