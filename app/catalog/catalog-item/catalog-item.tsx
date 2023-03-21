@@ -41,7 +41,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
             <p>Сортувати за:</p>
             <div className="relative">
               <select
-                className="border border-transparent bg-themeCaramel px-4 py-2 pr-8 underline-offset-0 hover:border-transparent  focus:border-transparent focus:outline-0 focus:ring-0"
+                className="text-themeBrown-100 border border-transparent bg-themeCaramel px-4 py-2 pr-8 underline-offset-0 hover:border-transparent focus:border-transparent focus:outline-0 focus:ring-0"
                 onChange={handleChangeSortTitle}
                 value={sortTitle}
               >
@@ -57,7 +57,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
 
       <div className=" mt-8 -ml-4 mr-4 grid grid-cols-3 gap-x-10 gap-y-14">
         {isLoading && isFullCatalog
-          ? [...new Array(6)].map((_, index) => <SkeletonCard key={index} />)
+          ? [...new Array(6)].fill(<SkeletonCard />)
           : catalog.map((cake) => (
               <Link
                 href={`/catalog/${cake.titleEng}`}

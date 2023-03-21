@@ -5,14 +5,14 @@ import { animated, useSpring } from '@react-spring/web';
 
 type Props = {
   children: React.ReactNode;
-  isOrderConfirm: boolean;
-  setIsOrderConfirm: (isOpen: boolean) => void;
+  isOpenModal: boolean;
+  setIsOpenModal: (isOpen: boolean) => void;
 };
 
 export const PopUpOverlay: React.FC<Props> = ({
   children,
-  isOrderConfirm,
-  setIsOrderConfirm,
+  isOpenModal,
+  setIsOpenModal,
 }) => {
   const modalRef = useRef<HTMLInputElement>(null);
 
@@ -20,16 +20,16 @@ export const PopUpOverlay: React.FC<Props> = ({
 
   const closeModal = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (modalRef.current === event.target) {
-      setIsOrderConfirm(false);
+      setIsOpenModal(false);
     }
   }
 
   const keyPress = useCallback(
     (event: any) => {
-      if (event.key === escapeKey && isOrderConfirm) {
-        setIsOrderConfirm(false);
+      if (event.key === escapeKey && isOpenModal) {
+        setIsOpenModal(false);
       }
-    }, [setIsOrderConfirm, isOrderConfirm]
+    }, [setIsOpenModal, isOpenModal]
   );
 
   useEffect(() => {
@@ -43,13 +43,13 @@ export const PopUpOverlay: React.FC<Props> = ({
     config: {
       duration: 300,
     },
-    opacity: isOrderConfirm ? 1 : 0,
-    transform: isOrderConfirm ? `translateЧ(0%)` : `translateY(100%)`,
+    opacity: isOpenModal ? 1 : 0,
+    transform: isOpenModal ? `translateЧ(0%)` : `translateY(100%)`,
   });
 
   return (
     <>
-      {isOrderConfirm && (
+      {isOpenModal && (
         <div
           ref={modalRef}
           className="flex flex-col justify-center items-center fixed top-0 left-0 w-full h-full bg-black bg-opacity-[72%] z-50"

@@ -1,32 +1,7 @@
+import { ContextProvider } from "@provider/context-provider";
 import Link from "next/link";
-
-interface NavItem {
-  label: string;
-  page: string;
-}
-
-const navItems: Array<NavItem> = [
-  {
-    label: "Про мене",
-    page: "/#about",
-  },
-  {
-    label: "Каталог",
-    page: "/catalog",
-  },
-  {
-    label: "Відгуки",
-    page: "/#testimonials",
-  },
-  {
-    label: "Доставка",
-    page: "/#delivery",
-  },
-  {
-    label: "Контакти",
-    page: "/#contacts",
-  },
-];
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
 type Props = {
   className: string;
@@ -34,15 +9,29 @@ type Props = {
 };
 
 export const MenuItems: React.FC<Props> = ({ className, onClick }) => {
+  const { isContactsOpen, setIsContactsOpen } = useContext(ContextProvider);
+  const router = useRouter();
+
   return (
     <>
-      {navItems.map((item, index) => (
-        <li key={index} className={className}>
-          <Link href={item.page} onClick={onClick}>
-            {item.label}
-          </Link>
-        </li>
-      ))}
+      <li className={className}>
+        <a href={"/#about"}>Про мене</a>
+      </li>
+      <li className={className}>
+        <Link href={"/catalog"}>Каталог</Link>
+      </li>
+      <li className={className}>
+        <a href={"/#testimonials"}>Відгуки</a>
+      </li>
+      <li className={className}>
+        <a href={"/#delivery"}>Доставка</a>
+      </li>
+      <li
+        className={`${className} font-text text-lg text-themeGray-100`}
+        onClick={() => setIsContactsOpen(!isContactsOpen)}
+      >
+        Контакти
+      </li>
     </>
   );
 };

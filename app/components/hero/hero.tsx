@@ -7,7 +7,6 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section
-      id="about"
       className="relative mb-[120px] mt-6 grid grid-cols-12 gap-x-10"
     >
       <div className="absolute top-[122px] z-10 col-span-8 col-start-1 flex flex-col gap-8">

@@ -1,6 +1,7 @@
 import HeroSection from "@hero/hero";
 import AboutSection from "@about/about";
 import CatalogPreview from "@/catalog-preview/catalog-preview";
+import Delivery from "@delivery/delivery";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <CatalogPreview />
+      <Delivery />
     </>
   );
 }
