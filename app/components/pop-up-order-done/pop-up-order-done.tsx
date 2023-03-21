@@ -19,21 +19,19 @@ export const PopUpOrderDone = () => {
   const handleConfirmOrder = () => {
     setIsOrderConfirm(false);
     router.push("/");
+    window.scrollTo(0, 0);
   };
 
   return (
     <PopUpOverlay
-      isOrderConfirm={isOrderConfirm}
-      setIsOrderConfirm={setIsOrderConfirm}
+      isOpenModal={isOrderConfirm}
+      setIsOpenModal={setIsOrderConfirm}
     >
       {isOrderConfirm && (
         <div className="flex h-[331px] w-[544px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8">
           <h2>Дякуємо за замовленя</h2>
           <p className=" text-lg">З вами зв’яжуться у найближчий час</p>
-          <button
-            className="primaryButton px-8"
-            onClick={handleConfirmOrder}
-          >
+          <button className="primaryButton px-8" onClick={handleConfirmOrder}>
             Повернутись на головну
           </button>
           <div className="flex gap-5">

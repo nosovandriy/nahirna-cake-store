@@ -4,6 +4,7 @@ import "@style/globals.scss";
 import Header from "@header/header";
 import Footer from "@footer/footer";
 import { ModalProvider } from "@provider/context-provider";
+import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <PopUpContacts />
         </ModalProvider>
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import classNames from "classnames";
 
 import { Logo } from "@logo";
@@ -8,10 +8,12 @@ import { MenuItems } from "./navigation/menuItems";
 import { ShoppingCart } from "@icons/shopping-cart";
 import { MobileMenu } from "@icons/mobile-menu";
 import Link from "next/link";
+import { ContextProvider } from "@providercontext-provider";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [navigationShadow, setNavigationShadow] = useState(false);
+  // const [navigationShadow, setNavigationShadow] = useState(false);
+
 
   const handleShowMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);

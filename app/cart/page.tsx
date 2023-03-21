@@ -8,6 +8,7 @@ import { Add, Remove } from "@icons/add-remove";
 import { EditIcon } from "@icons/edit";
 import { ContextProvider } from "../context-provider/context-provider";
 import { PopUpOrderDone } from "@pop-up-order-done/pop-up-order-done";
+import EmptyCart from "./empty-cart/empty-cart";
 
 const Cart = () => {
   const [delivery, setDelivery] = useState(false);
@@ -16,6 +17,8 @@ const Cart = () => {
   return (
     <>
       <BreadCrumbs />
+      <EmptyCart />
+
       <div className="mt-10 grid grid-cols-12 gap-x-10">
         <div className="col-span-7 col-start-1">
           <h2 className="col-span-4 col-start-1 mb-10">Корзина</h2>
@@ -152,9 +155,7 @@ const Cart = () => {
                 <h3 className="">Спосіб доставки</h3>
               </div>
               <div className="flex flex-col gap-4">
-                <div
-                  className="flex w-max items-center"
-                >
+                <div className="flex w-max items-center">
                   <input
                     id="radioButton-pickup"
                     name="push-notifications-pickup"
@@ -165,15 +166,13 @@ const Cart = () => {
                   />
                   <label
                     htmlFor="radioButton-pickup"
-                    className="ml-2 font-text text-themeGray-60 cursor-pointer"
+                    className="ml-2 cursor-pointer font-text text-themeGray-60"
                     onClick={() => setDelivery(false)}
                   >
                     Самовивіз - Тарнавського, 11 (з 9:00 до 20:00)
                   </label>
                 </div>
-                <div
-                  className="flex w-max items-center"
-                >
+                <div className="flex w-max items-center">
                   <input
                     id="radioButton-taxi"
                     name="push-notifications-pickup"
@@ -183,7 +182,7 @@ const Cart = () => {
                   />
                   <label
                     htmlFor="radioButton-taxi"
-                    className="ml-2 font-text text-themeGray-60 cursor-pointer"
+                    className="ml-2 cursor-pointer font-text text-themeGray-60"
                     onClick={() => setDelivery(true)}
                   >
                     Кур’єром по Тернополю
@@ -234,7 +233,10 @@ const Cart = () => {
           </div>
           <hr className="mx-auto mb-8 h-px w-full bg-themeBrown-20"></hr>
           <div className="flex flex-col justify-between gap-6">
-            <button className="primaryButton" onClick={() => setIsOrderConfirm(true)}>
+            <button
+              className="primaryButton"
+              onClick={() => setIsOrderConfirm(true)}
+            >
               Підтверджую замовлення
             </button>
             <button className="secondaryButton">Продовжити покупку</button>
