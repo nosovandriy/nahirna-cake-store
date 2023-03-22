@@ -1,7 +1,8 @@
-import { ContextProvider } from "@provider/context-provider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useContext } from "react";
+
+import { useAppDispatch } from "@typeReduxHooks";
+import { setIsContactsOpen } from "../../../../redux/slices/popUpSlice";
 
 type Props = {
   className: string;
@@ -9,8 +10,12 @@ type Props = {
 };
 
 export const MenuItems: React.FC<Props> = ({ className, onClick }) => {
-  const { isContactsOpen, setIsContactsOpen } = useContext(ContextProvider);
+  const dispatch = useAppDispatch();
   const router = useRouter();
+
+  const handleContactsOpen = () => {
+    dispatch(setIsContactsOpen(true));
+  };
 
   return (
     <>
@@ -28,7 +33,7 @@ export const MenuItems: React.FC<Props> = ({ className, onClick }) => {
       </li>
       <li
         className={`${className} font-text text-lg text-themeGray-100`}
-        onClick={() => setIsContactsOpen(!isContactsOpen)}
+        onClick={handleContactsOpen}
       >
         Контакти
       </li>

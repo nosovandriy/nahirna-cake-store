@@ -1,35 +1,27 @@
-// "use client";
+"use client";
 
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect } from 'react';
 import { animated, useSpring } from '@react-spring/web';
 
 type Props = {
   children: React.ReactNode;
-  isOpenModal: boolean;
-  setIsOpenModal: (isOpen: boolean) => void;
+  isOpenModalAction: boolean;
+  setIsOpenModalAction: (isOpen: boolean) => void;
 };
 
-export const PopUpOverlay: React.FC<Props> = ({
+const PopUpOverlay: React.FC<Props> = ({
   children,
-  isOpenModal,
-  setIsOpenModal,
+  isOpenModalAction,
+  setIsOpenModalAction,
 }) => {
-  const modalRef = useRef<HTMLInputElement>(null);
-
   const escapeKey = 'Escape';
-
-  const closeModal = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (modalRef.current === event.target) {
-      setIsOpenModal(false);
-    }
-  }
 
   const keyPress = useCallback(
     (event: any) => {
-      if (event.key === escapeKey && isOpenModal) {
-        setIsOpenModal(false);
+      if (event.key === escapeKey && isOpenModalAction) {
+        setIsOpenModalAction(false);
       }
-    }, [setIsOpenModal, isOpenModal]
+    }, [isOpenModalAction, setIsOpenModalAction]
   );
 
   useEffect(() => {
@@ -43,17 +35,15 @@ export const PopUpOverlay: React.FC<Props> = ({
     config: {
       duration: 300,
     },
-    opacity: isOpenModal ? 1 : 0,
-    transform: isOpenModal ? `translateЧ(0%)` : `translateY(100%)`,
+    opacity: isOpenModalAction ? 1 : 0,
+    transform: isOpenModalAction ? `translateЧ(0%)` : `translateY(100%)`,
   });
 
   return (
     <>
-      {isOpenModal && (
+      {isOpenModalAction && (
         <div
-          ref={modalRef}
           className="flex flex-col justify-center items-center fixed top-0 left-0 w-full h-full bg-black bg-opacity-[72%] z-50"
-          // onClick={(event) => closeModal(event)}
         >
           <animated.div style={animation}>
             {children}
@@ -63,3 +53,5 @@ export const PopUpOverlay: React.FC<Props> = ({
     </>
   );
 }
+
+export default PopUpOverlay;
