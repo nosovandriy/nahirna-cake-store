@@ -9,8 +9,8 @@ export const ContextProvider = React.createContext({
   setIsOrderConfirm: (isOpen: boolean) => {},
   isContactsOpen: false,
   setIsContactsOpen: (isOpen: boolean) => {},
-  sortTitle: SortBy.popularity,
-  setSortTitle: (sortType: SortBy) => {},
+  // sortTitle: SortBy.popularity,
+  // setSortTitle: (sortType: SortBy) => {},
 });
 
 export const ModalProvider: React.FC<{
@@ -18,15 +18,15 @@ export const ModalProvider: React.FC<{
 }> = ({ children }) => {
   const [isOrderConfirm, setIsOrderConfirm] = useState(false);
   const [isContactsOpen, setIsContactsOpen] = useState(false);
-  const [sortTitle, setSortTitle] = useState<SortBy>(SortBy.popularity);
+  // const [sortTitle, setSortTitle] = useState<SortBy>(SortBy.popularity);
 
   const contextValue = {
     isOrderConfirm,
     setIsOrderConfirm,
     isContactsOpen,
     setIsContactsOpen,
-    sortTitle,
-    setSortTitle,
+    // sortTitle,
+    // setSortTitle,
   };
 
   return (

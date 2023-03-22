@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "@hero/hero";
 import AboutSection from "@about/about";
 import CatalogPreview from "@/catalog-preview/catalog-preview";
