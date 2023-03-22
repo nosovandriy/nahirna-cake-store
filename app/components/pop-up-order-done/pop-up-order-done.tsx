@@ -12,12 +12,18 @@ import { iconContacts } from "../../contacts";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export const PopUpOrderDone = () => {
-  const { isOrderConfirm, setIsOrderConfirm } = useContext(ContextProvider);
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+import { setIsOrderConfirm } from "../../redux/slices/popUpSlice";
+
+const PopUpOrderDone = () => {
+  // const { isOrderConfirm, setIsOrderConfirm } = useContext(ContextProvider);
+  const dispatch = useAppDispatch();
+  const isOrderConfirm = useAppSelector((state) => state.popUp.isOrderConfirm);
+
   const router = useRouter();
 
   const handleConfirmOrder = () => {
-    setIsOrderConfirm(false);
+    dispatch(setIsOrderConfirm(false));
     router.push("/");
     window.scrollTo(0, 0);
   };
@@ -53,3 +59,5 @@ export const PopUpOrderDone = () => {
     </PopUpOverlay>
   );
 };
+
+export default PopUpOrderDone;

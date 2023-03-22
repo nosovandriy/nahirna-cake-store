@@ -5,6 +5,7 @@ import Header from "@header/header";
 import Footer from "@footer/footer";
 import { ModalProvider } from "@provider/context-provider";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
+import ReduxProvider from "./redux/redux-provider";
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
@@ -31,12 +32,14 @@ export default function RootLayout({
   return (
     <html lang="uk" className={`${inter.variable} ${sofia.variable}`}>
       <body className="flex min-h-screen flex-col">
-        <ModalProvider>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <PopUpContacts />
-        </ModalProvider>
+        <ReduxProvider>
+          <ModalProvider>
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <PopUpContacts />
+          </ModalProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

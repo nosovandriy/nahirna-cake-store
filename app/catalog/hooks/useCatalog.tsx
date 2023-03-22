@@ -1,13 +1,16 @@
-import { ContextProvider } from "@provider/context-provider";
-import { useContext } from "react";
 import { SortBy } from "@typeSortType";
 import { Catalog } from "@typeCatalog";
 
+import { useSelector } from "react-redux";
+import type { TypedUseSelectorHook } from "react-redux";
+import { RootState } from "../../redux/store";
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export function useCatalog(isFullCatalog: boolean = true): {
   catalog: Catalog[];
 } {
-  const { sortTitle } = useContext(ContextProvider);
+  const sortType = useAppSelector((state) => state.sortCake.sortType);
 
   const fullCatalog = [
     {
@@ -217,7 +220,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
   ];
 
   const sortedData = [...fullCatalog].sort((a, b) => {
-    switch (sortTitle) {
+    switch (sortType) {
       case SortBy.popularity:
         return Number(a.popularity) - Number(b.popularity);
 

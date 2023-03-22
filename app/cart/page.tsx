@@ -1,24 +1,30 @@
 "use client";
 
-import BreadCrumbs from "@breadcrumb/breadcrumbs";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { DeleteIcon } from "@icons/delete";
-import { Add, Remove } from "@icons/add-remove";
-import { EditIcon } from "@icons/edit";
-import { ContextProvider } from "../context-provider/context-provider";
-import { PopUpOrderDone } from "@pop-up-order-done/pop-up-order-done";
+
+import BreadCrumbs from "@breadcrumb/breadcrumbs";
 import EmptyCart from "./empty-cart/empty-cart";
+import PopUpOrderDone from "@pop-up-order-done/pop-up-order-done";
+import { setIsOrderConfirm } from "../redux/slices/popUpSlice";
+import { useAppDispatch } from "@type/ReduxHooks";
+import { Add, Remove } from "@icons/add-remove";
+import { DeleteIcon } from "@icons/delete";
+// import { EditIcon } from "@icons/edit";
 
 const Cart = () => {
-  const [delivery, setDelivery] = useState(false);
-  const { setIsOrderConfirm } = useContext(ContextProvider);
+  const [cakeDelivery, setCakeDelivery] = useState(false);
+
+  const dispatch = useAppDispatch();
+
+  const handleOrderConfirm = () => {
+    dispatch(setIsOrderConfirm(true));
+  };
 
   return (
     <>
       <BreadCrumbs />
       <EmptyCart />
-
       <div className="mt-10 grid grid-cols-12 gap-x-10">
         <div className="col-span-7 col-start-1">
           <h2 className="col-span-4 col-start-1 mb-10">Корзина</h2>
@@ -162,12 +168,12 @@ const Cart = () => {
                     type="radio"
                     className="radioButton cursor-pointer"
                     defaultChecked
-                    onClick={() => setDelivery(false)}
+                    onClick={() => setCakeDelivery(false)}
                   />
                   <label
                     htmlFor="radioButton-pickup"
                     className="ml-2 cursor-pointer font-text text-themeGray-60"
-                    onClick={() => setDelivery(false)}
+                    onClick={() => setCakeDelivery(false)}
                   >
                     Самовивіз - Тарнавського, 11 (з 9:00 до 20:00)
                   </label>
@@ -178,19 +184,19 @@ const Cart = () => {
                     name="push-notifications-pickup"
                     type="radio"
                     className="radioButton cursor-pointer"
-                    onClick={() => setDelivery(true)}
+                    onClick={() => setCakeDelivery(true)}
                   />
                   <label
                     htmlFor="radioButton-taxi"
                     className="ml-2 cursor-pointer font-text text-themeGray-60"
-                    onClick={() => setDelivery(true)}
+                    onClick={() => setCakeDelivery(true)}
                   >
                     Кур’єром по Тернополю
                   </label>
                 </div>
               </div>
             </fieldset>
-            {delivery && (
+            {cakeDelivery && (
               <fieldset className="mb-10">
                 <div className="mb-10 flex gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-20">
@@ -233,10 +239,7 @@ const Cart = () => {
           </div>
           <hr className="mx-auto mb-8 h-px w-full bg-themeBrown-20"></hr>
           <div className="flex flex-col justify-between gap-6">
-            <button
-              className="primaryButton"
-              onClick={() => setIsOrderConfirm(true)}
-            >
+            <button className="primaryButton" onClick={handleOrderConfirm}>
               Підтверджую замовлення
             </button>
             <button className="secondaryButton">Продовжити покупку</button>
