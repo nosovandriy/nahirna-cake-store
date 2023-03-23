@@ -33,6 +33,8 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
     setAddToCart(true);
   };
 
+  console.log(window.URLSearchParams.name)
+
   return (
     <>
       {selectedCard ? (

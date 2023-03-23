@@ -15,6 +15,7 @@ const NotFoundPage = () => {
           alt="cheesecake"
           width={175}
           height={175}
+          className=" animate-spinSlow"
         />
         <h2 className=" text-[264px] font-[800px] leading-[264px]">4</h2>
       </div>

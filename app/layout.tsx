@@ -33,11 +33,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uk" className={`${inter.variable} ${sofia.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body>
         <ReduxProvider>
           <ModalProvider>
             <Header />
-            <main className="flex-grow">{children}</main>
+            <main>{children}</main>
             <Footer />
             <PopUpContacts />
           </ModalProvider>

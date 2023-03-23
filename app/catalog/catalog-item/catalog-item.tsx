@@ -18,7 +18,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 700);
   }, []);
 
   return (
@@ -29,7 +29,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
       </div>
       <div className=" mt-8 -ml-4 mr-4 grid grid-cols-3 gap-x-10 gap-y-14">
         {isLoading && isFullCatalog
-          ? [...new Array(6)].fill(<SkeletonCard />)
+          ? [...new Array(6)].map((_, index) => <SkeletonCard key={index} />)
           : catalog.map((cake) => (
               <Link
                 href={`/catalog/${cake.titleEng}`}

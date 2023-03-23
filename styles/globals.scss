@@ -8,7 +8,11 @@
   }
 
   body {
-    @apply mx-auto my-0 max-w-[1440px] bg-themeCaramel px-[68px];
+    @apply mx-auto my-0 flex min-h-screen max-w-[1440px] flex-col bg-themeCaramel px-[68px];
+  }
+
+  main {
+    @apply flex-grow;
   }
 
   a {
@@ -61,17 +65,17 @@
   }
 
   .activeSizeButton {
-    @apply leading-6 rounded-full py-2 px-6 text-base font-normal text-themeCaramel duration-500 bg-themeBrown-50 active:scale-95;
+    @apply rounded-full bg-themeBrown-50 py-2 px-6 text-base font-normal leading-6 text-themeCaramel duration-500 active:scale-95;
   }
   .notActiveSizeButton {
-    @apply leading-6 rounded-full border border-themeBrown-20 py-[7px] px-6 text-base font-normal text-themeGray-100 duration-500 hover:border-themeBrown-50 active:scale-95 active:active:bg-themeBrown-50 focus:text-themeCaramel;
+    @apply rounded-full border border-themeBrown-20 py-[7px] px-6 text-base font-normal leading-6 text-themeGray-100 duration-500 hover:border-themeBrown-50 focus:text-themeCaramel active:scale-95 active:active:bg-themeBrown-50;
   }
 
   .formInput {
     @apply w-full rounded-md border-0 bg-themeCaramel p-4 text-themeGray-100 ring-1 ring-inset ring-themeGray-30 placeholder:text-themeGray-30 focus:ring-1 focus:ring-inset focus:ring-themeBrown-100;
   }
   .formLabel {
-    @apply peer-focus:text-sm absolute left-4 -top-5 text-sm text-themeGray-30 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-themeGray-30 peer-focus:-top-5 peer-focus:text-themeGray-30;
+    @apply absolute left-4 -top-5 text-sm text-themeGray-30 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-themeGray-30 peer-focus:-top-5 peer-focus:text-sm peer-focus:text-themeGray-30;
   }
 
   .radioButton {
@@ -79,6 +83,6 @@
   }
 
   .galleryButton {
-    @apply absolute top-1/2 -translate-y-1/2 transform rounded-full bg-themeCaramel p-2 bg-opacity-30 hover:bg-themeGray-10 hover:opacity-100;
+    @apply absolute top-1/2 -translate-y-1/2 transform rounded-full bg-themeCaramel bg-opacity-30 p-2 hover:bg-themeGray-10 hover:opacity-100;
   }
 }
