@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutSection = () => {
   return (
-    <section id="about" className=" scroll-mt-24 grid grid-cols-12 gap-x-10 mb-[120px]">
+    <section id="about" className="scroll-mt-24 grid grid-cols-12 gap-x-10 mb-[120px]">
       <div className="col-span-3 col-start-1  mb-[92px] self-end">
         <Image
           src="/assets/about-left.png"

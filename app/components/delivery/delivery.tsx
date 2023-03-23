@@ -8,7 +8,7 @@ const Delivery = () => {
   return (
     <div
       id="delivery"
-      className="mb-[120px] flex items-center justify-between gap-10"
+      className="mb-[120px] flex scroll-mt-24 items-center justify-between gap-10"
     >
       <div>
         <h2 className="mb-10">Оплата та доставка</h2>

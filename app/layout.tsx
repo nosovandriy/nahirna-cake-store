@@ -3,7 +3,6 @@ import { Sofia_Sans, Inter } from "next/font/google";
 import "@style/globals.scss";
 import Header from "@header/header";
 import Footer from "@footer/footer";
-import { ModalProvider } from "@provider/context-provider";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
 
@@ -35,12 +34,10 @@ export default function RootLayout({
     <html lang="uk" className={`${inter.variable} ${sofia.variable}`}>
       <body>
         <ReduxProvider>
-          <ModalProvider>
             <Header />
             <main>{children}</main>
             <Footer />
             <PopUpContacts />
-          </ModalProvider>
         </ReduxProvider>
       </body>
     </html>

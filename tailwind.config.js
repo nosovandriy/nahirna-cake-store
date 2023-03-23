@@ -39,7 +39,7 @@ module.exports = {
           slideUp: "slideUp 0.5s",
           slideUpEaseInOut: "slideUp 0.5s ease-in-out",
           slideUpCubiBezier: "slideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1)",
-          spinSlow: "spin 3s linear infinite",
+          spinSlow: "spin 30s linear infinite",
         },
         animationDelay: {
           0: "0s",

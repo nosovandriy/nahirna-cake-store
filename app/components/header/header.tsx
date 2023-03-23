@@ -1,14 +1,12 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
-import classNames from "classnames";
+import { useState } from "react";
 
 import { Logo } from "@logo";
 import { MenuItems } from "./navigation/menuItems";
 import { ShoppingCart } from "@icons/shopping-cart";
 import { MobileMenu } from "@icons/mobile-menu";
 import Link from "next/link";
-import { ContextProvider } from "@providercontext-provider";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);

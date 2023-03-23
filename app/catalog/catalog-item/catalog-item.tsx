@@ -48,7 +48,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
                     />
                     <h3 className="mb-2">{cake.title}</h3>
                     <p className="text-2xl font-medium text-themeBrown-100">
-                      {`від ${(cake.price * cake.weight[0]).toFixed()} грн`}
+                      {`${(cake.price * cake.weight[0]).toFixed()} грн`}
                     </p>
                   </div>
                 </div>
