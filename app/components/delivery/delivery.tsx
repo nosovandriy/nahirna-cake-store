@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { CheckIcon } from "@icons/check";
 import { InfoIcon } from "@icons/info";
+import Hint from "@hint/hint";
 
 const Delivery = () => {
   return (
@@ -20,9 +21,7 @@ const Delivery = () => {
           <div className="flex gap-2">
             <CheckIcon />
             <p className="mb-4">Готівка при отриманні</p>
-            <div className=" fill-themeGray-30">
-              <InfoIcon />
-            </div>
+            <Hint />
           </div>
         </div>
         <div>

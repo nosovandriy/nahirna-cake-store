@@ -26,7 +26,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   useEffect(() => {
     setTimeout(() => {
       setAddToCart(false);
-    }, 3000);
+    }, 2000);
   }, [addToCart]);
 
   const handleAddProductToCart = () => {
@@ -38,7 +38,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
       {selectedCard ? (
         <section className="relative">
           {addToCart && (
-            <div className="absolute top-0 z-50 flex gap-4 h-14 w-full items-center justify-center bg-themeBrown-100">
+            <div className="absolute top-0 z-50 flex gap-4 h-14 w-full items-center justify-center bg-themeBrown-100 animate-fadeIn">
               <p className="text-themeCaramel">Товар додано у кошик</p>
               <div className=" fill-themeCaramel">
                 <CheckIcon />

@@ -95,7 +95,7 @@ const Cart = () => {
                   className="formInput peer placeholder-transparent"
                   placeholder="Ім’я та прізвище"
                 />
-                <label htmlFor="name" className="formLabel">
+                <label htmlFor="name" className="formLabel cursor-text">
                   Ім’я та прізвище
                 </label>
               </div>
@@ -108,7 +108,7 @@ const Cart = () => {
                 />
                 <label
                   htmlFor="phone"
-                  className="formLabel peer-placeholder-shown:text-opacity-0 peer-focus:text-themeGray-30"
+                  className="formLabel cursor-text peer-placeholder-shown:text-opacity-0 peer-focus:text-themeGray-30"
                 >
                   Мобільний номер
                 </label>
@@ -207,12 +207,12 @@ const Cart = () => {
                 <div className="flex flex-col gap-4">
                   <div className="relative mb-10">
                     <input
-                      id="name"
+                      id="delivery"
                       type="text"
                       className="formInput peer placeholder-transparent"
                       placeholder="Вулиця та номер квартири"
                     />
-                    <label htmlFor="name" className="formLabel">
+                    <label htmlFor="delivery" className="formLabel cursor-text">
                       Вулиця та номер квартири
                     </label>
                   </div>

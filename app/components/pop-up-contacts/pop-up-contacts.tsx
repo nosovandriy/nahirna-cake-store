@@ -6,7 +6,7 @@ import PopUpOverlay from "@pop-up-overlay/pop-up-overlay";
 import { iconContacts } from "../../contacts";
 import { CloseIcon } from "@icons/close";
 import { useAppDispatch, useAppSelector } from "@typeReduxHooks";
-import {  setIsContactsOpen as setIsContactsOpenAction } from "../../redux/slices/popUpSlice";
+import { setIsContactsOpen as setIsContactsOpenAction } from "../../redux/slices/popUpSlice";
 
 const PopUpContacts = () => {
   const dispatch = useAppDispatch();
@@ -18,9 +18,10 @@ const PopUpContacts = () => {
 
   return (
     <PopUpOverlay
-      isOpenModalAction={isContactsOpen}
-      setIsOpenModalAction={(isOpen: boolean) => dispatch(setIsContactsOpenAction(isOpen))}
-
+      isOpenModal={isContactsOpen}
+      setIsOpenModal={(isOpen: boolean) =>
+        dispatch(setIsContactsOpenAction(isOpen))
+      }
     >
       {isContactsOpen && (
         <div className="relative flex h-[270px] w-[544px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8">

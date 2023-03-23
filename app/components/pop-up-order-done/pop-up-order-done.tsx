@@ -10,7 +10,9 @@ import { setIsOrderConfirm as setIsOrderConfirmAction } from "../../redux/slices
 
 const PopUpOrderDone = () => {
   const dispatch = useAppDispatch();
-  const isOrderConfirmAction = useAppSelector((state) => state.popUp.isOrderConfirm);
+  const isOrderConfirm = useAppSelector(
+    (state) => state.popUp.isOrderConfirm
+  );
 
   const router = useRouter();
 
@@ -22,10 +24,12 @@ const PopUpOrderDone = () => {
 
   return (
     <PopUpOverlay
-      isOpenModalAction={isOrderConfirmAction}
-      setIsOpenModalAction={(isOpen: boolean) => dispatch(setIsOrderConfirmAction(isOpen))}
+      isOpenModal={isOrderConfirm}
+      setIsOpenModal={(isOpen: boolean) =>
+        dispatch(setIsOrderConfirmAction(isOpen))
+      }
     >
-      {isOrderConfirmAction && (
+      {isOrderConfirm && (
         <div className="flex h-[331px] w-[544px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8">
           <h2>Дякуємо за замовленя</h2>
           <p className=" text-lg">З вами зв’яжуться у найближчий час</p>
