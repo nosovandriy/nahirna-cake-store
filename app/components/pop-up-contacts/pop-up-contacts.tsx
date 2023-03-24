@@ -5,7 +5,7 @@ import Link from "next/link";
 import PopUpOverlay from "@pop-up-overlay/pop-up-overlay";
 import { iconContacts } from "../../contacts";
 import { CloseIcon } from "@icons/close";
-import { useAppDispatch, useAppSelector } from "@typeReduxHooks";
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import { setIsContactsOpen as setIsContactsOpenAction } from "../../redux/slices/popUpSlice";
 
 const PopUpContacts = () => {

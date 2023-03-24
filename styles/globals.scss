@@ -12,7 +12,7 @@
   }
 
   main {
-    @apply flex-grow;
+    @apply flex-grow flex flex-col;
   }
 
   a {
@@ -65,17 +65,17 @@
   }
 
   .activeSizeButton {
-    @apply rounded-full bg-themeBrown-50 py-2 px-6 text-base font-normal leading-6 text-themeCaramel duration-500 active:scale-95;
+    @apply rounded-full border bg-themeBrown-50 py-2 px-6 text-base font-normal leading-6 text-themeCaramel duration-500 active:scale-95;
   }
   .notActiveSizeButton {
-    @apply rounded-full border border-themeBrown-20 py-[7px] px-6 text-base font-normal leading-6 text-themeGray-100 duration-500 hover:border-themeBrown-50 focus:text-themeCaramel active:scale-95 active:active:bg-themeBrown-50;
+    @apply rounded-full border border-themeBrown-20 py-2 px-6 text-base font-normal leading-6 text-themeGray-100 duration-500 hover:border-themeBrown-50 focus:text-themeCaramel active:scale-95 active:active:bg-themeBrown-50;
   }
 
   .formInput {
     @apply w-full rounded-md border-0 bg-themeCaramel p-4 text-themeGray-100 ring-1 ring-inset ring-themeGray-30 placeholder:text-themeGray-30 focus:ring-1 focus:ring-inset focus:ring-themeBrown-100;
   }
   .formLabel {
-    @apply absolute left-4 -top-5 text-sm text-themeGray-30 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-themeGray-30 peer-focus:-top-5 peer-focus:text-sm peer-focus:text-themeGray-30;
+    @apply absolute left-4 -top-5 text-sm text-themeGray-30 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-themeGray-30 peer-focus:-top-5 peer-focus:text-sm peer-focus:text-themeBrown-100;
   }
 
   .radioButton {

@@ -4,14 +4,12 @@ import { useState } from "react";
 
 import { Logo } from "@logo";
 import { MenuItems } from "./navigation/menuItems";
-import { ShoppingCart } from "@icons/shopping-cart";
 import { MobileMenu } from "@icons/mobile-menu";
-import Link from "next/link";
+import HeaderCartIcon from "./header-cart-icon/header-cart-icon";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   // const [navigationShadow, setNavigationShadow] = useState(false);
-
 
   const handleShowMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
@@ -40,7 +38,7 @@ const Header = () => {
         <div className="md:hidden" onClick={handleShowMobileMenu}>
           <MobileMenu />
         </div>
-        <div className="w-[145px] h-[45px]">
+        <div className="h-[45px] w-[145px]">
           <Logo handleShowMobileMenu={handleShowMobileMenu} />
         </div>
         <ul className="hidden gap-10 lg:flex">
@@ -50,18 +48,7 @@ const Header = () => {
             }
           />
         </ul>
-        <div className="ml-[120px] flex cursor-pointer fill-themeGray-60 duration-300 hover:scale-110 hover:fill-themeBrown-100">
-          <Link href={"/cart"}>
-            <div className="flex items-center rounded-full bg-themeBrown-100 py-2 px-4">
-              <p className="text-xs text-themeCaramel">110 грн</p>
-              <hr className="mx-[10px] h-6 w-px bg-themeBrown-20" />
-              <div className="mr-2 fill-themeCaramel">
-                <ShoppingCart />
-              </div>
-              <p className="text-xs text-themeCaramel">3</p>
-            </div>
-          </Link>
-        </div>
+        <HeaderCartIcon />
       </nav>
       {/* <div
         className={

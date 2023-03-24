@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import sortCake from "./slices/sortSlice";
 import popUp from "./slices/popUpSlice";
+import cart from "./slices/cartSlice";
 
 export const store = configureStore({
   reducer: {
     sortCake,
     popUp,
+    cart,
   },
 });
 
