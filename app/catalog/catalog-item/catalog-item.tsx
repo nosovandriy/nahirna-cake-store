@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import SkeletonCard from "../skeleton/skeleton";
 import { useCatalog } from "../hooks/useCatalog";
-import SortCatalog from "@sort-catalog/sort-catalog";
+import SortCatalog from "@catalogsort-catalog/sort-catalog";
 
 type Props = {
   isFullCatalog?: boolean;

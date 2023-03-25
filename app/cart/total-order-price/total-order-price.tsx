@@ -35,7 +35,7 @@ const TotalOrderPrice = () => {
       <hr className="mx-auto mb-8 h-px w-full bg-themeBrown-20"></hr>
       <div className="flex flex-col justify-between gap-6">
         <button className="primaryButton" onClick={handleOrderConfirm}>
-          Підтверджую замовлення
+          Підтвердити замовлення
         </button>
         <button className="secondaryButton">Продовжити покупку</button>
       </div>

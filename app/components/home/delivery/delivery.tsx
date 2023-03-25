@@ -1,8 +1,9 @@
+"use client";
+
 import Image from "next/image";
 
 import { CheckIcon } from "@icons/check";
-import { InfoIcon } from "@icons/info";
-import Hint from "@hint/hint";
+import Hint from "@home/delivery/hint/hint";
 
 const Delivery = () => {
   return (
@@ -38,7 +39,7 @@ const Delivery = () => {
       </div>
       <div className="">
         <Image
-          src="/assets/map3.jpg"
+          src="/assets/map.jpg"
           alt="cheesecake-Nahirna map location"
           width={856}
           height={566}

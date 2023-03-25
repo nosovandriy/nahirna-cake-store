@@ -51,9 +51,7 @@ const cartSlice = createSlice({
         findItem.count++;
       }
 
-      state.totalPrice = state.items.reduce((sum, item) => {
-        return item.price * item.count + sum;
-      }, 0);
+      state.totalPrice = getTotalPrice(state.items);
     },
 
     decreaseItem(state, action) {
@@ -64,9 +62,7 @@ const cartSlice = createSlice({
         findItem.count--;
       }
 
-      state.totalPrice = state.items.reduce((sum, item) => {
-        return item.price * item.count + sum;
-      }, 0);
+      state.totalPrice = getTotalPrice(state.items);
     },
 
     removeItem(state, action) {
@@ -79,14 +75,17 @@ const cartSlice = createSlice({
         state.items = state.items.filter((item) => item !== findItem);
       }
 
-      state.totalPrice = state.items.reduce((sum, item) => {
-        return item.price * item.count + sum;
-      }, 0);
+      if (!state.items.length) {
+        state.cakeDelivery = 0;
+      }
+
+      state.totalPrice = getTotalPrice(state.items);
     },
 
     clearItems(state) {
       state.items = [];
       state.totalPrice = 0;
+      state.cakeDelivery = 0;
     },
 
     withDelivery(state) {

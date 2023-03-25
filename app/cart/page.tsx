@@ -35,7 +35,6 @@ const Cart = () => {
               </div>
             </div>
             {items.map((item) => {
-              console.log(item.id);
               return <CartItem key={item.uniqId} item={item} />;
             })}
             <OrderForm />

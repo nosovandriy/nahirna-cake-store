@@ -1,9 +1,10 @@
 "use client";
 
-import HeroSection from "@hero/hero";
-import AboutSection from "@about/about";
-import CatalogPreview from "@/catalog-preview/catalog-preview";
-import Delivery from "@delivery/delivery";
+import HeroSection from "@home/hero/hero";
+import AboutSection from "@home/about/about";
+import CatalogPreview from "@home/catalog-preview/catalog-preview";
+import Testimonials from "@home/testimonials/testimonials";
+import Delivery from "@home/delivery/delivery";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <CatalogPreview />
+      <Testimonials />
       <Delivery />
     </>
   );
