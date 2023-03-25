@@ -32,7 +32,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
           ? [...new Array(6)].map((_, index) => <SkeletonCard key={index} />)
           : catalog.map((cake) => (
               <Link
-                href={`/catalog/${cake.titleEng}`}
+                href={`/catalog/${cake.id}`}
                 key={cake.id}
                 className="cursor-pointer"
               >
@@ -48,7 +48,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
                     />
                     <h3 className="mb-2">{cake.title}</h3>
                     <p className="text-2xl font-medium text-themeBrown-100">
-                      {`${(cake.price * cake.weight[0]).toFixed()} грн`}
+                      {`${(cake.price * cake.weights[0]).toFixed()} грн`}
                     </p>
                   </div>
                 </div>
