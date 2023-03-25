@@ -6,7 +6,6 @@ import { withoutDelivery, withDelivery } from "../../redux/slices/cartSlice";
 const OrderForm = () => {
   const dispatch = useAppDispatch();
   const isCakeDelivery = useAppSelector((state) => state.cart.cakeDelivery);
-  console.log(isCakeDelivery);
 
   const handleCakeDelivery = () => {
     dispatch(withDelivery());
