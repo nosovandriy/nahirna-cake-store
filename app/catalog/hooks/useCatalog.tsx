@@ -1,9 +1,9 @@
-import { SortBy } from "@typeSortType";
-import { Catalog } from "@typeCatalog";
-
 import { useSelector } from "react-redux";
+
 import type { TypedUseSelectorHook } from "react-redux";
-import { RootState } from "../../redux/store";
+import { RootState } from "@redux/store";
+import { SortBy } from "@type/SortType";
+import { Catalog } from "@type/Catalog";
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 

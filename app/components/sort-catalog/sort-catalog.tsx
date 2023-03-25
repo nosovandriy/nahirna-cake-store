@@ -1,9 +1,8 @@
 "use client";
 
-import { useAppDispatch, useAppSelector } from "@typeReduxHooks";
-import { SortBy } from "@typeSortType";
-import React from "react";
 import { setSortType } from "../../redux/slices/sortSlice";
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+import { SortBy } from "@type/SortType";
 
 const SortCatalog = () => {
   const dispatch = useAppDispatch();

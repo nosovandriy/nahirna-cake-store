@@ -1,17 +1,15 @@
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
-import { useAppDispatch } from "@typeReduxHooks";
 import { setIsContactsOpen } from "../../../../redux/slices/popUpSlice";
+import { useAppDispatch } from "@type/ReduxHooks";
 
 type Props = {
   className: string;
   onClick?: () => void;
 };
 
-export const MenuItems: React.FC<Props> = ({ className, onClick }) => {
+export const MenuItems: React.FC<Props> = ({ className }) => {
   const dispatch = useAppDispatch();
-  const router = useRouter();
 
   const handleContactsOpen = () => {
     dispatch(setIsContactsOpen(true));
