@@ -17,13 +17,12 @@ import { ProductCart } from "@typeProductCart";
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const [addToCart, setAddToCart] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [productAmount, setProductAmount] = useState(1);
+  const [productCount, setProductCount] = useState(1);
   const dispatch = useAppDispatch();
 
   const { catalog } = useCatalog();
   const selectedCard = catalog.find((item) => item.id === params.cakeId);
   const [activeWeight, setActiveWeight] = useState(selectedCard?.weights[0]);
-  console.log(productAmount);
 
 
   useEffect(() => {
@@ -42,11 +41,12 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
     if (selectedCard && activeWeight) {
       const item: ProductCart = {
         id: selectedCard.id,
+        uniqId: crypto.randomUUID(),
         title: selectedCard.title,
         price: selectedCard.price * activeWeight,
         weight: activeWeight,
         imgURL: selectedCard.imageTitle,
-        count: productAmount,
+        count: productCount,
       };
       dispatch(addItem(item));
     }
@@ -57,7 +57,6 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const handleSetProductWeight = (index: number) => {
     setActiveWeight(index);
   };
-  console.log(activeWeight);
 
   return (
     <>
@@ -116,14 +115,14 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                 <p className="text-sm">Кількість</p>
                 <div className="flex justify-between gap-2 rounded-full border border-themeBrown-20 py-1 px-2 text-base font-normal text-themeGray-100">
                   <button
-                    onClick={() => setProductAmount((prev) => prev -= 1)}
-                    disabled={productAmount === 1}
-                    className={`${productAmount < 2 && `fill-themeGray-20`}`}
+                    onClick={() => setProductCount((prev) => prev -= 1)}
+                    disabled={productCount === 1}
+                    className={`${productCount < 2 && `fill-themeGray-20`}`}
                   >
                     <Remove />
                   </button>
-                  <p className="text-themeGray-100">{productAmount}</p>
-                  <button onClick={() => setProductAmount(prev => prev += 1)}>
+                  <p className="text-themeGray-100">{productCount}</p>
+                  <button onClick={() => setProductCount(prev => prev += 1)}>
                     <Add />
                   </button>
                 </div>

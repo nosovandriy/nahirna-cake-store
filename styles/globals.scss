@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply h-screen scroll-smooth;
+    @apply h-screen scroll-smooth select-none;
   }
 
   body {

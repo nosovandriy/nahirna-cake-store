@@ -12,7 +12,7 @@ import { DeleteIcon } from "@icons/delete";
 import { clearItems } from "../redux/slices/cartSlice";
 
 const Cart = () => {
-  const { items, totalPrice } = useAppSelector((state) => state.cart);
+  const { items } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
   const handleClearItems = () => {
@@ -34,15 +34,13 @@ const Cart = () => {
                 <DeleteIcon />
               </div>
             </div>
-            {items.map((item) => (
-              <CartItem key={item.id} item={item} />
-            ))}
+            {items.map((item) => {
+              console.log(item.id);
+              return <CartItem key={item.uniqId} item={item} />;
+            })}
             <OrderForm />
           </div>
 
-          {/* {items.map((item) => (
-            <TotalOrderPrice key={item.id} amount={item.amount} />
-          ))} */}
           <TotalOrderPrice />
         </div>
       ) : (

@@ -1,14 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+import { withoutDelivery, withDelivery } from "../../redux/slices/cartSlice";
 
 const OrderForm = () => {
-  const [cakeDelivery, setCakeDelivery] = useState(false);
+  const dispatch = useAppDispatch();
+  const isCakeDelivery = useAppSelector((state) => state.cart.cakeDelivery);
+  console.log(isCakeDelivery);
+
+  const handleCakeDelivery = () => {
+    dispatch(withDelivery());
+  };
+
+  const handleCakeWithoutDelivery = () => {
+    dispatch(withoutDelivery());
+  };
 
   return (
     <form action="#" method="post">
       <fieldset className="mb-10">
-        <div className="mb-10 flex gap-4 items-center">
+        <div className="mb-10 flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
             <span className="text-xl font-medium text-white">1</span>
           </div>
@@ -41,7 +52,7 @@ const OrderForm = () => {
         </div>
       </fieldset>
       <fieldset className="mb-10">
-        <div className="mb-10 flex gap-4 items-center">
+        <div className="mb-10 flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
             <span className="text-xl font-medium text-white">2</span>
           </div>
@@ -80,7 +91,7 @@ const OrderForm = () => {
         </div>
       </fieldset>
       <fieldset className="mb-10">
-        <div className="mb-10 flex gap-4 items-center">
+        <div className="mb-10 flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
             <span className="text-xl font-medium text-white">3</span>
           </div>
@@ -94,12 +105,12 @@ const OrderForm = () => {
               type="radio"
               className="radioButton cursor-pointer"
               defaultChecked
-              onClick={() => setCakeDelivery(false)}
+              onClick={handleCakeWithoutDelivery}
             />
             <label
               htmlFor="radioButton-pickup"
               className="ml-2 cursor-pointer font-text text-themeGray-60"
-              onClick={() => setCakeDelivery(false)}
+              onClick={handleCakeWithoutDelivery}
             >
               Самовивіз - Тарнавського, 11 (з 9:00 до 20:00)
             </label>
@@ -110,25 +121,25 @@ const OrderForm = () => {
               name="push-notifications-pickup"
               type="radio"
               className="radioButton cursor-pointer"
-              onClick={() => setCakeDelivery(true)}
+              onClick={handleCakeDelivery}
             />
             <label
               htmlFor="radioButton-taxi"
               className="ml-2 cursor-pointer font-text text-themeGray-60"
-              onClick={() => setCakeDelivery(true)}
+              onClick={handleCakeDelivery}
             >
               Кур’єром по Тернополю
             </label>
           </div>
         </div>
       </fieldset>
-      {cakeDelivery && (
+      {isCakeDelivery > 0 && (
         <fieldset className="mb-10">
           <div className="mb-10 flex gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-20">
               <span className="text-xl font-medium text-white">4</span>
             </div>
-            <h3 className="">Адреса доставки</h3>
+            <h3>Адреса доставки</h3>
           </div>
           <div className="flex flex-col gap-4">
             <div className="relative mb-10">
