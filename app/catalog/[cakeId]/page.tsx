@@ -30,9 +30,10 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setAddToCart(false);
-    }, 1500);
+    }, 3000);
+    return () => clearTimeout(timeoutId);
   }, [addToCart]);
 
   const handleAddProductToCart = () => {
