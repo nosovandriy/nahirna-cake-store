@@ -21,6 +21,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  charset: "UTF-8",
   title: "Nahirna cake",
   description: "Nahirna cake shop with cheesecake",
 };

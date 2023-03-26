@@ -35,9 +35,6 @@ const cartSlice = createSlice({
         });
       }
 
-      // state.totalPrice = state.items.reduce((sum, item) => {
-      //   return item.price * item.count + sum;
-      // }, 0);
       state.totalPrice = getTotalPrice(state.items);
     },
 

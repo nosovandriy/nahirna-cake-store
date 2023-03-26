@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply h-screen scroll-smooth select-none;
+    @apply h-screen scroll-smooth select-none animate-fadeIn;
   }
 
   body {
