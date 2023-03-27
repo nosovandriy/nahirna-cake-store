@@ -1,16 +1,24 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { ProductCart } from "@type/ProductCart";
 
 export interface CartType {
-  totalPrice: number;
   items: ProductCart[];
+  totalPrice: number;
+  clientName: string;
+  clientPhone: string;
+  payMethod: string;
   cakeDelivery: number;
+  deliveryAddress: string;
 }
 
 const initialState: CartType = {
-  totalPrice: 0,
   items: [],
+  totalPrice: 0,
+  clientName: "",
+  clientPhone: "",
+  payMethod: "card-pay",
   cakeDelivery: 0,
+  deliveryAddress: "",
 };
 
 const getTotalPrice = (items: ProductCart[]) => {
@@ -85,13 +93,45 @@ const cartSlice = createSlice({
       state.cakeDelivery = 0;
     },
 
-    withDelivery(state) {
-      state.cakeDelivery = 100;
+    getClientName(state, action) {
+      state.clientName = action.payload;
     },
 
-    withoutDelivery(state) {
-      state.cakeDelivery = 0;
+    getClientPhone(state, action) {
+      state.clientPhone = action.payload;
     },
+
+    getPayMethod(state, action) {
+      if (action.payload === "card-pay") {
+        state.payMethod = "card-pay";
+      } else {
+        state.payMethod = "cash-pay";
+      }
+      console.log(state.payMethod);
+    },
+
+    deliveryPrice(state, action) {
+      if (!action.payload) {
+        state.cakeDelivery = 0;
+      } else {
+        state.cakeDelivery = 100;
+      }
+    },
+
+    getClientAddress(state, action) {
+      state.deliveryAddress = action.payload;
+      console.log(state.deliveryAddress);
+    },
+
+    getClearAllData(state) {
+      state.items = [];
+      state.totalPrice = 0;
+      state.clientName = "";
+      state.clientPhone = "";
+      state.payMethod = "card-pay";
+      state.cakeDelivery = 0;
+      state.deliveryAddress = "";
+    }
   },
 });
 
@@ -100,9 +140,13 @@ export const {
   decreaseItem,
   removeItem,
   clearItems,
-  withDelivery,
-  withoutDelivery,
+  deliveryPrice,
   addItemInTheCart,
+  getClientName,
+  getClientPhone,
+  getPayMethod,
+  getClientAddress,
+  getClearAllData,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
