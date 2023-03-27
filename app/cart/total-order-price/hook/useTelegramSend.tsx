@@ -47,7 +47,6 @@ const useTelegramSend = () => {
         parse_mode: "html",
         text: newOrder,
       });
-
       console.log("Message sent successfully!");
     } catch (error) {
       console.error("Error sending message:", error);
