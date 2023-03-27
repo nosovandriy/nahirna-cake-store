@@ -17,8 +17,7 @@ const useTelegramSend = () => {
   async function sendOrderData() {
     const TOKEN = "5843715113:AAHfx_5ah2xw58t3A24SkcRINv-K1nWRTpg";
     const CHAT_ID = "-1001666813279";
-    // const TOKEN = process.env.TELEGRAM_TOKEN;
-    // const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
     const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
     let newOrder = `<i><b>Нове замовлення</b></i>\n\n`;
