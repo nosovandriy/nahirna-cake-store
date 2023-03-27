@@ -7,7 +7,7 @@ const AboutSection = () => {
     <section id="about" className="scroll-mt-24 grid grid-cols-12 gap-x-10 mb-[120px]">
       <div className="col-span-3 col-start-1  mb-[92px] self-end">
         <Image
-          src="/assets/about-left.png"
+          src="/assets/about-left.webp"
           alt="cheesecake ternopil Nahirna"
           width={296}
           height={360}
@@ -16,7 +16,7 @@ const AboutSection = () => {
       </div>
       <div className="col-span-4 col-start-4 h-[600px] items-center justify-center">
         <Image
-          src="/assets/about-center.png"
+          src="/assets/about-center.webp"
           alt="cheesecake ternopil Nahirna"
           width={408}
           height={606}

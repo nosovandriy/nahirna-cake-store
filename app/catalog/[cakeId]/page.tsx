@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import ProductCardCarousel from "@catalog/[cakeId]/carousel/carousel";
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
-import NotFoundPage from "@404/404";
 import SkeletonGallery from "@catalog/catalog-item/skeleton-gallery/skeleton-gallery";
 import { useCatalog } from "@catalog/hooks/useCatalog";
 import { CheckIcon } from "@icons/check";
@@ -12,6 +11,7 @@ import { useAppDispatch } from "@type/ReduxHooks";
 import { Add, Remove } from "@icons/add-remove";
 import { addItem } from "@redux/slices/cartSlice";
 import { ProductCart } from "@type/ProductCart";
+import NotFoundPage from "../../404";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const [addToCart, setAddToCart] = useState(false);

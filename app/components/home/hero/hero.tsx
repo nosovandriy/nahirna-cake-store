@@ -26,7 +26,7 @@ const HeroSection = () => {
       </div>
       <div className="col-span-4 col-start-6 items-center justify-center">
         <Image
-          src="/assets/hero-main.png"
+          src="/assets/hero-main.webp"
           alt="cheesecake ternopil Nahirna"
           width={408}
           height={606}
@@ -36,7 +36,7 @@ const HeroSection = () => {
       <div className="col-span-3 col-start-10 self-end mb-[92px]">
         {/* <HeroCarousel /> */}
         <Image
-          src="/assets/hero-small.png"
+          src="/assets/hero-small.webp"
           alt="cheesecake ternopil Nahirna"
           width={296}
           height={200}

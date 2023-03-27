@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -11,10 +11,11 @@ const NotFoundPage = () => {
       <div className="flex h-full items-center justify-center">
         <h2 className=" text-[264px] font-[800px] leading-[264px]">4</h2>
         <Image
-          src="/assets/404.png"
+          src="/assets/404.webp"
           alt="cheesecake"
           width={175}
           height={175}
+          className=" animate-spinSlow"
         />
         <h2 className=" text-[264px] font-[800px] leading-[264px]">4</h2>
       </div>

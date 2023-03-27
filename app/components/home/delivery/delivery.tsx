@@ -39,7 +39,7 @@ const Delivery = () => {
       </div>
       <div className="">
         <Image
-          src="/assets/map.jpg"
+          src="/assets/map.webp"
           alt="cheesecake-Nahirna map location"
           width={856}
           height={566}
