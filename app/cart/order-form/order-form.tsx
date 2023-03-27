@@ -166,7 +166,7 @@ const OrderForm = () => {
       {cakeDelivery > 0 && (
         <fieldset className="mb-10">
           <div className="mb-10 flex gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-20">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-100">
               <span className="text-xl font-medium text-white">4</span>
             </div>
             <h3>Адреса доставки</h3>
