@@ -15,8 +15,9 @@ const useTelegramSend = () => {
   } = useAppSelector((state) => state.cart);
 
   async function sendOrderData() {
-    const TOKEN = process.env.DB_TELEGRAM_TOKEN;
-    const CHAT_ID = process.env.DB_TELEGRAM_CHAT_ID;
+    const TOKEN = "5843715113:AAHfx_5ah2xw58t3A24SkcRINv-K1nWRTpg";
+    const CHAT_ID = "-1001666813279";
+
     const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
     let newOrder = `<i><b>Нове замовлення</b></i>\n\n`;
@@ -47,7 +48,6 @@ const useTelegramSend = () => {
         parse_mode: "html",
         text: newOrder,
       });
-
       console.log("Message sent successfully!");
     } catch (error) {
       console.error("Error sending message:", error);

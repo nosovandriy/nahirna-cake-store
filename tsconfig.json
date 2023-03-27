@@ -28,7 +28,6 @@
       "@provider*": ["./app/context-provider/*"],
       "@type/*": ["./types/*"],
       "@redux/*": ["./app/redux/*"],
-      "@env/*": ["./*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
