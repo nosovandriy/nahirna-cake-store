@@ -9,11 +9,10 @@ import Link from "next/link";
 const TotalOrderPrice = () => {
   const { sendOrderData } = useTelegramSend();
   const dispatch = useAppDispatch();
-  const { items, totalPrice, cakeDelivery } = useAppSelector(
+  const { items, totalPrice, cakeDelivery, clientName, clientPhone } = useAppSelector(
     (state) => state.cart
   );
 
-  console.log(items);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
   const handleOrderConfirm = () => {
@@ -21,6 +20,8 @@ const TotalOrderPrice = () => {
     dispatch(setIsOrderConfirm(true));
     dispatch(getClearAllData());
   };
+
+  const isAccessOrderButton = clientName.length >= 2 && clientPhone.length >= 9;
 
   return (
     <div className="sticky top-6 col-span-4 col-start-9 h-fit rounded-2xl border border-solid border-themeBrown-50 p-6">
@@ -48,7 +49,7 @@ const TotalOrderPrice = () => {
           type="submit"
           className="primaryButton"
           onClick={handleOrderConfirm}
-          disabled
+          disabled={!isAccessOrderButton}
         >
           Підтвердити замовлення
         </button>
