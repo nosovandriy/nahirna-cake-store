@@ -6,23 +6,16 @@ import { getClearAllData } from "@redux/slices/cartSlice";
 import useTelegramSend from "./hook/useTelegramSend";
 
 const TotalOrderPrice = () => {
-  const {sendOrderData} = useTelegramSend();
+  const { sendOrderData } = useTelegramSend();
   const dispatch = useAppDispatch();
-  const {
-    items,
-    totalPrice,
-    cakeDelivery,
-    clientName,
-    clientPhone,
-    payMethod,
-    deliveryAddress,
-  } = useAppSelector((state) => state.cart);
+  const { items, totalPrice, cakeDelivery } = useAppSelector(
+    (state) => state.cart
+  );
 
   console.log(items);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
-  const handleOrderConfirm =  () => {
-
+  const handleOrderConfirm = () => {
     sendOrderData();
     dispatch(setIsOrderConfirm(true));
     dispatch(getClearAllData());
@@ -53,7 +46,7 @@ const TotalOrderPrice = () => {
         <button
           type="submit"
           className="primaryButton"
-          onClick={(event) => handleOrderConfirm(event)}
+          onClick={handleOrderConfirm}
         >
           Підтвердити замовлення
         </button>
