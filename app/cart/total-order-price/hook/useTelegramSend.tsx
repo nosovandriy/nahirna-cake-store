@@ -50,7 +50,7 @@ const useTelegramSend = () => {
 
       console.log("Message sent successfully!");
     } catch (error) {
-      console.error("Error sending message:", error.message);
+      console.error("Error sending message:", error);
     }
   }
 
