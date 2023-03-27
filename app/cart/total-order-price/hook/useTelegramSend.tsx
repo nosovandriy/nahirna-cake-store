@@ -15,8 +15,8 @@ const useTelegramSend = () => {
   } = useAppSelector((state) => state.cart);
 
   async function sendOrderData() {
-    const TOKEN = "5843715113:AAHfx_5ah2xw58t3A24SkcRINv-K1nWRTpg";
-    const CHAT_ID = "-1001666813279";
+    const TOKEN = process.env.NEXT_PUBLIC_TOKEN;
+    const CHAT_ID = process.env.NEXT_PUBLIC_ID;
 
     const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
@@ -26,7 +26,8 @@ const useTelegramSend = () => {
       cakeData += `<b>Чізкейк:</b> ${item.title}\n`;
       cakeData += `<b>Кількість:</b> ${item.count} шт\n`;
       cakeData += `<b>Вага:</b> ${item.weight / 1000} кг\n`;
-      cakeData += `<b>Ціна:</b> ${item.price} грн\n\n`;
+      cakeData += `<b>Ціна:</b> ${item.price} грн\n`;
+      cakeData += `<b>Сума:</b> ${item.price * item.count} грн\n\n`;
       return cakeData;
     });
     newOrder += `<b>Загальна сума:</b> ${totalPrice} грн\n\n`;

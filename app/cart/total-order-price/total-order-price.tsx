@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import { setIsOrderConfirm } from "../../redux/slices/popUpSlice";
 import { getClearAllData } from "@redux/slices/cartSlice";
 import useTelegramSend from "./hook/useTelegramSend";
+import Link from "next/link";
 
 const TotalOrderPrice = () => {
   const { sendOrderData } = useTelegramSend();
@@ -47,10 +48,13 @@ const TotalOrderPrice = () => {
           type="submit"
           className="primaryButton"
           onClick={handleOrderConfirm}
+          disabled
         >
           Підтвердити замовлення
         </button>
-        <button className="secondaryButton">Продовжити покупку</button>
+        <Link href={"/catalog"}>
+          <button className="secondaryButton w-full">Продовжити покупку</button>
+        </Link>
       </div>
     </div>
   );

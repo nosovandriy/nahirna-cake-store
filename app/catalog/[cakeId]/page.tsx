@@ -42,7 +42,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
         id: selectedCard.id,
         uniqId: crypto.randomUUID(),
         title: selectedCard.title,
-        price: selectedCard.price * activeWeight,
+        price: Number((selectedCard.price * activeWeight).toFixed()),
         weight: activeWeight,
         imgURL: selectedCard.imageTitle,
         count: productCount,

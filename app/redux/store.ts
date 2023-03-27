@@ -9,6 +9,7 @@ export const store = configureStore({
     popUp,
     cart,
   },
+  devTools: false,
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
