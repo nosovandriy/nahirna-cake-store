@@ -58,7 +58,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
               </button>
             </div>
             <div
-              className="cursor-pointer fill-themeGray-40"
+              className="cursor-pointer fill-themeGray-40 transition duration-500 hover:rotate-180"
               onClick={handleRemoveItem}
             >
               <CloseIcon />
@@ -79,7 +79,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
                 <button
                   onClick={handleDecreaseItem}
                   disabled={count === 1}
-                  className={`${count < 2 && `fill-themeGray-20`}`}
+                  className={`${count < 2 && `fill-themeGray-20 cursor-default`}`}
                 >
                   <Remove />
                 </button>

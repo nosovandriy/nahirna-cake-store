@@ -26,7 +26,7 @@ const PopUpContacts = () => {
       {isContactsOpen && (
         <div className="relative flex h-[270px] w-[544px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8">
           <div
-            className="absolute top-7 right-7 cursor-pointer fill-themeGray-60 transition duration-500 hover:rotate-180"
+            className="absolute top-7 right-7 cursor-pointer fill-themeGray-60 duration-500 hover:rotate-180"
             onClick={handleIsContactsOpen}
           >
             <CloseIcon />
