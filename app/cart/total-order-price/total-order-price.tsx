@@ -47,7 +47,7 @@ const TotalOrderPrice = () => {
       <div className="flex flex-col justify-between gap-6">
         <button
           type="submit"
-          className="primaryButton"
+          className={`primaryButton ${!isAccessOrderButton && "bg-themeBrown-20 hover:bg-themeBrown-20"}`}
           onClick={handleOrderConfirm}
           disabled={!isAccessOrderButton}
         >

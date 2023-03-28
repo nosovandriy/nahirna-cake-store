@@ -61,7 +61,7 @@
   }
 
   .secondaryButton {
-    @apply flex items-center justify-center rounded-full border border-themeBrown-100 py-4 px-12 text-lg font-normal text-themeGray-100 duration-500 hover:border-themeBrown-50 active:scale-95 active:active:bg-themeBrown-50;
+    @apply flex items-center justify-center rounded-full border border-themeBrown-100 py-4 px-12 text-lg font-normal text-themeGray-100 duration-500 hover:border-themeBrown-20 hover:bg-themeBrown-20 active:scale-95 active:bg-themeBrown-50 active:text-themeCaramel;
   }
 
   .activeSizeButton {

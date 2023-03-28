@@ -1,7 +1,7 @@
-import { ShoppingCart } from "@icons/shopping-cart";
 import { useEffect, useState } from "react";
-import "./style.css";
 import { FaShoppingCart, FaGift } from "react-icons/fa";
+
+import "./button-style.css";
 import { CheckIcon } from "@icons/check";
 
 type Props = {
