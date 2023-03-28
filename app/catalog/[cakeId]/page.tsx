@@ -12,6 +12,7 @@ import { Add, Remove } from "@icons/add-remove";
 import { addItem } from "@redux/slices/cartSlice";
 import { ProductCart } from "@type/ProductCart";
 import NotFoundPage from "../../404";
+import MayLikeProducts from "@may-like/may-like";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const [addToCart, setAddToCart] = useState(false);
@@ -155,6 +156,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
       ) : (
         <NotFoundPage />
       )}
+      <MayLikeProducts selectedId={params.cakeId} />
     </>
   );
 };
