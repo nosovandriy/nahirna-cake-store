@@ -9,14 +9,14 @@ import OrderForm from "./order-form/order-form";
 import TotalOrderPrice from "./total-order-price/total-order-price";
 import EmptyCart from "./empty-cart/empty-cart";
 import { DeleteIcon } from "@icons/delete";
-import { clearItems } from "../redux/slices/cartSlice";
+import { getClearAllData } from "../redux/slices/cartSlice";
 
 const Cart = () => {
   const { items } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
   const handleClearItems = () => {
-    dispatch(clearItems());
+    dispatch(getClearAllData());
   };
 
   return (

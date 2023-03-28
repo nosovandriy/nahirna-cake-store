@@ -13,6 +13,7 @@ import { addItem } from "@redux/slices/cartSlice";
 import { ProductCart } from "@type/ProductCart";
 import NotFoundPage from "../../404";
 import MayLikeProducts from "@may-like/may-like";
+import AddToCartButton from "./button/button";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const [addToCart, setAddToCart] = useState(false);
@@ -62,15 +63,6 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
     <>
       {selectedCard ? (
         <section className="relative">
-          {addToCart && (
-            <div className="absolute top-0 z-50 flex h-14 w-full animate-fadeIn items-center justify-center gap-4 bg-themeBrown-100">
-              <p className="text-themeCaramel">Товар додано у кошик</p>
-              <div className=" fill-themeCaramel">
-                <CheckIcon />
-              </div>
-            </div>
-          )}
-
           <BreadCrumbs cakeTitle={selectedCard.title} />
           <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
@@ -125,12 +117,9 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                   </button>
                 </div>
               </div>
-              <button
-                className="primaryButton mb-10"
-                onClick={handleAddProductToCart}
-              >
-                Додати в кошик
-              </button>
+              <AddToCartButton
+                handleAddProductToCart={handleAddProductToCart}
+              />
               <p className="pb-4 text-xl font-medium text-themeGray-100">
                 Склад та алергени
               </p>

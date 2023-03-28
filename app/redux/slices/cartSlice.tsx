@@ -87,12 +87,6 @@ const cartSlice = createSlice({
       state.totalPrice = getTotalPrice(state.items);
     },
 
-    clearItems(state) {
-      state.items = [];
-      state.totalPrice = 0;
-      state.cakeDelivery = 0;
-    },
-
     getClientName(state, action) {
       state.clientName = action.payload;
     },
@@ -139,7 +133,6 @@ export const {
   addItem,
   decreaseItem,
   removeItem,
-  clearItems,
   deliveryPrice,
   addItemInTheCart,
   getClientName,

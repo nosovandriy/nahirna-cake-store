@@ -16,9 +16,9 @@ const TotalOrderPrice = () => {
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
   const handleOrderConfirm = () => {
-    sendOrderData();
     dispatch(setIsOrderConfirm(true));
     dispatch(getClearAllData());
+    sendOrderData();
   };
 
   const isAccessOrderButton = clientName.length >= 2 && clientPhone.length >= 9;

@@ -7,7 +7,7 @@ import PopUpOverlay from "@pop-up-overlay/pop-up-overlay";
 import { iconContacts } from "../../contacts";
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import { setIsOrderConfirm as setIsOrderConfirmAction } from "../../redux/slices/popUpSlice";
-import { clearItems } from "@redux/slices/cartSlice";
+import { getClearAllData } from "@redux/slices/cartSlice";
 
 const PopUpOrderDone = () => {
   const dispatch = useAppDispatch();
@@ -18,10 +18,10 @@ const PopUpOrderDone = () => {
   const router = useRouter();
 
   const handleConfirmOrder = () => {
-    dispatch(setIsOrderConfirmAction(false));
     router.push("/");
     window.scrollTo(0, 0);
-    dispatch(clearItems());
+    dispatch(getClearAllData());
+    dispatch(setIsOrderConfirmAction(false));
   };
 
   return (
