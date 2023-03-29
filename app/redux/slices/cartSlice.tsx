@@ -101,7 +101,6 @@ const cartSlice = createSlice({
       } else {
         state.payMethod = "cash-pay";
       }
-      console.log(state.payMethod);
     },
 
     deliveryPrice(state, action) {
@@ -114,7 +113,6 @@ const cartSlice = createSlice({
 
     getClientAddress(state, action) {
       state.deliveryAddress = action.payload;
-      console.log(state.deliveryAddress);
     },
 
     getClearAllData(state) {
@@ -125,7 +123,7 @@ const cartSlice = createSlice({
       state.payMethod = "card-pay";
       state.cakeDelivery = 0;
       state.deliveryAddress = "";
-    }
+    },
   },
 });
 

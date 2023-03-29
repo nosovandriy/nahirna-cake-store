@@ -19,7 +19,7 @@ const AddToCartButton: React.FC<Props> = ({ handleAddProductToCart }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsAdded(false);
-    }, 3000);
+    }, 2500);
     return () => clearTimeout(timeoutId);
   }, [isAdded]);
 
@@ -27,6 +27,7 @@ const AddToCartButton: React.FC<Props> = ({ handleAddProductToCart }) => {
     <button
       className={` cart-button mb-10 ${isAdded ? "clicked" : ""}`}
       onClick={handleClick}
+      disabled={isAdded}
     >
       <span className="add-to-cart">Додати в кошик</span>
       <span className="added ml-3 flex gap-3">

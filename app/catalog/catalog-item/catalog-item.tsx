@@ -40,10 +40,10 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
                   <div>
                     <Image
                       src={cake.imageTitle}
-                      alt={cake.description}
+                      alt={`${cake.id} cheesecake`}
                       width={408}
                       height={300}
-                      style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                      // style={{ objectFit: "cover", objectPosition: "50% 50%" }}
                       className="mb-4 h-[300px]"
                     />
                     <h3 className="mb-2">{cake.title}</h3>

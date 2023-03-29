@@ -25,7 +25,6 @@ const MayLikeProducts: React.FC<Props> = ({ selectedId }) => {
     setRandomArray(tempArray);
   }, []);
 
-  console.log(randomArray);
 
   return (
     <div>
