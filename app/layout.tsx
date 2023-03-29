@@ -1,5 +1,5 @@
 import { Sofia_Sans, Inter } from "next/font/google";
-import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 import "@style/globals.scss";
 import Header from "@header/header";
@@ -7,20 +7,20 @@ import Footer from "@footer/footer";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
 
-  disableReactDevTools();
+disableReactDevTools();
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sofia",
-  display: 'swap',
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-inter",
-  display: 'swap',
+  display: "swap",
 });
 
 export const metadata = {
@@ -40,7 +40,7 @@ export default function RootLayout({
             <Header />
             <main>{children}</main>
             <Footer />
-            <PopUpContacts />
+          <PopUpContacts />
         </ReduxProvider>
       </body>
     </html>

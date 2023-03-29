@@ -1,7 +1,7 @@
 import React from "react";
 import ContentLoader, { IContentLoaderProps } from "react-content-loader";
 
-const SkeletonGallery = (props: React.FC<IContentLoaderProps>) => (
+const SkeletonGallery = (props: IContentLoaderProps) => (
   <ContentLoader
     speed={2}
     width={632}

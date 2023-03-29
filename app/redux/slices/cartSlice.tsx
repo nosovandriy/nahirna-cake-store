@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ProductCart } from "@type/ProductCart";
 
 export interface CartType {
@@ -7,7 +7,7 @@ export interface CartType {
   clientName: string;
   clientPhone: string;
   payMethod: string;
-  cakeDelivery: number;
+  deliveryPrice: number;
   deliveryAddress: string;
 }
 
@@ -17,7 +17,7 @@ const initialState: CartType = {
   clientName: "",
   clientPhone: "",
   payMethod: "card-pay",
-  cakeDelivery: 0,
+  deliveryPrice: 0,
   deliveryAddress: "",
 };
 
@@ -29,7 +29,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem: (state, action) => {
+    addItem: (state, action: PayloadAction<ProductCart>) => {
       const findItem = state.items.find(
         (item) =>
           item.id === action.payload.id && item.weight === action.payload.weight
@@ -81,47 +81,39 @@ const cartSlice = createSlice({
       }
 
       if (!state.items.length) {
-        state.cakeDelivery = 0;
+        state.deliveryPrice = 0;
       }
 
       state.totalPrice = getTotalPrice(state.items);
     },
 
-    getClientName(state, action) {
+    setClientName(state, action: PayloadAction<string>) {
       state.clientName = action.payload;
     },
 
-    getClientPhone(state, action) {
+    setClientPhone(state, action: PayloadAction<string>) {
       state.clientPhone = action.payload;
     },
 
-    getPayMethod(state, action) {
-      if (action.payload === "card-pay") {
-        state.payMethod = "card-pay";
-      } else {
-        state.payMethod = "cash-pay";
-      }
+    setPayMethod(state, action: PayloadAction<string>) {
+      state.payMethod = action.payload;
     },
 
-    deliveryPrice(state, action) {
-      if (!action.payload) {
-        state.cakeDelivery = 0;
-      } else {
-        state.cakeDelivery = 100;
-      }
+    setDeliveryPrice(state, action: PayloadAction<number>) {
+      state.deliveryPrice = action.payload;
     },
 
-    getClientAddress(state, action) {
+    setClientAddress(state, action: PayloadAction<string>) {
       state.deliveryAddress = action.payload;
     },
 
-    getClearAllData(state) {
+    clearAllData(state) {
       state.items = [];
       state.totalPrice = 0;
       state.clientName = "";
       state.clientPhone = "";
       state.payMethod = "card-pay";
-      state.cakeDelivery = 0;
+      state.deliveryPrice = 0;
       state.deliveryAddress = "";
     },
   },
@@ -131,13 +123,13 @@ export const {
   addItem,
   decreaseItem,
   removeItem,
-  deliveryPrice,
+  setDeliveryPrice,
   addItemInTheCart,
-  getClientName,
-  getClientPhone,
-  getPayMethod,
-  getClientAddress,
-  getClearAllData,
+  setClientName,
+  setClientPhone,
+  setPayMethod,
+  setClientAddress,
+  clearAllData,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

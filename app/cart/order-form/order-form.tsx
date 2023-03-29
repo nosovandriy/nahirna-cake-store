@@ -1,42 +1,41 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
-import { deliveryPrice, getClientAddress, getClientName, getClientPhone, getPayMethod } from "../../redux/slices/cartSlice";
+import {
+  setClientName,
+  setClientPhone,
+  setPayMethod,
+  setDeliveryPrice,
+  setClientAddress,
+} from "../../redux/slices/cartSlice";
 
 const OrderForm = () => {
   const dispatch = useAppDispatch();
-  const {
-    clientName,
-    clientPhone,
-    payMethod,
-    cakeDelivery,
-    deliveryAddress,
-  } = useAppSelector((state) => state.cart);
+  const { clientName, clientPhone, payMethod, deliveryPrice, deliveryAddress } =
+    useAppSelector((state) => state.cart);
 
-
-  const handleCakeDelivery = (isDelivery: boolean) => {
-    dispatch(deliveryPrice(isDelivery));
+  const handleClientName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setClientName(event.target.value));
   };
 
-  const handleGetClientName = (name: string) => {
-    dispatch(getClientName(name));
+  const handleClientPhone = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setClientPhone(event.target.value));
   };
 
-  const handleGetClientPhone = (phone: string) => {
-    dispatch(getClientPhone(phone));
+  const handlePayMethod = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setPayMethod(event.target.value));
   };
 
-  const handleGetPayMethod = (pay: string) => {
-    dispatch(getPayMethod(pay));
+  const handleCakeDelivery = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setDeliveryPrice(Number(event.target.value)));
   };
 
-  const handleGetClientAddress = (address: string) => {
-    dispatch(getClientAddress(address));
+  const handleClientAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setClientAddress(event.target.value));
   };
-
 
   return (
-    <form action="#" method="post">
+    <form>
       <fieldset className="mb-10">
         <div className="mb-10 flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
@@ -52,7 +51,7 @@ const OrderForm = () => {
             className="formInput peer placeholder-transparent"
             placeholder="Ім’я та прізвище"
             value={clientName}
-            onChange={(event) => handleGetClientName(event.target.value)}
+            onChange={handleClientName}
           />
           <label htmlFor="name" className="formLabel cursor-text">
             Ім’я та прізвище
@@ -66,7 +65,7 @@ const OrderForm = () => {
             className="formInput peer"
             placeholder="+38(099)999-99-99"
             value={clientPhone}
-            onChange={(event) => handleGetClientPhone(event.target.value)}
+            onChange={handleClientPhone}
           />
           <label
             htmlFor="phone"
@@ -84,7 +83,7 @@ const OrderForm = () => {
           <h3 className="">Спосіб оплати</h3>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex items-center">
+          <div className="flex w-fit items-center">
             <input
               id="radioButton-cash"
               name="variant-pay"
@@ -92,7 +91,7 @@ const OrderForm = () => {
               className="radioButton cursor-pointer"
               value="card-pay"
               defaultChecked={payMethod === "card-pay"}
-              onChange={(event) => handleGetPayMethod(event.target.value)}
+              onChange={handlePayMethod}
             />
             <label
               htmlFor="radioButton-cash"
@@ -101,7 +100,7 @@ const OrderForm = () => {
               Карткою онлайн
             </label>
           </div>
-          <div className="flex items-center">
+          <div className="flex w-fit items-center">
             <input
               id="radioButton-card"
               name="variant-pay"
@@ -109,7 +108,7 @@ const OrderForm = () => {
               className="radioButton cursor-pointer"
               value="cash-pay"
               defaultChecked={payMethod === "cash-pay"}
-              onChange={(event) => handleGetPayMethod(event.target.value)}
+              onChange={handlePayMethod}
             />
             <label
               htmlFor="radioButton-card"
@@ -128,42 +127,43 @@ const OrderForm = () => {
           <h3 className="">Спосіб доставки</h3>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex w-max items-center">
+          <div className="flex w-fit items-center">
             <input
               id="radioButton-pickup"
               name="delivery"
               type="radio"
               className="radioButton cursor-pointer"
-              defaultChecked
-              onClick={() => handleCakeDelivery(false)}
+              value={0}
+              defaultChecked={deliveryPrice === 0}
+              onChange={handleCakeDelivery}
             />
             <label
               htmlFor="radioButton-pickup"
               className="ml-2 cursor-pointer font-text text-themeGray-60"
-              onClick={() => handleCakeDelivery(false)}
             >
               Самовивіз - Тарнавського, 11 (з 9:00 до 20:00)
             </label>
           </div>
-          <div className="flex w-max items-center">
+          <div className="flex w-fit items-center">
             <input
-              id="radioButton-taxi"
+              id="radioButton-delivery"
               name="delivery"
               type="radio"
               className="radioButton cursor-pointer"
-              onClick={() => handleCakeDelivery(true)}
+              value={100}
+              defaultChecked={deliveryPrice === 100}
+              onChange={handleCakeDelivery}
             />
             <label
-              htmlFor="radioButton-taxi"
+              htmlFor="radioButton-delivery"
               className="ml-2 cursor-pointer font-text text-themeGray-60"
-              onClick={() => handleCakeDelivery(true)}
             >
               Кур’єром по Тернополю
             </label>
           </div>
         </div>
       </fieldset>
-      {cakeDelivery > 0 && (
+      {deliveryPrice > 0 && (
         <fieldset className="mb-10">
           <div className="mb-10 flex gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
@@ -180,7 +180,7 @@ const OrderForm = () => {
                 className="formInput peer placeholder-transparent"
                 placeholder="Вулиця та номер квартири"
                 value={deliveryAddress}
-                onChange={(event) => handleGetClientAddress(event.target.value)}
+                onChange={handleClientAddress}
               />
               <label htmlFor="delivery" className="formLabel cursor-text">
                 Вулиця та номер квартири

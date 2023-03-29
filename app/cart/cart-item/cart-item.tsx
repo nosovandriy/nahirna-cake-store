@@ -79,7 +79,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
                 <button
                   onClick={handleDecreaseItem}
                   disabled={count === 1}
-                  className={`${count < 2 && `fill-themeGray-20 cursor-default`}`}
+                  className={`${count === 1 && `fill-themeGray-20 cursor-default`}`}
                 >
                   <Remove />
                 </button>
