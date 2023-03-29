@@ -3,8 +3,8 @@
 import React, { FC } from "react";
 import { Provider } from "react-redux";
 
-import store, { persistor } from "./store";
-import { PersistGate } from "redux-persist/integration/react";
+import {store } from "./store";
+// import { PersistGate } from "redux-persist/integration/react";
 
 type Props = {
   children: React.ReactNode;
@@ -13,9 +13,9 @@ type Props = {
 const ReduxProvider: FC<Props> = ({ children }) => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
         {children}
-      </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
   );
 };

@@ -18,16 +18,16 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
   return (
     <>
       <li className={className}>
-        <a href={"/#about"}>Про мене</a>
+        <Link href={"/#about"}>Про мене</Link>
       </li>
       <li className={className}>
         <Link href={"/catalog"}>Каталог</Link>
       </li>
       <li className={className}>
-        <a href={"/#testimonials"}>Відгуки</a>
+        <Link href={"/#testimonials"}>Відгуки</Link>
       </li>
       <li className={className}>
-        <a href={"/#delivery"}>Доставка</a>
+        <Link href={"/#delivery"}>Доставка</Link>
       </li>
       <li
         className={`${className} font-text text-lg text-themeGray-100`}

@@ -1,5 +1,5 @@
 import { Sofia_Sans, Inter } from "next/font/google";
-import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+// import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 import "@style/globals.scss";
 import Header from "@header/header";
@@ -7,7 +7,7 @@ import Footer from "@footer/footer";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
 
-disableReactDevTools();
+// disableReactDevTools();
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
