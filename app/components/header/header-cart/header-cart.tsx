@@ -1,12 +1,32 @@
 "use client";
 
 import { ShoppingCart } from "@icons/shopping-cart";
-import { useAppSelector } from "@type/ReduxHooks";
+import { setLocalStorageData } from "@redux/slices/cartSlice";
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+import getDataFromLocalStorage from "@utils/getDataFromLocalStorage";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const HeaderCartIcon = () => {
+  const dispatch = useAppDispatch();
   const { items, totalPrice } = useAppSelector((state) => state.cart);
+
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem("cart", json);
+    }
+    isMounted.current = true;
+  }, [items]);
+
+  useEffect(() => {
+    dispatch(setLocalStorageData(getDataFromLocalStorage()));
+  }, [dispatch]);
+
   return (
     <div className="ml-[120px] flex cursor-pointer fill-themeGray-60 duration-300 hover:scale-110 hover:fill-themeBrown-100">
       <Link href={"/cart"}>
@@ -28,3 +48,7 @@ const HeaderCartIcon = () => {
 };
 
 export default HeaderCartIcon;
+function dispatch(arg0: { payload: undefined; type: "cart/loadDataFromLS"; }) {
+  throw new Error("Function not implemented.");
+}
+

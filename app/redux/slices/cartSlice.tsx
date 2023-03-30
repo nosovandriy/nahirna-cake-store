@@ -1,15 +1,9 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ProductCart } from "@type/ProductCart";
+"use client";
 
-export interface CartType {
-  items: ProductCart[];
-  totalPrice: number;
-  clientName: string;
-  clientPhone: string;
-  payMethod: string;
-  deliveryPrice: number;
-  deliveryAddress: string;
-}
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { CartType } from "@type/OrderCartType";
+import { ProductCart } from "@type/ProductCart";
+import getTotalPrice from "@utils/calcTotalPrice";
 
 const initialState: CartType = {
   items: [],
@@ -21,14 +15,15 @@ const initialState: CartType = {
   deliveryAddress: "",
 };
 
-const getTotalPrice = (items: ProductCart[]) => {
-  return items.reduce((sum, item) => item.price * item.count + sum, 0);
-};
-
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    setLocalStorageData: (state, action) => {
+      state.items = action.payload.itemsFromLocalStorage;
+      state.totalPrice = action.payload.totalPriceFromLocalStorage;
+    },
+
     addItem: (state, action: PayloadAction<ProductCart>) => {
       const findItem = state.items.find(
         (item) =>
@@ -130,6 +125,7 @@ export const {
   setPayMethod,
   setClientAddress,
   clearAllData,
+  setLocalStorageData,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
