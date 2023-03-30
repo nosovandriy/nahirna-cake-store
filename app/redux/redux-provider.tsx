@@ -3,7 +3,7 @@
 import React, { FC } from "react";
 import { Provider } from "react-redux";
 
-import {store } from "./store";
+import { store } from "./store";
 // import { PersistGate } from "redux-persist/integration/react";
 
 type Props = {
@@ -14,7 +14,7 @@ const ReduxProvider: FC<Props> = ({ children }) => {
   return (
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
-        {children}
+      {children}
       {/* </PersistGate> */}
     </Provider>
   );

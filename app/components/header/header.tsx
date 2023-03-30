@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Logo } from "@logo";
 import { MenuItems } from "./navigation/menuItems";
 import { MobileMenu } from "@icons/mobile-menu";
-import HeaderCartIcon from "./header-cart-icon/header-cart-icon";
+import HeaderCartIcon from "./header-cart/header-cart";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
