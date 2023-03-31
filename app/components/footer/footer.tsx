@@ -13,7 +13,7 @@ const Header = () => {
       <div className="flex items-center justify-between h-[199px]">
         <Logo />
         <div className="mb-6 flex flex-col flex-wrap gap-10 font-text text-lg text-themeGray-100 sm:mb-0">
-          <ul className="columns-2 gap-x-36 leading-[40px]">
+          <ul className="columns-2 gap-x-36 space-y-5">
             <MenuItems className={"hover:underline"} />
           </ul>
         </div>
