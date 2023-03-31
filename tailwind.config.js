@@ -29,7 +29,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        title: ["var(--font-sofia)", "sans-serif"],
+        title: ["var(--font-sofia)"],
         text: ["var(--font-inter)", "sans-serif"],
       },
       animation: {
