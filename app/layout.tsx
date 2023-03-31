@@ -1,13 +1,10 @@
 import { Sofia_Sans, Inter } from "next/font/google";
-// import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 import "@style/globals.scss";
 import Header from "@header/header";
 import Footer from "@footer/footer";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
-
-// disableReactDevTools();
 
 const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
@@ -24,8 +21,27 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Nahirna cake",
-  description: "Nahirna cake shop with cheesecake",
+  title: {
+    default: "Nahirna cake - найкращі чізкейки",
+    template: "%s | Nahirna cake - найкращі чізкейки",
+  },
+  description:
+    "Ми використовуємо тільки якісні інгредієнти і виготовляємо кожен десерт з дбайливою увагою до деталей. Спробуйте наші чізкейки і відчуйте справжню насолоду.",
+
+  openGraph: {
+    title: "&#34;Nahirna-cake shop&#34; - найкращі чізкейки",
+    description:
+      "Ми використовуємо тільки якісні інгредієнти і виготовляємо кожен десерт з дбайливою увагою до деталей. Спробуйте наші чізкейки і відчуйте справжню насолоду.",
+    url: "https://nahirna-cake.com.ua",
+    siteName: "Nahirna-cake",
+    images: [
+      {
+        url: "https://serving.photos.photobox.com/088135218c3d71e53d0d7a809df06d9712ec6423fc649e07581ab8212fee39d2c9f8ad7e.jpg",
+      },
+    ],
+    locale: "uk-UA",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -37,9 +53,9 @@ export default function RootLayout({
     <html lang="uk" className={`${inter.variable} ${sofia.variable}`}>
       <body>
         <ReduxProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
+          <Header />
+          <main>{children}</main>
+          <Footer />
           <PopUpContacts />
         </ReduxProvider>
       </body>
