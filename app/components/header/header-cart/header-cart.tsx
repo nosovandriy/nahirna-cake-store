@@ -24,7 +24,8 @@ const HeaderCartIcon = () => {
   }, [items]);
 
   useEffect(() => {
-    dispatch(setLocalStorageData(getDataFromLocalStorage()));
+    const data = getDataFromLocalStorage();
+    dispatch(setLocalStorageData(data));
   }, [dispatch]);
 
   return (
