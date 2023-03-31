@@ -5,6 +5,7 @@ import Header from "@header/header";
 import Footer from "@footer/footer";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
+import Script from "next/script";
 
 const sofiaFont = Sofia_Sans({
   subsets: ["cyrillic"],
@@ -22,11 +23,13 @@ const interFont = Inter({
 
 export const metadata = {
   title: "Nahirna cake - найкращі чізкейки",
-  description: "Ми використовуємо тільки якісні інгредієнти і виготовляємо кожен десерт з дбайливою увагою до деталей. Спробуйте наші чізкейки і відчуйте справжню насолоду.",
-
+  description:
+    "Ми використовуємо тільки якісні інгредієнти і виготовляємо кожен десерт з дбайливою увагою до деталей. Спробуйте наші чізкейки і відчуйте справжню насолоду.",
+  icons: "./favicon.ico",
   openGraph: {
-    title: "&#34;Nahirna-cake shop&#34; - найкращі чізкейки",
-    description: "Ми використовуємо тільки якісні інгредієнти і виготовляємо кожен десерт з дбайливою увагою до деталей. Спробуйте наші чізкейки і відчуйте справжню насолоду.",
+    title: "Nahirna-cake shop - найкращі чізкейки",
+    description:
+      "Ми використовуємо тільки якісні інгредієнти і виготовляємо кожен десерт з дбайливою увагою до деталей. Спробуйте наші чізкейки і відчуйте справжню насолоду.",
     url: "https://nahirna-cake.com.ua",
     siteName: "Nahirna-cake",
     images: [
@@ -45,6 +48,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uk" className={`${interFont.variable} ${sofiaFont.variable}`}>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ID}`}
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ID}');
+    `}
+      </Script>
       <body>
         <ReduxProvider>
           <Header />
