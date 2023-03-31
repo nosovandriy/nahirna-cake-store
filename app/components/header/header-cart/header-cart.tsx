@@ -49,7 +49,7 @@ const HeaderCartIcon = () => {
 };
 
 export default HeaderCartIcon;
-function dispatch(arg0: { payload: undefined; type: "cart/loadDataFromLS"; }) {
-  throw new Error("Function not implemented.");
-}
+// function dispatch(arg0: { payload: undefined; type: "cart/loadDataFromLS"; }) {
+//   throw new Error("Function not implemented.");
+// }
 

@@ -41,7 +41,7 @@ const PopUpOverlay: React.FC<Props> = ({
   return (
     <>
       {isOpenModal && (
-        <div className="fixed top-0 left-0 z-50 flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-[72%]">
+        <div className="fixed top-0 left-0 z-50 flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-[72%] backdrop-blur-sm">
           <animated.div style={animation}>{children}</animated.div>
         </div>
       )}

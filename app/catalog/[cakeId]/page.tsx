@@ -6,7 +6,6 @@ import ProductCardCarousel from "@catalog/[cakeId]/carousel/carousel";
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
 import SkeletonGallery from "@catalog/catalog-item/skeleton-gallery/skeleton-gallery";
 import { useCatalog } from "@catalog/hooks/useCatalog";
-import { CheckIcon } from "@icons/check";
 import { useAppDispatch } from "@type/ReduxHooks";
 import { Add, Remove } from "@icons/add-remove";
 import { addItem } from "@redux/slices/cartSlice";

@@ -2,7 +2,7 @@
 
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { CartType } from "@type/OrderCartType";
-import { ProductCart } from "@type/ProductCart";
+import { DataFromLocalStorage, ProductCart, SelectedProduct, SelectedProductID } from "@type/ProductCart";
 import getTotalPrice from "@utils/calcTotalPrice";
 
 const initialState: CartType = {
@@ -19,7 +19,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    setLocalStorageData: (state, action) => {
+    setLocalStorageData: (state, action: PayloadAction<DataFromLocalStorage>) => {
       state.items = action.payload.itemsFromLocalStorage;
       state.totalPrice = action.payload.totalPriceFromLocalStorage;
     },
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
       state.totalPrice = getTotalPrice(state.items);
     },
 
-    addItemInTheCart: (state, action) => {
+    addItemInTheCart: (state, action: PayloadAction<SelectedProduct>) => {
       const findItem = state.items.find(
         (item) =>
           item.id === action.payload.id && item.weight === action.payload.weight
@@ -54,7 +54,7 @@ const cartSlice = createSlice({
       state.totalPrice = getTotalPrice(state.items);
     },
 
-    decreaseItem(state, action) {
+    decreaseItem(state, action: PayloadAction<SelectedProductID>) {
       const findItem = state.items.find(
         (item) => item.uniqId === action.payload.uniqId
       );
@@ -65,7 +65,7 @@ const cartSlice = createSlice({
       state.totalPrice = getTotalPrice(state.items);
     },
 
-    removeItem(state, action) {
+    removeItem(state, action: PayloadAction<SelectedProduct>) {
       const findItem = state.items.find(
         (item) =>
           item.id === action.payload.id && item.weight === action.payload.weight
