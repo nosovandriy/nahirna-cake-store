@@ -64,7 +64,7 @@ export default function RootLayout({
         <ReduxProvider>
           <Header />
           <main>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
           <PopUpContacts />
         </ReduxProvider>
       </body>

@@ -30,10 +30,10 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
         <a href={"/#delivery"}>Доставка</a>
       </li>
       <li
-        className={`${className} font-text text-lg text-themeGray-100`}
+        className={`${className}`}
         onClick={handleContactsOpen}
       >
-        Контакти
+        <p className="text-lg text-themeGray-100">Контакти</p>
       </li>
     </>
   );

@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply mx-auto my-0 flex min-h-screen max-w-[1440px] flex-col bg-themeCaramel px-[68px];
+    @apply mx-auto my-0 flex min-h-screen max-w-[1440px] flex-col bg-themeCaramel px-5 desktop:px-[68px];
   }
 
   main {
