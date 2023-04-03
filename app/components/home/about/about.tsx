@@ -6,9 +6,9 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
+      className="sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob tablet:grid-cols-about-tab laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
     >
-      <div className="relative -mr-10 translate-y-[60%] grid-in-small-image tablet:translate-y-2/4 laptop:mr-0">
+      <div className="relative -mr-10 translate-y-[60%] grid-in-small-image tablet:mr-0 tablet:translate-y-2/4 tablet:pr-2.5">
         <Image
           src="/assets/about-left.webp"
           alt="cheesecake ternopil Nahirna"
@@ -17,7 +17,7 @@ const AboutSection = () => {
           priority
         />
       </div>
-      <div className="justify-self-center grid-in-image laptop:px-5">
+      <div className="justify-self-center grid-in-image laptop:px-5 tablet:pl-2.5">
         <Image
           src="/assets/about-center.webp"
           alt="cheesecake ternopil Nahirna"

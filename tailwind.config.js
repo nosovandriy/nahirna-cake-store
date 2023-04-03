@@ -27,6 +27,7 @@ module.exports = {
         "hero-tab": "60% 40%",
         "hero-desk": "40% 35% 25%",
         "about-mob": "35% 65%",
+        "about-tab": "40% 60%",
         "about-desk": "24% 38.5% 37.5%",
       },
       gridTemplateRows: {
