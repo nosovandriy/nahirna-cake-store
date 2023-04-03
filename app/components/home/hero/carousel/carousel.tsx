@@ -18,7 +18,7 @@ const HeroCarousel = () => {
     speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     fade: true,
     autoplaySpeed: 3500,
     pauseOnHover: false,
