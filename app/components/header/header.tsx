@@ -1,21 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 
 import { Logo } from "@logo";
 import { MenuItems } from "./navigation/menuItems";
 import { MobileMenu } from "@icons/mobile-menu";
 import HeaderCartIcon from "./header-cart/header-cart";
 import { CloseIcon } from "@icons/close";
-import Link from "next/link";
 import { iconContacts } from "../../contacts/default-contacts";
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+import { setShowMobileMenu } from "@redux/slices/navigationSlice";
 
 const Header = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  // const [navigationShadow, setNavigationShadow] = useState(false);
-
+  const dispatch = useAppDispatch();
+  const showMobileMenu = useAppSelector(
+    (state) => state.navigation.showMobileMenu
+  );
   const handleShowMobileMenu = () => {
-    setShowMobileMenu(!showMobileMenu);
+    dispatch(setShowMobileMenu(!showMobileMenu));
   };
 
   // useEffect(() => {
@@ -32,7 +34,7 @@ const Header = () => {
 
   return (
     <header
-      className="mb-14"
+      className="mb-6 tablet:mb-10 desktopHD:mb-14"
       // className={classNames("static z-[40] w-full", {
       //   "shadow-xl": navigationShadow,
       // })}
@@ -46,11 +48,14 @@ const Header = () => {
             <MobileMenu />
           </div>
           <div className=" ">
-            <Logo handleShowMobileMenu={handleShowMobileMenu} />
+            <Logo />
           </div>
         </div>
 
-        <ul className="hidden gap-8 laptop:flex desktop:gap-10">
+        <ul
+          className="hidden gap-8 laptop:flex desktopHD:gap-10"
+          onClick={handleShowMobileMenu}
+        >
           <MenuItems
             className={
               "border-b border-transparent hover:border-themeBrown-100"
@@ -62,7 +67,7 @@ const Header = () => {
       <div
         className={
           showMobileMenu
-            ? "fixed left-0 top-0 h-screen w-full laptop:hidden z-50"
+            ? "fixed left-0 top-0 z-50 h-screen w-full laptop:hidden"
             : ""
         }
       >
@@ -83,7 +88,7 @@ const Header = () => {
                   <CloseIcon />
                 </div>
                 <div className=" ">
-                  <Logo handleShowMobileMenu={handleShowMobileMenu} />
+                  <Logo />
                 </div>
               </div>
 
@@ -102,7 +107,7 @@ const Header = () => {
               />
             </ul>
           </div>
-          <div className="flex flex-col justify-center items-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4">
             <p>Зв&apos;яжіться з нами</p>
             <div className="flex gap-5 pb-10">
               {iconContacts.map((iconContact, index) => (

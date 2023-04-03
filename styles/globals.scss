@@ -4,15 +4,15 @@
 
 @layer base {
   html {
-    @apply h-screen scroll-smooth select-none animate-fadeIn;
+    @apply h-screen animate-fadeIn select-none scroll-smooth;
   }
 
   body {
-    @apply mx-auto my-0 flex min-h-screen max-w-[1440px] flex-col bg-themeCaramel px-5 desktop:px-[68px];
+    @apply mx-auto my-0 flex min-h-screen flex-col bg-themeCaramel px-5 laptop:max-w-[1024px] laptop:px-[40px] desktop:max-w-[1200px]  desktopHD:max-w-[1440px] desktopHD:px-[68px];
   }
 
   main {
-    @apply flex-grow flex flex-col;
+    @apply flex flex-grow flex-col;
   }
 
   a {
@@ -33,7 +33,7 @@
   }
 
   h1 {
-    @apply text-[86px] font-medium leading-[103px] text-themeBrown-100;
+    @apply font-medium leading-[120%] text-themeBrown-100 laptop:text-[64px] desktopHD:text-[86px];
   }
 
   h2 {
@@ -57,7 +57,7 @@
   }
 
   .primaryButton {
-    @apply rounded-full bg-themeBrown-100 py-4 px-14 text-lg font-normal text-themeGray-0 duration-500 hover:bg-themeBrown-50 active:scale-95 active:bg-themeBrown-120;
+    @apply rounded-full bg-themeBrown-100 py-4 px-14 text-lg font-normal text-themeGray-0 duration-500 hover:bg-themeBrown-50 active:scale-95 active:bg-themeBrown-120 [&>*]:text-themeGray-0 hover:[&>*]:text-themeGray-0;
   }
 
   .secondaryButton {

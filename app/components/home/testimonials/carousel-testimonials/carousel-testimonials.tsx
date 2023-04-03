@@ -17,6 +17,7 @@ const CarouselTestimonials = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+    arrows: false,
   };
 
   return (

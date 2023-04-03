@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-// const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
@@ -10,16 +10,24 @@ module.exports = {
   ],
   theme: {
     screens: {
+      // 'mobile': {'max': '639px'},
       tablet: "640px",
-      // => @media (min-width: 640px) { ... }
-
       laptop: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
-      desktop: "1440px",
-      // => @media (min-width: 1440px) { ... }
+      desktop: "1200px",
+      desktopHD: "1440px",
     },
     extend: {
+      gridTemplateAreas: {
+        "layout-mob": ["image carousel", "text text"],
+        "layout-desk": ["text image carousel"],
+      },
+      gridTemplateColumns: {
+        "layout-mob": "50% 50%",
+        "layout-desk": "40% 35% 25%",
+      },
+      gridTemplateRows: {
+        "layout-mob": "1fr 1fr",
+      },
       colors: {
         themeBrown: {
           20: "#DFD9D7",
@@ -78,5 +86,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@savvywombat/tailwindcss-grid-areas"),
+  ],
 };

@@ -33,6 +33,7 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@savvywombat/tailwindcss-grid-areas": "^3.0.1",
     "@tailwindcss/forms": "^0.5.3",
     "@types/react-slick": "^0.23.10",
     "autoprefixer": "^10.4.14",
