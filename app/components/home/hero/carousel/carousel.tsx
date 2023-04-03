@@ -13,9 +13,9 @@ const testimonials = [
 
 const HeroCarousel = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 1500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

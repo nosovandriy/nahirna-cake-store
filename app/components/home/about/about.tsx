@@ -4,17 +4,20 @@ import Image from "next/image";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="scroll-mt-24 grid grid-cols-12 gap-x-10 mb-[120px]">
-      <div className="col-span-3 col-start-1  mb-[92px] self-end">
+    <section
+      id="about"
+      className="sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
+    >
+      <div className="relative -mr-10 translate-y-[60%] grid-in-small-image tablet:translate-y-2/4 laptop:mr-0">
         <Image
           src="/assets/about-left.webp"
           alt="cheesecake ternopil Nahirna"
-          width={296}
-          height={360}
+          width={400}
+          height={270}
           priority
         />
       </div>
-      <div className="col-span-4 col-start-4 h-[600px] items-center justify-center">
+      <div className="justify-self-center grid-in-image laptop:px-5">
         <Image
           src="/assets/about-center.webp"
           alt="cheesecake ternopil Nahirna"
@@ -23,18 +26,22 @@ const AboutSection = () => {
           priority
         />
       </div>
-      <div className="col-span-5 col-start-8 my-auto">
-        <h2 className="mb-10">Я - Нагірна Вікторія, шеф кондитер</h2>
-        <p className="">
-          Любов до своєї справи та до людей. Саме це надихає мене робити нові
-          десерти та не зупинятися на досягнутому.
-          <br /> <br />
-          Для приготування дійсно смачного десерту я відбираю найкращих
-          постачальників не тільки з України, а й з усього світу!
-          <br /> <br />
-          Тут ви ніколи не знайдете замінників масла, шкідливих консерватів чи
-          підсилювачів смаку.
-        </p>
+      <div className="space-y-6 self-center grid-in-text">
+        <h2>Я - Нагірна Вікторія, шеф кондитер</h2>
+        <div className="space-y-3">
+          <p>
+            Любов до своєї справи та до людей. Саме це надихає мене робити нові
+            десерти та не зупинятися на досягнутому.
+          </p>
+          <p>
+            Для приготування дійсно смачного десерту я відбираю найкращих
+            постачальників не тільки з України, а й з усього світу!
+          </p>
+          <p>
+            Тут ви ніколи не знайдете замінників масла, шкідливих консервантів
+            чи підсилювачів смаку.
+          </p>
+        </div>
       </div>
     </section>
   );

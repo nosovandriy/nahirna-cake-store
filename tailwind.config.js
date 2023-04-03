@@ -10,7 +10,6 @@ module.exports = {
   ],
   theme: {
     screens: {
-      // 'mobile': {'max': '639px'},
       tablet: "640px",
       laptop: "1024px",
       desktop: "1200px",
@@ -18,15 +17,20 @@ module.exports = {
     },
     extend: {
       gridTemplateAreas: {
-        "layout-mob": ["image carousel", "text text"],
-        "layout-desk": ["text image carousel"],
+        "hero-mob": ["image carousel", "text text"],
+        "hero-desk": ["text image carousel"],
+        "about-mob": ["small-image image", "text text"],
+        "about-desk": ["small-image image text"],
       },
       gridTemplateColumns: {
-        "layout-mob": "50% 50%",
-        "layout-desk": "40% 35% 25%",
+        "hero-mob": "50% 50%",
+        "hero-tab": "60% 40%",
+        "hero-desk": "40% 35% 25%",
+        "about-mob": "35% 65%",
+        "about-desk": "24% 38.5% 37.5%",
       },
       gridTemplateRows: {
-        "layout-mob": "1fr 1fr",
+        "hero-mob": "1fr",
       },
       colors: {
         themeBrown: {

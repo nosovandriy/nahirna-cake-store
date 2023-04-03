@@ -37,7 +37,7 @@
   }
 
   h2 {
-    @apply text-4xl font-bold leading-[34px] text-themeBrown-100;
+    @apply text-3xl laptop:text-[32px] desktop:text-4xl font-bold leading-[34px] text-themeBrown-100;
   }
 
   h3 {
@@ -84,5 +84,9 @@
 
   .galleryButton {
     @apply absolute top-1/2 -translate-y-1/2 transform rounded-full bg-themeCaramel bg-opacity-30 p-2 hover:bg-themeGray-10 hover:opacity-100;
+  }
+
+  .sectionMarginBottom {
+    @apply mb-14 tablet:mb-20 laptop:mb-[100px] desktop:mb-[120px]
   }
 }
