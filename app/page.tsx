@@ -9,9 +9,9 @@ import Delivery from "@home/delivery/delivery";
 export default function Home() {
   return (
     <>
-      {/* <HeroSection /> */}
-      {/* <AboutSection /> */}
-      {/* <CatalogPreview /> */}
+      <HeroSection />
+      <AboutSection />
+      <CatalogPreview />
       <Testimonials />
       <Delivery />
     </>

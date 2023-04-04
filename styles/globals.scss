@@ -41,11 +41,11 @@
   }
 
   h3 {
-    @apply text-[24px] tablet:text-[28px] font-semibold leading-[34px];
+    @apply text-lg tablet:text-[24px] desktop:text-[28px] font-semibold leading-[34px];
   }
 
   h4 {
-    @apply font-text text-xl font-medium;
+    @apply font-text text-base tablet:text-[20px] desktop:text-2xl font-medium;
   }
 
   li {

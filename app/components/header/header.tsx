@@ -20,24 +20,9 @@ const Header = () => {
     dispatch(setShowMobileMenu(!showMobileMenu));
   };
 
-  // useEffect(() => {
-  //   const handleShadow = () => {
-  //     if (window.scrollY >= 90) {
-  //       setNavigationShadow(true);
-  //     } else {
-  //       setNavigationShadow(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleShadow);
-  // }, []);
-
   return (
     <header
-      className="mb-6 tablet:mb-10 desktopHD:mb-14"
-      // className={classNames("static z-[40] w-full", {
-      //   "shadow-xl": navigationShadow,
-      // })}
+      className="sticky top-0 bg-themeCaramel z-[40] mb-6 w-full tablet:mb-10 desktopHD:mb-14"
     >
       <nav className="flex items-center justify-between py-3 laptop:py-[33px]">
         <div className="flex items-center">
