@@ -39,7 +39,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
                 className="cursor-pointer"
               >
                 <div className="relative flex flex-col items-center justify-center hover:animate-pulse">
-                  {/* <div className="absolute inset-[-4%] border border-transparent hover:border-themeBrown-20"></div> */}
+                  <div className="absolute inset-[-4%] border border-transparent hover:border-themeBrown-20"></div>
                   <Image
                     src={cake.imageTitle}
                     alt={`${cake.id} cheesecake`}
