@@ -41,7 +41,7 @@
   }
 
   h3 {
-    @apply text-[28px] font-semibold leading-[34px];
+    @apply text-[24px] tablet:text-[28px] font-semibold leading-[34px];
   }
 
   h4 {
