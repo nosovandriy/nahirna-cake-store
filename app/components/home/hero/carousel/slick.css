@@ -117,20 +117,3 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
-
-
-.slick-slide > div {
-  margin: 0 10px;
-}
-.slick-list {
-  margin: 0 -10px;
-}
-
-@media (min-width: 1440px) {
-    .slick-slide > div {
-      margin: 0 20px;
-    }
-    .slick-list {
-      margin: 0 -20px;
-    }
-  }

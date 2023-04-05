@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { setIsContactsOpen } from "../../../../redux/slices/popUpSlice";
 import { useAppDispatch } from "@type/ReduxHooks";
+import { setShowMobileMenu } from "@redux/slices/navigationSlice";
 
 type Props = {
   className: string;
@@ -13,27 +14,29 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
 
   const handleContactsOpen = () => {
     dispatch(setIsContactsOpen(true));
+    dispatch(setShowMobileMenu(false));
+  };
+
+  const handleHideMobileMenu = () => {
+    dispatch(setShowMobileMenu(false));
   };
 
   return (
     <>
-      <li className={className}>
+      <li className={className} onClick={handleHideMobileMenu}>
         <a href={"/#about"}>Про мене</a>
       </li>
-      <li className={className}>
+      <li className={className} onClick={handleHideMobileMenu}>
         <Link href={"/catalog"}>Каталог</Link>
       </li>
-      <li className={className}>
+      <li className={className} onClick={handleHideMobileMenu}>
         <a href={"/#testimonials"}>Відгуки</a>
       </li>
-      <li className={className}>
+      <li className={className} onClick={handleHideMobileMenu}>
         <a href={"/#delivery"}>Доставка</a>
       </li>
-      <li
-        className={`${className} font-text text-lg text-themeGray-100`}
-        onClick={handleContactsOpen}
-      >
-        Контакти
+      <li className={`${className}`} onClick={handleContactsOpen}>
+        <p className="text-lg text-themeGray-100">Контакти</p>
       </li>
     </>
   );

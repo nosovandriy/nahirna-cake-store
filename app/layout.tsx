@@ -7,14 +7,14 @@ import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
 import Script from "next/script";
 
-const sofiaFont = Sofia_Sans({
+const sofia = Sofia_Sans({
   subsets: ["cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sofia",
   display: "swap",
 });
 
-const interFont = Inter({
+const inter = Inter({
   subsets: ["cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-inter",
@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk" className={`${interFont.variable} ${sofiaFont.variable}`}>
+    <html lang="uk" className={`${inter.variable} ${sofia.variable}`}>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ID}`}

@@ -4,11 +4,10 @@ import ContentLoader from "react-content-loader";
 const SkeletonCard = (props: any) => (
   <ContentLoader
     speed={2}
-    width={408}
-    height={389}
     viewBox="0 0 408 389"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
+    style={{ width: '100%' }}
     {...props}
   >
     <rect x="0" y="0" rx="0" ry="0" width="408" height="300" />

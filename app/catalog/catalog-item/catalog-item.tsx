@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import SkeletonCard from "../skeleton/skeleton";
 import { useCatalog } from "../hooks/useCatalog";
-import SortCatalog from "@catalogsort-catalog/sort-catalog";
+import SortCatalog from "@catalog/sort-catalog/sort-catalog";
+import ProductCardPreview from "@product-card-preview/product-card-preview";
 
 type Props = {
   isFullCatalog?: boolean;
@@ -22,41 +23,25 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
   }, []);
 
   return (
-    <section className="mb-[120px] flex flex-col">
-      <div className="flex justify-between">
-        <h2 className="items-center justify-center">Каталог</h2>
+    <section className="sectionMarginBottom flex flex-col">
+      <div className="flex items-start justify-between">
+        <h2 className="mb-6 items-center justify-center tablet:mb-8 laptop:mb-10">
+          Каталог
+        </h2>
         {isFullCatalog && <SortCatalog />}
       </div>
-      <div className=" mt-8 -ml-4 mr-4 grid grid-cols-3 gap-x-10 gap-y-14">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-y-8 laptop:grid-cols-3 laptop:gap-y-10 desktop:gap-y-14 desktopHD:gap-x-10">
         {isLoading && isFullCatalog
           ? [...new Array(6)].map((_, index) => <SkeletonCard key={index} />)
-          : catalog.map((cake) => (
-              <Link
-                href={`/catalog/${cake.id}`}
-                key={cake.id}
-                className="cursor-pointer"
-              >
-                <div className="flex h-[421px] max-h-[421px] w-[440px] max-w-[440px] flex-col items-center justify-center border border-transparent hover:border-themeBrown-20">
-                  <div>
-                    <Image
-                      src={cake.imageTitle}
-                      alt={`${cake.id} cheesecake`}
-                      width={408}
-                      height={300}
-                      // style={{ objectFit: "cover", objectPosition: "50% 50%" }}
-                      className="mb-4 h-[300px]"
-                    />
-                    <h3 className="mb-2">{cake.title}</h3>
-                    <p className="text-2xl font-medium text-themeBrown-100">
-                      {`${(cake.price * cake.weights[0]).toFixed()} грн`}
-                    </p>
-                  </div>
-                </div>
-              </Link>
+          : catalog.map((product) => (
+              <ProductCardPreview product={product} key={product.id} />
             ))}
       </div>
       {!isFullCatalog && (
-        <Link href={"/catalog"} className="mx-auto mt-10">
+        <Link
+          href={"/catalog"}
+          className="mx-auto mt-6 tablet:mt-8 desktop:mt-10"
+        >
           <button className="secondaryButton h-[42px] text-center">
             Більше
           </button>

@@ -3,7 +3,7 @@ import { useAppDispatch } from "@type/ReduxHooks";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export const Logo = () => {
+const FooterLogo = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
@@ -13,7 +13,7 @@ export const Logo = () => {
   };
 
   return (
-    <div className="relative h-[32px] w-[105px] tablet:h-[36px] tablet:w-[120px] laptop:h-[43px] laptop:w-[135px] desktopHD:w-[143px]">
+    <div className="relative h-[55px] w-[184px]">
       <Image
         src="/assets/logo.svg"
         alt="Nahirna-cake logo"
@@ -24,3 +24,5 @@ export const Logo = () => {
     </div>
   );
 };
+
+export default FooterLogo;

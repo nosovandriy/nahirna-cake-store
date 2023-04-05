@@ -12,16 +12,37 @@ const CarouselTestimonials = () => {
     dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 3000,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1023,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 639,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="mb-[120px]">
-      <Slider {...settings}>
+    <div>
+      <Slider {...settings} className="slick-spacing">
         {testimonials.map((testimonial, index) => (
           <div key={index}>
             <Image
@@ -29,9 +50,9 @@ const CarouselTestimonials = () => {
               alt="cheesecake"
               width={408}
               height={300}
-              className=" max-h-[300px] object-cover"
+              className=" max-h-[300px] object-cover mx-auto"
             />
-            <div className="max-w-[408px] bg-white py-6 px-4">
+            <div className="max-w-[408px] bg-white py-6 px-4 mx-auto">
               <p className="mb-4">{testimonial.text}</p>
               <div className="flex gap-2">
                 <Image
