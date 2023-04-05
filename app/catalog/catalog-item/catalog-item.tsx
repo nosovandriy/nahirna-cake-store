@@ -30,7 +30,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
         </h2>
         {isFullCatalog && <SortCatalog />}
       </div>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-y-8 laptop:grid-cols-3 laptop:gap-y-10 desktop:gap-y-14 desktopHD:gap-x-10">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-x-[34px] tablet:gap-y-8 tabletXL:grid-cols-3 laptop:gap-x-5 laptop:gap-y-10 desktop:gap-y-14 desktopHD:gap-x-10">
         {isLoading && isFullCatalog
           ? [...new Array(6)].map((_, index) => <SkeletonCard key={index} />)
           : catalog.map((product) => (

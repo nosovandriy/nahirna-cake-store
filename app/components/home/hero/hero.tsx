@@ -9,14 +9,13 @@ const HeroSection = () => {
   return (
     <section>
       <div className="sectionMarginBottom relative grid grid-cols-hero-mob grid-rows-hero-mob gap-y-5 grid-areas-hero-mob tablet:grid-cols-hero-tab tablet:gap-y-10 laptop:grid-cols-hero-desk laptop:grid-areas-hero-desk">
-        <div className=" pr-2.5 grid-in-image">
+        <div className="pr-2.5 tablet:pr-6 laptop:pr-2.5 grid-in-image">
           <Image
             src="/assets/hero-main.webp"
             alt="cheesecake ternopil Nahirna"
             priority
-            width={408}
-            height={600}
-            className=" mx-auto"
+            width={600}
+            height={840}
           />
         </div>
         <div className="self-center pl-2.5 grid-in-carousel tablet:translate-y-2/4">

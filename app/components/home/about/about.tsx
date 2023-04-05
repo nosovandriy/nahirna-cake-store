@@ -17,12 +17,12 @@ const AboutSection = () => {
           priority
         />
       </div>
-      <div className="justify-self-center grid-in-image tablet:pl-2.5 laptop:px-5">
+      <div className="justify-self-center grid-in-image tablet:pl-6 laptop:px-5">
         <Image
           src="/assets/about-center.webp"
           alt="cheesecake ternopil Nahirna"
-          width={408}
-          height={606}
+          width={600}
+          height={840}
           priority
         />
       </div>

@@ -12,11 +12,11 @@
   }
 
   footer, header {
-    @apply px-5 laptop:px-[40px] desktopHD:px-[68px];
+    @apply px-5 tablet:px-[40px] desktopHD:px-[68px];
   }
 
   main {
-    @apply flex flex-grow flex-col px-5 laptop:px-[40px] desktopHD:px-[68px];
+    @apply flex flex-grow flex-col px-5 tablet:px-[40px] desktopHD:px-[68px];
   }
 
   a {
