@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <header
-      className="sticky top-0 bg-themeCaramel z-[40] mb-6 w-full tablet:mb-10 desktopHD:mb-14"
+      className="sticky laptop:static top-0 bg-themeCaramel z-[40] mb-6 tablet:mb-10 desktopHD:mb-14"
     >
       <nav className="flex items-center justify-between py-3 laptop:py-[33px]">
         <div className="flex items-center">
@@ -32,14 +32,13 @@ const Header = () => {
           >
             <MobileMenu />
           </div>
-          <div className=" ">
+          <div>
             <Logo />
           </div>
         </div>
 
         <ul
           className="hidden gap-8 laptop:flex desktopHD:gap-10"
-          onClick={handleShowMobileMenu}
         >
           <MenuItems
             className={

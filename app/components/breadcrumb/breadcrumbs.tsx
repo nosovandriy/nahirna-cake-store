@@ -28,7 +28,7 @@ const BreadCrumbs: React.FC<Props> = ({ cakeTitle }) => {
   };
 
   return (
-    <div role="presentation" className="mb-10 no-underline">
+    <div role="presentation" className="mb-6 tablet:mb-4 laptop:mb-8 desktop:mb-10 no-underline">
       <MuiBreadcrumbs aria-label="breadcrumb" separator={<ArrowRightSmall />}>
         <div onClick={() => router.push("/")}>
           <div className="flex fill-themeBrown-100 duration-300 hover:scale-105">

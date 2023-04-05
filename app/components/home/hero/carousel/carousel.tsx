@@ -4,7 +4,7 @@ import "./slick.css";
 import "./slick-theme.css";
 import Image from "next/image";
 
-const testimonials = [
+const heroImagesCarousel = [
   "/assets/hero-carousel/1.webp",
   "/assets/hero-carousel/2.webp",
   "/assets/hero-carousel/3.webp",
@@ -28,7 +28,7 @@ const HeroCarousel = () => {
   return (
     <div>
       <Slider {...settings}>
-        {testimonials.map((testimonial, index) => (
+        {heroImagesCarousel.map((testimonial, index) => (
           <div key={index}>
             <Image
               src={testimonial}

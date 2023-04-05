@@ -26,7 +26,7 @@ const CarouselTestimonials = () => {
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 1023,
         settings: {
           slidesToShow: 2,
         },

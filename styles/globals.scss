@@ -8,11 +8,15 @@
   }
 
   body {
-    @apply mx-auto my-0 flex min-h-screen flex-col bg-themeCaramel px-5 laptop:max-w-[1024px] laptop:px-[40px] desktop:max-w-[1200px]  desktopHD:max-w-[1440px] desktopHD:px-[68px];
+    @apply mx-auto my-0 flex min-h-screen flex-col bg-themeCaramel laptop:max-w-[1024px]  desktop:max-w-[1200px]  desktopHD:max-w-[1440px];
+  }
+
+  footer, header {
+    @apply px-5 laptop:px-[40px] desktopHD:px-[68px];
   }
 
   main {
-    @apply flex flex-grow flex-col;
+    @apply flex flex-grow flex-col px-5 laptop:px-[40px] desktopHD:px-[68px];
   }
 
   a {
@@ -37,15 +41,15 @@
   }
 
   h2 {
-    @apply text-3xl laptop:text-[32px] desktop:text-4xl font-bold leading-[34px] text-themeBrown-100;
+    @apply text-[28px] tablet:text-3xl font-bold leading-[34px] text-themeBrown-100 laptop:text-[32px] desktop:text-4xl;
   }
 
   h3 {
-    @apply text-lg tablet:text-[24px] desktop:text-[28px] font-semibold leading-[34px];
+    @apply text-lg font-semibold leading-[120%] tablet:text-[24px] desktop:text-[28px];
   }
 
   h4 {
-    @apply font-text text-base tablet:text-[20px] desktop:text-2xl font-medium;
+    @apply font-text leading-[150%] text-base font-medium tablet:text-[20px] desktop:text-2xl;
   }
 
   li {
@@ -87,6 +91,6 @@
   }
 
   .sectionMarginBottom {
-    @apply mb-14 tablet:mb-20 laptop:mb-[100px] desktop:mb-[120px]
+    @apply mb-14 tablet:mb-20 laptop:mb-[100px] desktop:mb-[120px];
   }
 }

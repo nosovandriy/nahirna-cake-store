@@ -9,7 +9,7 @@ const Delivery = () => {
   return (
     <div
       id="delivery"
-      className="sectionMarginBottom flex scroll-mt-24 flex-col justify-between gap-10 tablet:gap-0 laptop:gap-10 laptop:flex-row"
+      className="sectionMarginBottom flex scroll-mt-24 flex-col justify-between gap-10 tablet:gap-0 laptop:gap-5 desktopHD:gap-x-10 laptop:flex-row"
     >
       <div className="laptop:shrink-0">
         <h2 className="mb-6 tablet:mb-8 laptop:mb-10">Оплата та доставка</h2>

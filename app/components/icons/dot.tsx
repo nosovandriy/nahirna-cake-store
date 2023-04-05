@@ -1,11 +1,10 @@
 export const Dot = () => {
   return (
     <svg
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className=" w-3 h-3 tablet:w-5 tablet:h-5 desktop:w-6 desktop:h-6 desktopHD:w-7 desktopHD:h-7"
     >
       <rect width="24" height="24" fill="#FDFAF5" />
       <path

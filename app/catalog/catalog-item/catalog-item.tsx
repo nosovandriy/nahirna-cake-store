@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import SkeletonCard from "../skeleton/skeleton";
 import { useCatalog } from "../hooks/useCatalog";
-import SortCatalog from "@catalogsort-catalog/sort-catalog";
+import SortCatalog from "@catalog/sort-catalog/sort-catalog";
+import ProductCardPreview from "@product-card-preview/product-card-preview";
 
 type Props = {
   isFullCatalog?: boolean;
@@ -23,36 +24,17 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
 
   return (
     <section className="sectionMarginBottom flex flex-col">
-      <div className="flex justify-between">
+      <div className="flex items-start justify-between">
         <h2 className="mb-6 items-center justify-center tablet:mb-8 laptop:mb-10">
           Каталог
         </h2>
         {isFullCatalog && <SortCatalog />}
       </div>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-y-8 laptop:grid-cols-3 laptop:gap-y-10 desktop:gap-y-14">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-y-8 laptop:grid-cols-3 laptop:gap-y-10 desktop:gap-y-14 desktopHD:gap-x-10">
         {isLoading && isFullCatalog
           ? [...new Array(6)].map((_, index) => <SkeletonCard key={index} />)
-          : catalog.map((cake) => (
-              <Link
-                href={`/catalog/${cake.id}`}
-                key={cake.id}
-                className="cursor-pointer"
-              >
-                <div className="relative flex flex-col items-center justify-center hover:animate-pulse">
-                  <div className="absolute inset-[-4%] border border-transparent hover:border-themeBrown-20"></div>
-                  <Image
-                    src={cake.imageTitle}
-                    alt={`${cake.id} cheesecake`}
-                    width={500}
-                    height={400}
-                    className=" tablet:mb-4"
-                  />
-                  <h3 className="mb-2 self-start">{cake.title}</h3>
-                  <h4 className="self-start text-themeBrown-100">
-                    {`${(cake.price * cake.weights[0]).toFixed()} грн`}
-                  </h4>
-                </div>
-              </Link>
+          : catalog.map((product) => (
+              <ProductCardPreview product={product} key={product.id} />
             ))}
       </div>
       {!isFullCatalog && (

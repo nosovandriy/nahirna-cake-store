@@ -24,7 +24,15 @@ const HeroSection = () => {
         </div>
         <div className="mx-auto max-w-[460px] space-y-5 grid-in-text tablet:max-w-[560px] tablet:space-y-6">
           <h1 className="text-center text-[32px] tablet:text-[56px] laptop:mt-[26%] laptop:w-[180%] laptop:text-start laptop:text-[64px] desktop:text-[74px] desktopHD:text-[86px]">
-            Спробуй найсмачніші чізкейки в Тернополі
+            Спробуй найсмачніші
+            <br />ч
+            <span className="relative">
+              і
+              <div className="absolute left-2/4 top-[10%] -translate-x-2/4">
+                <Dot />
+              </div>
+            </span>
+            зкейки в Тернополі
           </h1>
           <p className=" text-center laptop:max-w-[500px] laptop:text-start">
             Десерти з натуральних продуктів без консервантів та ароматизаторів.

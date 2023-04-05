@@ -1,5 +1,6 @@
 "use client";
 
+import { SortIcon } from "@icons/sort";
 import { setSortType } from "../../redux/slices/sortSlice";
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import { SortBy } from "@type/SortType";
@@ -17,10 +18,13 @@ const SortCatalog = () => {
 
   return (
     <div className="flex items-center justify-start">
-      <p>Сортувати за:</p>
+      <p className="hidden tablet:block">Сортувати за:</p>
+      <div className="block tablet:hidden">
+        <SortIcon />
+      </div>
       <div className="relative">
         <select
-          className="cursor-pointer border border-transparent bg-themeCaramel px-4 py-2 pr-8 text-themeBrown-100 underline-offset-0 hover:border-transparent focus:border-transparent focus:outline-0 focus:ring-0"
+          className="text-center tablet:text-left text-sm tablet:text-base cursor-pointer border border-transparent bg-themeCaramel px-1 tablet:px-4 py-2 pr-8 text-themeBrown-100 underline-offset-0 hover:border-transparent focus:border-transparent focus:outline-0 focus:ring-0"
           onChange={handleChangeSortTitle}
           value={sortType}
         >
