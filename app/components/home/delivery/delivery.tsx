@@ -49,7 +49,6 @@ const Delivery = () => {
           alt="cheesecake-Nahirna map location"
           width={900}
           height={600}
-          priority
         />
       </div>
     </div>

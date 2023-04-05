@@ -35,7 +35,6 @@ const HeroCarousel = () => {
               alt="cheesecake"
               width={367}
               height={270}
-              priority
             />
           </div>
         ))}
