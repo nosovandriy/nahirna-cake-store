@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section>
       <div className="sectionMarginBottom relative grid grid-cols-hero-mob grid-rows-hero-mob gap-y-5 grid-areas-hero-mob tablet:grid-cols-hero-tab tablet:gap-y-10 laptop:grid-cols-hero-desk laptop:grid-areas-hero-desk">
-        <div className="pr-2.5 tablet:pr-6 laptop:pr-2.5 grid-in-image">
+        <div className="pr-2.5 tablet:pr-6 laptop:pr-2.5 desktopHD:pr-8 grid-in-image">
           <Image
             src="/assets/hero-main.webp"
             alt="cheesecake ternopil Nahirna"

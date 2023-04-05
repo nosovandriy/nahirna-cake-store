@@ -17,7 +17,7 @@ const AboutSection = () => {
           priority
         />
       </div>
-      <div className="justify-self-center grid-in-image tablet:pl-6 laptop:px-5">
+      <div className="justify-self-center grid-in-image tablet:pl-6 laptop:px-5 desktopHD:laptop:px-10">
         <Image
           src="/assets/about-center.webp"
           alt="cheesecake ternopil Nahirna"
