@@ -33,9 +33,9 @@ const HeroCarousel = () => {
             <Image
               src={testimonial}
               alt="cheesecake"
-              width={400}
+              width={367}
               height={270}
-              style={{ objectFit: "cover" }}
+              priority
             />
           </div>
         ))}
