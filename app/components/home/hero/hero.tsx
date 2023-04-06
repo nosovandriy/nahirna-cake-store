@@ -16,6 +16,9 @@ const HeroSection = () => {
             priority
             width={600}
             height={840}
+            sizes="(max-width: 639px) 50vw,
+            (max-width: 1023px) 66vw,
+            100vw"
           />
         </div>
         <div className="self-center pl-2.5 grid-in-carousel tablet:translate-y-2/4">

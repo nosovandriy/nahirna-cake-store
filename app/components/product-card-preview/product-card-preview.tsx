@@ -17,7 +17,7 @@ const ProductCardPreview: React.FC<Props> = ({ product }) => {
         <div>
           <Image
             src={product.imageTitle}
-            alt={product.description}
+            alt={`${product.id} cheesecake`}
             width={408}
             height={300}
             className="mb-4"

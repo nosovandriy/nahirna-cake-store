@@ -28,13 +28,17 @@ const HeroCarousel = () => {
   return (
     <div>
       <Slider {...settings}>
-        {heroImagesCarousel.map((testimonial, index) => (
+        {heroImagesCarousel.map((item, index) => (
           <div key={index}>
             <Image
-              src={testimonial}
+              src={item}
               alt="cheesecake"
               width={367}
               height={270}
+              loading={item.length === index + 1 ? 'eager' : 'lazy'}
+              sizes="(max-width: 639px) 50vw,
+              (max-width: 1023px) 33vw,
+              40vw"
             />
           </div>
         ))}
