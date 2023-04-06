@@ -14,6 +14,9 @@ const AboutSection = () => {
           alt="cheesecake ternopil Nahirna"
           width={408}
           height={276}
+          sizes="(max-width: 639px) 35vw,
+          (max-width: 1023px) 40vw,
+          25vw"
         />
       </div>
       <div className="justify-self-center grid-in-image tablet:pl-6 laptop:px-5 desktopHD:laptop:px-10">
@@ -22,6 +25,9 @@ const AboutSection = () => {
           alt="cheesecake ternopil Nahirna"
           width={600}
           height={840}
+          sizes="(max-width: 639px) 65vw,
+          (max-width: 1023px) 60vw,
+          40vw"
         />
       </div>
       <div className="space-y-6 self-center grid-in-text">

@@ -21,6 +21,9 @@ const ProductCardPreview: React.FC<Props> = ({ product }) => {
             width={408}
             height={300}
             className="mb-4"
+            sizes="(max-width: 639px) 50vw,
+            (max-width: 889px) 33vw,
+            33vw"
           />
           <h3 className="mb-2 self-start">{product.title}</h3>
           <h4 className="self-start text-themeBrown-100">
