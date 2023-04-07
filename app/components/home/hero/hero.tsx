@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section>
       <div className="sectionMarginBottom relative grid grid-cols-hero-mob grid-rows-hero-mob gap-y-5 grid-areas-hero-mob tablet:grid-cols-hero-tab tablet:gap-y-10 laptop:grid-cols-hero-desk laptop:grid-areas-hero-desk">
-        <div className="pr-2.5 tablet:pr-6 laptop:pr-2.5 desktopHD:pr-8 grid-in-image">
+        <div className="pr-2.5 grid-in-image tablet:pr-6 laptop:pr-2.5 desktopHD:pr-8">
           <Image
             src="/assets/hero-main.webp"
             alt="cheesecake ternopil Nahirna"
@@ -40,9 +40,13 @@ const HeroSection = () => {
             Десерти з натуральних продуктів без консервантів та ароматизаторів.
             Тут кожен знайде чізкейк для себе
           </p>
-          <button className="primaryButton w-full laptop:w-[300px]">
-            <Link href={"/catalog"}>Перейти в каталог</Link>
-          </button>
+          <div>
+            <Link href={"/catalog"}>
+              <button className="primaryButton w-full laptop:w-[300px]">
+                Перейти в каталог{" "}
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

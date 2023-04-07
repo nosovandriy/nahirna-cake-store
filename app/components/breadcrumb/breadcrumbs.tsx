@@ -28,7 +28,10 @@ const BreadCrumbs: React.FC<Props> = ({ cakeTitle }) => {
   };
 
   return (
-    <div role="presentation" className="mb-6 tablet:mb-8 laptop:mb-8 desktop:mb-10 no-underline">
+    <div
+      role="presentation"
+      className="mb-6 no-underline tablet:mb-8 laptop:mb-8 desktop:mb-10"
+    >
       <MuiBreadcrumbs aria-label="breadcrumb" separator={<ArrowRightSmall />}>
         <div onClick={() => router.push("/")}>
           <div className="flex fill-themeBrown-100 duration-300 hover:scale-105">
@@ -39,12 +42,16 @@ const BreadCrumbs: React.FC<Props> = ({ cakeTitle }) => {
           <div className="cursor-auto text-themeGray-40">{pagePathName()}</div>
         ) : (
           <div onClick={() => router.push(`/${pageRoute}`)}>
-            <p className="text-themeBrown-100 duration-300 hover:scale-105">
+            <p className="text-sm text-themeBrown-100 duration-300 hover:scale-105 tablet:text-base">
               {pagePathName()}
             </p>
           </div>
         )}
-        {cakeTitle && <div className="cursor-auto font-text">{cakeTitle}</div>}
+        {cakeTitle && (
+          <div className="cursor-auto font-text text-sm tablet:text-base">
+            {cakeTitle}
+          </div>
+        )}
       </MuiBreadcrumbs>
     </div>
   );
