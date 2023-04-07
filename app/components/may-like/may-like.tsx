@@ -16,7 +16,7 @@ const MayLikeProducts: React.FC<Props> = ({ selectedId }) => {
 
   const handleChangeCardQuantity = () => {
     const viewportWidth = window.innerWidth;
-    if (viewportWidth < 1024) {
+    if (viewportWidth < 890) {
       setQuantity(2);
     } else {
       setQuantity(3);
@@ -50,7 +50,7 @@ const MayLikeProducts: React.FC<Props> = ({ selectedId }) => {
   return (
     <div className="sectionMarginBottom">
       <h2 className="mb-10">Вам може сподобатись</h2>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-y-8 laptop:grid-cols-3 laptop:gap-y-10 desktop:gap-y-14 desktopHD:gap-x-10">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-6 tablet:gap-y-8 tablet:gap-x-8 laptop:gap-x-5 tabletXL:grid-cols-3 laptop:gap-y-10 desktop:gap-y-14 desktopHD:gap-x-10">
         {randomArray.map((product) => (
           <ProductCardPreview product={product} key={product.id} />
         ))}

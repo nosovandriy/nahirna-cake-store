@@ -1,6 +1,6 @@
 .cart-button {
   position: relative;
-  width: 296px;
+  width: 95%;
   height: 62px;
   overflow: hidden;
   cursor: pointer;
@@ -11,7 +11,23 @@
   font-weight: 400;
   color: #f7f7f7;
   transition-duration: 0.5s;
-  transform: scale(0.95);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+@media (min-width: 890px) {
+  .cart-button {
+    width: 296px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cart-button {
+    width: 320px;
+  }
 }
 
 .cart-button:active {

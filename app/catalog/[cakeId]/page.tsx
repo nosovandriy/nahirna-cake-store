@@ -52,6 +52,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
     }
 
     setAddToCart(true);
+    setProductCount(1);
   };
 
   const handleSetProductWeight = (index: number) => {
@@ -61,9 +62,9 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   return (
     <>
       {selectedCard ? (
-        <section className="relative">
+        <section className="sectionMarginBottom">
           <BreadCrumbs cakeTitle={selectedCard.title} />
-          <div className="grid grid-cols-12 gap-x-10">
+          {/* <div className="grid grid-cols-12 gap-x-10">
             <div className="col-span-6 col-start-1 max-h-[645px]">
               {isLoading ? (
                 <SkeletonGallery />
@@ -121,6 +122,91 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
               />
               <p className="pb-4 text-xl font-medium text-themeGray-100">
                 Склад та алергени
+              </p>
+              <p className="pb-6">{selectedCard.ingredients}</p>
+              <p className="pb-4 text-xl font-medium text-themeGray-100">
+                Умови зберігання
+              </p>
+              <p className="pb-6">
+                СТРОК ПРИДАТНОСТІ: 3 доби
+                <br />
+                УМОВИ ЗБЕРІГАННЯ: при температурі від +2 до +6˚С
+              </p>
+              <p className="pb-4 text-xl font-medium text-themeGray-100">
+                Строк виконання замовлення
+              </p>
+              <p className="pb-6">
+                Замовлення виконується мінімум 2 дні. Після замовлення з вами
+                зв’яжеться менеджер для уточнення дати.
+              </p>
+            </div>
+          </div> */}
+          <div className="tabletXL:grid tabletXL:grid-cols-2 gap-x-8 laptop:gap-x-5 desktopHD:gap-x-10">
+            <div className="mb-4 tablet:mb-8">
+              <h2 className="mb-4 text-themeGray-100 tabletXL:hidden">
+                {selectedCard.title}
+              </h2>
+              {isLoading ? (
+                <SkeletonGallery />
+              ) : (
+                  <ProductCardCarousel
+                    images={selectedCard.images}
+                    imagesAlt={selectedCard.id}
+                  />
+              )}
+            </div>
+            <div className="">
+              <h2 className="mb-4 hidden text-themeGray-100 tabletXL:block">
+                {selectedCard.title}
+              </h2>
+              <p className="mb-6 tablet:mb-8 text-2xl font-medium text-themeBrown-100">
+                {activeWeight &&
+                  `${(selectedCard.price * activeWeight).toFixed()} грн`}
+              </p>
+              <div className="mb-8 flex gap-x-4">
+                {selectedCard.weights.map((weight: number, index: number) => (
+                  <button
+                    key={index}
+                    className={`${
+                      activeWeight === weight
+                        ? "activeSizeButton text-sm"
+                        : "notActiveSizeButton text-sm"
+                    }`}
+                    onClick={() => handleSetProductWeight(weight)}
+                  >
+                    {`${weight / 1000} кг`}
+                  </button>
+                ))}
+              </div>
+              <div>
+                <p className="mb-8">{selectedCard.description}</p>
+              </div>
+              <div className="mb-8 flex items-center gap-6">
+                <p className="text-sm">Кількість</p>
+                <div className="flex justify-between gap-2 rounded-full border border-themeBrown-20 py-1 px-2 text-base font-normal text-themeGray-100">
+                  <button
+                    onClick={() => setProductCount((prev) => (prev -= 1))}
+                    disabled={productCount === 1}
+                    className={`${productCount < 2 && `fill-themeGray-20`}`}
+                  >
+                    <Remove />
+                  </button>
+                  <p className="text-themeGray-100">{productCount}</p>
+                  <button
+                    onClick={() => setProductCount((prev) => (prev += 1))}
+                  >
+                    <Add />
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-center tabletXL:justify-start tabletXL:mb-10">
+                <AddToCartButton
+                  handleAddProductToCart={handleAddProductToCart}
+                />
+              </div>
+
+              <p className="pb-4 text-xl font-medium text-themeGray-100">
+                Склад
               </p>
               <p className="pb-6">{selectedCard.ingredients}</p>
               <p className="pb-4 text-xl font-medium text-themeGray-100">

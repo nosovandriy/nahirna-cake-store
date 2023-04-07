@@ -5,10 +5,14 @@ import { MenuItems } from "@header/navigation/menuItems";
 import Link from "next/link";
 import { iconContacts } from "../../contacts/default-contacts";
 import FooterLogo from "./footer-logo/footer-logo";
+import { usePathname } from "next/navigation";
 
-const Header = () => {
+const Footer = () => {
+  const pathname = usePathname();
+  const isProductPage = pathname.split("/").filter((item) => item).length === 2;
+
   return (
-    <footer>
+    <footer className={`${isProductPage && "mb-[90px] laptop:mb-0"}`}>
       <hr className="mx-auto h-px w-full bg-themeBrown-20"></hr>
       <div className="flex flex-col py-[30px] laptop:flex-row laptop:justify-between">
         <div className="mb-12 self-center">
@@ -53,4 +57,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;

@@ -1,13 +1,14 @@
 import React from "react";
 import ContentLoader, { IContentLoaderProps } from "react-content-loader";
 
-const SkeletonGallery = (props: IContentLoaderProps) => (
+const SkeletonGallery = (props: any) => (
   <ContentLoader
     speed={2}
     viewBox="0 0 632 640"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
     style={{ width: '100%' }}
+    uniqueKey="skeleton"
 
     {...props}
   >

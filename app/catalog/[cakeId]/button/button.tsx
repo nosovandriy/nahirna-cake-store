@@ -24,25 +24,30 @@ const AddToCartButton: React.FC<Props> = ({ handleAddProductToCart }) => {
   }, [isAdded]);
 
   return (
-    <button
-      className={` cart-button mb-10 ${isAdded ? "clicked" : ""}`}
-      onClick={handleClick}
-      disabled={isAdded}
-    >
-      <span className="add-to-cart">Додати в кошик</span>
-      <span className="added ml-3 flex gap-3">
-        Додано
-        <div className=" fill-themeCaramel">
-          <CheckIcon />
-        </div>
-      </span>
-      <i className="fas fa-shopping-cart">
-        <FaShoppingCart />
-      </i>
-      <i className="fas fa-box">
-        <FaGift />
-      </i>
-    </button>
+    <>
+        <div className="fixed bottom-0 z-10 h-[98px] w-full bg-themeCaramel text-white tabletXL:hidden"></div>
+        <button
+          className={`cart-button fixed tabletXL:static bottom-5 z-20 text-white ${
+            isAdded ? "clicked" : ""
+          }`}
+          onClick={handleClick}
+          disabled={isAdded}
+        >
+          <span className="add-to-cart">Додати в кошик</span>
+          <span className="added ml-3 flex gap-3">
+            Додано
+            <div className="fill-themeCaramel">
+              <CheckIcon />
+            </div>
+          </span>
+          <i className="fas fa-shopping-cart">
+            <FaShoppingCart />
+          </i>
+          <i className="fas fa-box">
+            <FaGift />
+          </i>
+        </button>
+    </>
   );
 };
 

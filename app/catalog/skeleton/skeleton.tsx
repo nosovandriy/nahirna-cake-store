@@ -8,6 +8,7 @@ const SkeletonCard = (props: any) => (
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
     style={{ width: '100%' }}
+    uniqueKey="skeleton"
     {...props}
   >
     <rect x="0" y="0" rx="0" ry="0" width="408" height="300" />
