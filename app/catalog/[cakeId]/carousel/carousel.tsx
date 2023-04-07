@@ -38,6 +38,9 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
           width={632}
           height={465}
           className="w-full"
+          priority
+          sizes="(max-width: 890px) 100vw,
+          50vw"
         />
         <button
           className="galleryButton left-2 rotate-180"
@@ -63,6 +66,9 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
               alt={`${imagesAlt} cheesecake`}
               width={250}
               height={135}
+              priority
+              sizes="(max-width: 890px) 30vw,
+              15vw"
             />
           </div>
         ))}
