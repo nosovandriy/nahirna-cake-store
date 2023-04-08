@@ -6,7 +6,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob tablet:grid-cols-about-tab laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
+      className="scroll-mt-24 sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob tablet:grid-cols-about-tab laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
     >
       <div className="relative -mr-10 translate-y-[60%] grid-in-small-image tablet:mr-0 tablet:translate-y-2/4 tablet:pr-2.5 laptop:pr-0">
         <Image

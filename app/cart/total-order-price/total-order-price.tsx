@@ -9,13 +9,8 @@ import Link from "next/link";
 const TotalOrderPrice = () => {
   const { sendOrderData } = useTelegramSend();
   const dispatch = useAppDispatch();
-  const {
-    items,
-    totalPrice,
-    deliveryPrice,
-    clientName,
-    clientPhone,
-  } = useAppSelector((state) => state.cart);
+  const { items, totalPrice, deliveryPrice, clientName, clientPhone } =
+    useAppSelector((state) => state.cart);
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
@@ -28,10 +23,10 @@ const TotalOrderPrice = () => {
   const isAccessOrderButton = clientName.length >= 2 && clientPhone.length >= 9;
 
   return (
-    <div className="sticky top-6 col-span-4 col-start-9 h-fit rounded-2xl border border-solid border-themeBrown-50 p-6">
+    <div className="Tablet:border-solid sticky top-6 mt-10 h-fit border-themeBrown-50 tablet:mb-20 tablet:rounded-2xl tablet:border tablet:p-6 laptop:mt-0 laptop:ml-5 desktop:ml-14 desktopHD:ml-28">
       <h2 className="mb-8 text-themeGray-100">Загалом</h2>
       <div className="mb-6 flex justify-between">
-        <p className=" text-lg text-themeGray-40">{totalCount} шт. на сумму</p>
+        <p className=" text-lg text-themeGray-40">{totalCount} шт. на суму</p>
         <p className="text-2xl font-medium text-themeBrown-100">
           {`${totalPrice} грн`}
         </p>
@@ -52,7 +47,8 @@ const TotalOrderPrice = () => {
         <button
           type="submit"
           className={`primaryButton ${
-            !isAccessOrderButton && "bg-themeBrown-20 hover:bg-themeBrown-20 active:transform-none"
+            !isAccessOrderButton &&
+            "bg-themeBrown-20 px-5 hover:bg-themeBrown-20 active:transform-none"
           }`}
           onClick={handleOrderConfirm}
           disabled={!isAccessOrderButton}
@@ -60,7 +56,9 @@ const TotalOrderPrice = () => {
           Підтвердити замовлення
         </button>
         <Link href={"/catalog"}>
-          <button className="secondaryButton w-full">Продовжити покупку</button>
+          <button className="secondaryButton mb-20 w-full tablet:mb-0">
+            Продовжити покупку
+          </button>
         </Link>
       </div>
     </div>

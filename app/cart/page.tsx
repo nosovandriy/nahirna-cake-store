@@ -23,10 +23,10 @@ const Cart = () => {
     <>
       <BreadCrumbs />
       {items.length > 0 ? (
-        <div className="mt-10 grid grid-cols-12 gap-x-10">
-          <div className="col-span-7 col-start-1">
-            <div className="mb-10 flex items-center justify-between">
-              <h2 className="col-span-4 col-start-1">Корзина</h2>
+        <div className="flex flex-col laptop:grid laptop:grid-cols-[60%_40%]">
+          <div className="">
+            <div className="mb-4 tablet:mb-8 desktop:mb-10 flex items-center justify-between">
+              <h2 className="">Корзина</h2>
               <div className="relative fill-themeGray-30">
                 <div
                   className="peer cursor-pointer fill-themeGray-60 duration-500 hover:scale-110"
