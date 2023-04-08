@@ -54,9 +54,6 @@ const CartItem: React.FC<Props> = ({ item }) => {
               <Link href={`/catalog/${id}`} className="cursor-pointer">
                 <h3 className="mr-4 text-xl">{title}</h3>
               </Link>
-              {/* <button className="activeSizeButton mr-3 cursor-default py-1 px-4">
-                {`${weight / 1000} кг`}
-              </button> */}
             </div>
             <div
               className="cursor-pointer fill-themeGray-40 transition duration-500 hover:rotate-180"

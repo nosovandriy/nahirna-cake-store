@@ -53,8 +53,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        title: ["var(--font-sofia)"],
-        text: ["var(--font-inter)", "sans-serif"],
+        title: ["var(--font-sofia)", "sans-serif"],
+        text: ["var(--font-raleway)", "sans-serif"],
       },
       animation: {
         fadeIn: "fadeIn 1s",
