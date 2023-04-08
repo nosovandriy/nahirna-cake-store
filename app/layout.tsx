@@ -1,4 +1,4 @@
-import { Inter, Sofia_Sans } from "next/font/google";
+import { Raleway, Sofia_Sans } from "next/font/google";
 
 import "@style/globals.scss";
 import Header from "@header/header";
@@ -14,7 +14,7 @@ const sofia = Sofia_Sans({
   display: "swap",
 });
 
-const inter = Inter({
+const inter = Raleway({
   subsets: ["cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-inter",

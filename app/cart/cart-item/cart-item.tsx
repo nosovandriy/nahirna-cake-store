@@ -73,14 +73,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
               </button>
             </div>
           </div>
-          <div className="mb-4">
-            <div className="flex items-center justify-between">
-              <p className="text-lg">Вага</p>
-              <p className="text-xl font-medium text-themeBrown-100">
-                {`2 кг`}
-              </p>
-            </div>
-          </div>
+
           <div className="mb-4">
             <div className="flex items-center justify-between">
               <p className="text-lg">Ціна</p>
