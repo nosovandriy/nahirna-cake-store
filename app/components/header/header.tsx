@@ -21,9 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className="sticky laptop:static top-0 bg-themeCaramel z-[40] mb-6 tablet:mb-10 desktopHD:mb-14"
-    >
+    <header className="sticky top-0 z-[40] mb-6 bg-themeCaramel tablet:mb-10 laptop:static desktopHD:mb-14">
       <nav className="flex items-center justify-between py-3 laptop:py-[33px]">
         <div className="flex items-center">
           <div
@@ -37,9 +35,7 @@ const Header = () => {
           </div>
         </div>
 
-        <ul
-          className="hidden gap-8 laptop:flex desktopHD:gap-10"
-        >
+        <ul className="hidden gap-8 laptop:flex desktopHD:gap-10">
           <MenuItems
             className={
               "border-b border-transparent hover:border-themeBrown-100"
@@ -75,8 +71,9 @@ const Header = () => {
                   <Logo />
                 </div>
               </div>
-
-              <HeaderCartIcon />
+              <div onClick={handleShowMobileMenu}>
+                <HeaderCartIcon />
+              </div>
             </div>
             <hr className="mx-auto h-px w-full bg-themeBrown-20"></hr>
           </div>
