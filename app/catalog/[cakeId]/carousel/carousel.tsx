@@ -30,14 +30,17 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative mb-10">
+    <div>
+      <div className="mb-5 tablet:mb-8 laptop:mb-5 desktopHD:mb-10 relative">
         <Image
           src={images[currentImageIndex]}
           alt={`${imagesAlt} cheesecake`}
           width={632}
           height={465}
-          className="max-h-[465px] max-w-[632px] object-cover"
+          className="w-full"
+          priority
+          sizes="(max-width: 890px) 100vw,
+          50vw"
         />
         <button
           className="galleryButton left-2 rotate-180"
@@ -49,11 +52,11 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
           <ArrowGallery />
         </button>
       </div>
-      <div className="flex w-full gap-10">
+      <div className="flex w-full gap-5 tablet:gap-8 laptop:gap-5 desktopHD:gap-10">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`h-[135px] flex-shrink-0 cursor-pointer ${
+            className={`cursor-pointer ${
               index === currentImageIndex ? "opacity-60" : ""
             }`}
             onClick={() => handleImageClick(index)}
@@ -61,9 +64,11 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
             <Image
               src={image}
               alt={`${imagesAlt} cheesecake`}
-              width={184}
+              width={250}
               height={135}
-              className="max-h-[135px] max-w-[184px] object-cover"
+              priority
+              sizes="(max-width: 890px) 30vw,
+              15vw"
             />
           </div>
         ))}

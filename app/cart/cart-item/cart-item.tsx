@@ -35,27 +35,28 @@ const CartItem: React.FC<Props> = ({ item }) => {
 
   return (
     <>
-      <div className="mb-10 flex gap-6">
-        <Link href={`/catalog/${id}`} className="cursor-pointer">
+      <div className="mb-10 flex flex-col tablet:grid tablet:grid-cols-[35%_65%]">
+        <Link
+          href={`/catalog/${id}`}
+          className="mb-4 cursor-pointer tablet:mb-0"
+        >
           <Image
-            className="max-h-[135px] max-w-[184px] flex-shrink-0"
             src={imgURL}
             alt="cheesecake ternopil Nahirna"
-            width={184}
-            height={135}
-            style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+            width={600}
+            height={450}
           />
         </Link>
 
-        <div className="w-full">
+        <div className="w-full tablet:pl-6">
           <div className="mb-5 flex items-center justify-between">
             <div className="flex items-center">
               <Link href={`/catalog/${id}`} className="cursor-pointer">
-                <h3 className="mr-4 leading-6">{title}</h3>
+                <h3 className="mr-4 text-xl">{title}</h3>
               </Link>
-              <button className="activeSizeButton mr-3 cursor-default py-1 px-4">
+              {/* <button className="activeSizeButton mr-3 cursor-default py-1 px-4">
                 {`${weight / 1000} кг`}
-              </button>
+              </button> */}
             </div>
             <div
               className="cursor-pointer fill-themeGray-40 transition duration-500 hover:rotate-180"
@@ -66,8 +67,24 @@ const CartItem: React.FC<Props> = ({ item }) => {
           </div>
           <div className="mb-4">
             <div className="flex items-center justify-between">
+              <p className="text-lg">Вага</p>
+              <button className="activeSizeButton cursor-default">
+                {`${weight / 1000} кг`}
+              </button>
+            </div>
+          </div>
+          <div className="mb-4">
+            <div className="flex items-center justify-between">
+              <p className="text-lg">Вага</p>
+              <p className="text-xl font-medium text-themeBrown-100">
+                {`2 кг`}
+              </p>
+            </div>
+          </div>
+          <div className="mb-4">
+            <div className="flex items-center justify-between">
               <p className="text-lg">Ціна</p>
-              <p className="text-2xl font-medium text-themeBrown-100">
+              <p className="text-xl font-medium text-themeBrown-100">
                 {`${price} грн`}
               </p>
             </div>
@@ -79,7 +96,9 @@ const CartItem: React.FC<Props> = ({ item }) => {
                 <button
                   onClick={handleDecreaseItem}
                   disabled={count === 1}
-                  className={`${count === 1 && `fill-themeGray-20 cursor-default`}`}
+                  className={`${
+                    count === 1 && `cursor-default fill-themeGray-20`
+                  }`}
                 >
                   <Remove />
                 </button>
@@ -92,13 +111,13 @@ const CartItem: React.FC<Props> = ({ item }) => {
           </div>
           <div className="flex items-center justify-between">
             <p className="text-lg">Сума</p>
-            <p className="text-2xl font-medium text-themeBrown-100">
+            <p className="text-xl font-medium text-themeBrown-100">
               {`${price * count} грн`}
             </p>
           </div>
         </div>
       </div>
-      <hr className="mx-auto mb-10 h-px w-full bg-themeBrown-20"></hr>
+      <hr className="mx-auto mb-10 h-px w-full bg-themeBrown-20 tablet:mb-14"></hr>
     </>
   );
 };

@@ -41,7 +41,11 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "мигдаль, фініки, кориця, чорниця, крохмаль, цукор, кешю, кокосове молоко, кокосова олія, лимонний сік, лимонна цедра.",
       imageTitle: "/assets/catalog/2/1.webp",
-      images: ["/assets/catalog/2/1.webp", "/assets/catalog/2/2.webp"],
+      images: [
+        "/assets/catalog/2/1.webp",
+        "/assets/catalog/2/2.webp",
+        "/assets/catalog/2/3.webp",
+      ],
     },
     {
       id: "lavender",
@@ -54,7 +58,11 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, суміш горіхів, лаванда, смородина.",
       imageTitle: "/assets/catalog/3/1.webp",
-      images: ["/assets/catalog/3/1.webp", "/assets/catalog/3/2.webp", "/assets/catalog/3/3.webp"],
+      images: [
+        "/assets/catalog/3/1.webp",
+        "/assets/catalog/3/2.webp",
+        "/assets/catalog/3/3.webp",
+      ],
     },
     {
       id: "lime-coconut",
@@ -84,8 +92,11 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, чорниця, лимонний сік, молоко, цедра лимона.",
       imageTitle: "/assets/catalog/5/1.webp",
-      images: ["/assets/catalog/5/1.webp", "/assets/catalog/5/2.webp"],
-    },
+      images: [
+        "/assets/catalog/5/1.webp",
+        "/assets/catalog/5/2.webp",
+        "/assets/catalog/5/3.webp",
+      ],    },
     {
       id: "raspberries-parmesan",
       popularity: "13",

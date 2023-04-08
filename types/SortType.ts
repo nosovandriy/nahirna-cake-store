@@ -1,6 +1,6 @@
 export enum SortBy {
-  popularity = "популярністю",
-  title = "назвою",
-  priceAsc = "зростанням ціни",
-  priceDesc = "спаданням ціни"
+  popularity = "популярність",
+  title = "назва",
+  priceAsc = "зростання ціни",
+  priceDesc = "спадання ціни"
 }

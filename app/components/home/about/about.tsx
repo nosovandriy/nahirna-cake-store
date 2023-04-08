@@ -6,7 +6,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob tablet:grid-cols-about-tab laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
+      className="scroll-mt-24 sectionMarginBottom relative grid grid-cols-about-mob gap-y-6 grid-areas-about-mob tablet:grid-cols-about-tab laptop:grid-cols-about-desk laptop:grid-areas-about-desk"
     >
       <div className="relative -mr-10 translate-y-[60%] grid-in-small-image tablet:mr-0 tablet:translate-y-2/4 tablet:pr-2.5 laptop:pr-0">
         <Image
@@ -14,16 +14,20 @@ const AboutSection = () => {
           alt="cheesecake ternopil Nahirna"
           width={408}
           height={276}
-          priority
+          sizes="(max-width: 639px) 35vw,
+          (max-width: 1023px) 40vw,
+          25vw"
         />
       </div>
-      <div className="justify-self-center grid-in-image tablet:pl-2.5 laptop:px-5">
+      <div className="justify-self-center grid-in-image tablet:pl-6 laptop:px-5 desktopHD:laptop:px-10">
         <Image
           src="/assets/about-center.webp"
           alt="cheesecake ternopil Nahirna"
-          width={408}
-          height={606}
-          priority
+          width={600}
+          height={840}
+          sizes="(max-width: 639px) 65vw,
+          (max-width: 1023px) 60vw,
+          40vw"
         />
       </div>
       <div className="space-y-6 self-center grid-in-text">

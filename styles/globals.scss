@@ -12,11 +12,11 @@
   }
 
   footer, header {
-    @apply px-5 laptop:px-[40px] desktopHD:px-[68px];
+    @apply px-5 tablet:px-[40px] desktopHD:px-[68px];
   }
 
   main {
-    @apply flex flex-grow flex-col px-5 laptop:px-[40px] desktopHD:px-[68px];
+    @apply flex flex-grow flex-col px-5 tablet:px-[40px] desktopHD:px-[68px];
   }
 
   a {
@@ -69,10 +69,10 @@
   }
 
   .activeSizeButton {
-    @apply rounded-full border bg-themeBrown-50 py-2 px-6 text-base font-normal leading-6 text-themeCaramel duration-500 active:scale-95;
+    @apply rounded-full border bg-themeBrown-50 py-1.5 px-4 text-base font-normal text-themeCaramel duration-500 active:scale-95;
   }
   .notActiveSizeButton {
-    @apply rounded-full border border-themeBrown-20 py-2 px-6 text-base font-normal leading-6 text-themeGray-100 duration-500 hover:border-themeBrown-50 focus:text-themeCaramel active:scale-95 active:active:bg-themeBrown-50;
+    @apply rounded-full border border-themeBrown-20 py-1.5 px-4 text-base font-normal text-themeGray-100 duration-500 hover:border-themeBrown-50 focus:text-themeCaramel active:scale-95 active:active:bg-themeBrown-50;
   }
 
   .formInput {
@@ -87,7 +87,7 @@
   }
 
   .galleryButton {
-    @apply absolute top-1/2 -translate-y-1/2 transform rounded-full bg-themeCaramel bg-opacity-30 p-2 hover:bg-themeGray-10 hover:opacity-100;
+    @apply absolute top-1/2 -translate-y-1/2 transform rounded-full bg-themeCaramel bg-opacity-70 p-2 hover:bg-themeGray-10 hover:opacity-100;
   }
 
   .sectionMarginBottom {

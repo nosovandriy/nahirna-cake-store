@@ -24,16 +24,16 @@ export const MenuItems: React.FC<Props> = ({ className }) => {
   return (
     <>
       <li className={className} onClick={handleHideMobileMenu}>
-        <a href={"/#about"}>Про мене</a>
+        <a href={"/#about"} className="py-3">Про мене</a>
       </li>
       <li className={className} onClick={handleHideMobileMenu}>
-        <Link href={"/catalog"}>Каталог</Link>
+        <Link href={"/catalog"} className="py-3">Каталог</Link>
       </li>
       <li className={className} onClick={handleHideMobileMenu}>
-        <a href={"/#testimonials"}>Відгуки</a>
+        <a href={"/#testimonials"} className="py-3">Відгуки</a>
       </li>
       <li className={className} onClick={handleHideMobileMenu}>
-        <a href={"/#delivery"}>Доставка</a>
+        <a href={"/#delivery"} className="py-3">Доставка</a>
       </li>
       <li className={`${className}`} onClick={handleContactsOpen}>
         <p className="text-lg text-themeGray-100">Контакти</p>

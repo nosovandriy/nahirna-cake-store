@@ -14,19 +14,19 @@ const CarouselTestimonials = () => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
     pauseOnHover: true,
     arrows: false,
     responsive: [
       {
-        breakpoint: 3000,
+        breakpoint: 5000,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 1023,
+        breakpoint: 889,
         settings: {
           slidesToShow: 2,
         },

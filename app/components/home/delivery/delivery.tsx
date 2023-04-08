@@ -47,9 +47,8 @@ const Delivery = () => {
         <Image
           src="/assets/map.webp"
           alt="cheesecake-Nahirna map location"
-          width={856}
-          height={566}
-          priority
+          width={900}
+          height={600}
         />
       </div>
     </div>
