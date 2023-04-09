@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { Logo } from "@logo";
 import { MenuItems } from "./navigation/menuItems";
@@ -100,7 +101,12 @@ const Header = () => {
                   className="easy-in cursor-pointer duration-300 hover:scale-110"
                   title={iconContact.title}
                 >
-                  {iconContact.icon}
+                  <Image
+                    src={iconContact.icon}
+                    alt="messanger icon"
+                    width={32}
+                    height={32}
+                  />
                 </Link>
               ))}
             </div>

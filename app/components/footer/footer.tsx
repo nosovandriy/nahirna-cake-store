@@ -44,7 +44,7 @@ const Footer = () => {
                 >
                   <Image
                     src={iconContact.icon}
-                    alt="cheesecake"
+                    alt="messanger icon"
                     width={32}
                     height={32}
                   />
