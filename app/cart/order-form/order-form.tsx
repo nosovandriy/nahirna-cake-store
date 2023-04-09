@@ -43,7 +43,7 @@ const OrderForm = () => {
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
               <span className="text-xl font-medium text-white">1</span>
             </div>
-            <h3 className="">Дані замовника</h3>
+            <h3 className="text-2xl">Дані замовника</h3>
           </div>
           <div className="relative mb-10">
             <input
