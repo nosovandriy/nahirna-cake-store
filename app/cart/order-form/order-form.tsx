@@ -62,9 +62,9 @@ const OrderForm = () => {
           <div className="relative">
             <input
               id="phone"
-              type="tel"
+              type="number"
               name="phone"
-              className="formInput peer"
+              className="formInput peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               placeholder="+38(099)999-99-99"
               value={clientPhone}
               onChange={handleClientPhone}
