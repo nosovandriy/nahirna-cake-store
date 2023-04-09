@@ -52,7 +52,7 @@ const CarouselTestimonials = () => {
               height={300}
               className=" max-h-[300px] object-cover mx-auto"
             />
-            <div className="max-w-[408px] bg-white py-6 px-4 mx-auto">
+            <div className="max-w-[408px] bg-white py-6 px-4 mx-auto rounded-b-[10px]">
               <p className="mb-4">{testimonial.text}</p>
               <div className="flex gap-2">
                 <Image

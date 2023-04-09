@@ -31,7 +31,7 @@ const AboutSection = () => {
         />
       </div>
       <div className="space-y-6 self-center grid-in-text">
-        <h2>Я - Нагірна Вікторія, шеф кондитер</h2>
+        <h2 className=" desktopHD:max-w-[420px]">Я - Нагірна Вікторія, шеф кондитер</h2>
         <div className="space-y-3">
           <p>
             Запрошую вас відвідати мій сайт та вибрати свій улюблений чізкейк.

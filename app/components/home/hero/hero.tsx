@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import HeroCarousel from "./carousel/carousel";
+import GalleryHeroCarousel from "./carousel/carousel";
 
 const HeroSection = () => {
   return (
@@ -20,11 +20,11 @@ const HeroSection = () => {
             100vw"
           />
         </div>
-        <div className="self-center pl-2.5 grid-in-carousel tablet:translate-y-2/4">
-          <HeroCarousel />
+        <div className="translate-y-1/4 pl-2.5 grid-in-carousel tablet:translate-y-2/4 laptop:translate-y-56 desktop:laptop:translate-y-52 desktopHD:translate-y-60">
+          <GalleryHeroCarousel />
         </div>
         <div className="mx-auto max-w-[460px] space-y-5 grid-in-text tablet:max-w-[560px] tablet:space-y-6">
-          <h1 className="text-center text-[32px] tablet:text-[56px] laptop:mt-[26%] laptop:w-[180%] laptop:text-start laptop:text-[64px] desktop:text-[74px] desktopHD:text-[86px]">
+          <h1 className="text-center text-[32px] tablet:text-[56px] laptop:mt-[22%] laptop:w-[180%] laptop:text-start laptop:text-[64px] desktop:text-[74px] desktopHD:text-[86px]">
             Спробуй найсмачніші чізкейки в Тернополі
           </h1>
           <p className=" text-center laptop:max-w-[500px] laptop:text-start">
@@ -34,7 +34,7 @@ const HeroSection = () => {
           <div>
             <Link href={"/catalog"}>
               <button className="primaryButton w-full laptop:w-[300px]">
-                Перейти в каталог{" "}
+                Перейти в каталог
               </button>
             </Link>
           </div>
