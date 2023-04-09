@@ -65,7 +65,7 @@ const Header = () => {
           className={
             showMobileMenu
               ? "fixed left-0 top-0 flex h-full w-full flex-col bg-themeCaramel px-5 duration-500 ease-in"
-              : "fixed left-[-100%] top-0 duration-500 ease-in"
+              : "fixed left-[-100%] top-0 flex h-full flex-col duration-500 ease-in"
           }
         >
           <div className="mb-5">
