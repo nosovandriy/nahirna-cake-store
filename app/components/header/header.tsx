@@ -21,6 +21,8 @@ const Header = () => {
     dispatch(setShowMobileMenu(!showMobileMenu));
   };
 
+  showMobileMenu?document.body.style.overflow = "hidden":document.body.style.overflow = "auto";
+
   return (
     <header className="sticky top-0 z-[40] mb-6 bg-themeCaramel tablet:mb-10 laptop:static desktopHD:mb-14">
       <nav className="flex items-center justify-between py-3 laptop:py-[33px]">
