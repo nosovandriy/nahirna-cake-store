@@ -47,9 +47,6 @@ const Footer = () => {
                     alt="cheesecake"
                     width={32}
                     height={32}
-                    sizes="(max-width: 639px) 50vw,
-                  (max-width: 1023px) 33vw,
-                  40vw"
                   />
                 </Link>
               ))}
