@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import PopUpOverlay from "@pop-up-overlay/pop-up-overlay";
 import { iconContacts } from "../../contacts";
@@ -24,9 +25,9 @@ const PopUpContacts = () => {
       }
     >
       {isContactsOpen && (
-        <div className="relative flex h-[270px] tablet:w-[544px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8">
+        <div className="relative flex h-[270px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8 tablet:w-[544px]">
           <div
-            className="absolute top-7 right-7 cursor-pointer fill-themeGray-60 duration-500 hover:rotate-180"
+            className="absolute right-7 top-7 cursor-pointer fill-themeGray-60 duration-500 hover:rotate-180"
             onClick={handleIsContactsOpen}
           >
             <CloseIcon />
@@ -49,7 +50,12 @@ const PopUpContacts = () => {
                 className="easy-in cursor-pointer duration-300 hover:scale-110"
                 title={iconContact.title}
               >
-                {iconContact.icon}
+                <Image
+                  src={iconContact.icon}
+                  alt="messanger icon"
+                  width={32}
+                  height={32}
+                />
               </Link>
             ))}
           </div>
