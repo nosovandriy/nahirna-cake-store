@@ -40,7 +40,7 @@ export function useTestimonials(): {
       imageСlient: "/assets/testimonials/5/client.webp",
     },
     {
-      name: "Таня Холодюк",
+      name: "Таня Голодюк",
       data: "02.11.2022",
       text: "Що ж ти робиш, Віка? Це божественно. До речі лайм - мій улюблений смак.",
       imageCake: "/assets/testimonials/6/cake.webp",

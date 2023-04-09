@@ -1,11 +1,13 @@
 "use client";
 
-import { MenuItems } from "@header/navigation/menuItems";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+import { MenuItems } from "@header/navigation/menuItems";
 import { iconContacts } from "../../contacts/default-contacts";
 import FooterLogo from "./footer-logo/footer-logo";
-import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -40,7 +42,15 @@ const Footer = () => {
                   className="easy-in cursor-pointer duration-300 hover:scale-110"
                   title={iconContact.title}
                 >
-                  {iconContact.icon}
+                  <Image
+                    src={iconContact.icon}
+                    alt="cheesecake"
+                    width={32}
+                    height={32}
+                    sizes="(max-width: 639px) 50vw,
+                  (max-width: 1023px) 33vw,
+                  40vw"
+                  />
                 </Link>
               ))}
             </div>

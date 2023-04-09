@@ -10,8 +10,6 @@ const GalleryCarousel = () => {
     "/assets/hero-carousel/3.webp",
   ];
 
-  console.log(currentImage);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(
