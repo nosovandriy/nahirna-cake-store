@@ -64,15 +64,12 @@ const OrderForm = () => {
               id="phone"
               type="number"
               name="phone"
-              className="formInput peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              placeholder="+38(099)999-99-99"
+              className="formInput peer placeholder-transparent [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              placeholder="Мобільний номер"
               value={clientPhone}
               onChange={handleClientPhone}
             />
-            <label
-              htmlFor="phone"
-              className="formLabel cursor-text peer-placeholder-shown:text-opacity-0 peer-focus:text-themeBrown-100"
-            >
+            <label htmlFor="phone" className="formLabel cursor-text">
               Мобільний номер
             </label>
           </div>
@@ -167,7 +164,7 @@ const OrderForm = () => {
         </fieldset>
         {deliveryPrice > 0 && (
           <fieldset className="mb-10">
-          <div className="mb-10 flex items-center gap-4">
+            <div className="mb-10 flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
                 <span className="text-xl font-medium text-white">4</span>
               </div>

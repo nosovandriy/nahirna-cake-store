@@ -20,7 +20,7 @@ const TotalOrderPrice = () => {
     sendOrderData();
   };
 
-  const isAccessOrderButton = clientName.length >= 2 && clientPhone.length >= 9;
+  const isAccessOrderButton = clientName.length >= 2 && clientPhone.length >= 10;
 
   return (
     <div className="Tablet:border-solid sticky top-6 mt-10 h-fit border-themeBrown-50 tablet:mb-20 tablet:rounded-2xl tablet:border tablet:p-6 laptop:mt-0 laptop:ml-5 desktop:ml-14 desktopHD:ml-28">
