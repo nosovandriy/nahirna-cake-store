@@ -11,6 +11,7 @@ import { CloseIcon } from "@icons/close";
 import { iconContacts } from "../../contacts/default-contacts";
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import { setShowMobileMenu } from "@redux/slices/navigationSlice";
+import { useEffect } from "react";
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +22,13 @@ const Header = () => {
     dispatch(setShowMobileMenu(!showMobileMenu));
   };
 
-  showMobileMenu?document.body.style.overflow = "hidden":document.body.style.overflow = "auto";
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      showMobileMenu
+        ? (document.body.style.overflow = "hidden")
+        : (document.body.style.overflow = "auto");
+    }
+  }, [showMobileMenu]);
 
   return (
     <header className="sticky top-0 z-[40] mb-6 bg-themeCaramel tablet:mb-10 laptop:static desktopHD:mb-14">
