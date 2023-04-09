@@ -64,7 +64,8 @@ const OrderForm = () => {
               id="phone"
               type="number"
               name="phone"
-              className="formInput peer placeholder-transparent [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              // className="formInput peer placeholder-transparent [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="formInput peer placeholder-transparent [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none appearance-none"
               placeholder="Мобільний номер"
               value={clientPhone}
               onChange={handleClientPhone}
