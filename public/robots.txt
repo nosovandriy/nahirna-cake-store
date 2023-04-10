@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nahirna-cake.com.ua/
+
+# Sitemaps
+Sitemap: https://nahirna-cake.com.ua/sitemap.xml
