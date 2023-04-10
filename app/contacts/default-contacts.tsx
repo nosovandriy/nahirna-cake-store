@@ -24,6 +24,6 @@ export const iconContacts = [
   {
     title: "FB Messenger",
     link: defaultContacts.facebookMessenger,
-    icon: "/assets/icons/social/fbMessanger.png",
+    icon: "/assets/icons/social/fbMessenger.png",
   },
 ];

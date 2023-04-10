@@ -1,19 +1,25 @@
-import { setShowMobileMenu } from "@redux/slices/navigationSlice";
-import { useAppDispatch } from "@type/ReduxHooks";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export const Logo = () => {
+import { setShowMobileMenu } from "@redux/slices/showUpSlice";
+import { useAppDispatch } from "@type/ReduxHooks";
+
+type Props = {
+  className: string;
+};
+
+export const Logo: React.FC<Props> = ({ className }) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
   const handleLogoClick = () => {
     dispatch(setShowMobileMenu(false));
     router.push("/");
+    window.scrollTo(0, 0);
   };
 
   return (
-    <div className="relative h-[32px] w-[105px] tablet:h-[36px] tablet:w-[120px] laptop:h-[43px] laptop:w-[135px] desktopHD:w-[143px]">
+    <div className={className}>
       <Image
         src="/assets/logo.svg"
         alt="Nahirna-cake logo"

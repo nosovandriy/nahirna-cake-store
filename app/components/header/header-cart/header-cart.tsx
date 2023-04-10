@@ -1,11 +1,12 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+
 import { ShoppingCart } from "@icons/shopping-cart";
 import { setLocalStorageData } from "@redux/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import getDataFromLocalStorage from "@utils/getDataFromLocalStorage";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
 
 const HeaderCartIcon = () => {
   const dispatch = useAppDispatch();

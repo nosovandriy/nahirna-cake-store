@@ -1,6 +1,5 @@
-"use client";
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
 import { CartType } from "@type/OrderCartType";
 import { DataFromLocalStorage, ProductCart, SelectedProduct, SelectedProductID } from "@type/ProductCart";
 import getTotalPrice from "@utils/calcTotalPrice";

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useEffect, useState } from "react";
 
@@ -10,12 +10,11 @@ import { useAppDispatch } from "@type/ReduxHooks";
 import { Add, Remove } from "@icons/add-remove";
 import { addItem } from "@redux/slices/cartSlice";
 import { ProductCart } from "@type/ProductCart";
-import NotFoundPage from "../../404";
+import NotFoundPage from "../../not-found";
 import MayLikeProducts from "@may-like/may-like";
 import AddToCartButton from "./button/button";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
-  const [addToCart, setAddToCart] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [productCount, setProductCount] = useState(1);
   const dispatch = useAppDispatch();
@@ -29,13 +28,6 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
       setIsLoading(false);
     }, 500);
   }, []);
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setAddToCart(false);
-    }, 3000);
-    return () => clearTimeout(timeoutId);
-  }, [addToCart]);
 
   const handleAddProductToCart = () => {
     if (selectedCard && activeWeight) {
@@ -51,7 +43,6 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
       dispatch(addItem(item));
     }
 
-    setAddToCart(true);
     setProductCount(1);
   };
 
@@ -107,7 +98,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                 </div>
                 <div className="mb-8 flex items-center gap-6">
                   <p className="text-sm">Кількість</p>
-                  <div className="flex justify-between gap-2 rounded-full border border-themeBrown-20 py-1 px-2 text-base font-normal text-themeGray-100">
+                  <div className="flex justify-between gap-2 rounded-full border border-themeBrown-20 px-2 py-1 text-base font-normal text-themeGray-100">
                     <button
                       onClick={() => setProductCount((prev) => (prev -= 1))}
                       disabled={productCount === 1}
@@ -142,11 +133,11 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                   УМОВИ ЗБЕРІГАННЯ: при температурі від +2 до +6˚С
                 </p>
                 <p className="pb-4 text-xl font-medium text-themeGray-100">
-                  Строк виконання замовлення
+                  Термін виконання замовлення
                 </p>
                 <p className="pb-6">
-                  Замовлення виконується мінімум 2 дні. Після замовлення з вами
-                  зв’яжеться менеджер для уточнення дати.
+                  Замовлення виконується 1-3 дні. Після оформлення замовлення з
+                  вами зв&apos;яжеться менеджер для уточнення дати.
                 </p>
               </div>
             </div>

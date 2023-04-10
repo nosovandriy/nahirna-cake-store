@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -18,6 +18,7 @@ const NotFoundPage = () => {
             alt="cheesecake"
             width={175}
             height={175}
+            priority
             className=" animate-spinSlow"
           />
         </div>

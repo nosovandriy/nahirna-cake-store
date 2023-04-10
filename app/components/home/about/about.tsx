@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 const AboutSection = () => {
@@ -25,6 +23,7 @@ const AboutSection = () => {
           alt="cheesecake ternopil Nahirna"
           width={600}
           height={840}
+          priority
           sizes="(max-width: 639px) 65vw,
           (max-width: 1023px) 60vw,
           40vw"

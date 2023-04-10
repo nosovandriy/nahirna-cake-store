@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { SortBy } from "@type/SortType";
 
 export interface SortState {

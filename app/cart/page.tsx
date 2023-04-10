@@ -1,15 +1,14 @@
-"use client";
-
-import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+"use client"
 
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
-import PopUpOrderDone from "@pop-up-order-done/pop-up-order-done";
 import CartItem from "./cart-item/cart-item";
 import OrderForm from "./order-form/order-form";
-import TotalOrderPrice from "./total-order-price/total-order-price";
 import EmptyCart from "./empty-cart/empty-cart";
+import PopUpOrderDone from "@pop-up-order-done/pop-up-order-done";
+import TotalOrderPrice from "./total-order-price/total-order-price";
 import { DeleteIcon } from "@icons/delete";
-import { clearAllData } from "../redux/slices/cartSlice";
+import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
+import { clearAllData } from "@redux/slices/cartSlice";
 
 const Cart = () => {
   const { items } = useAppSelector((state) => state.cart);

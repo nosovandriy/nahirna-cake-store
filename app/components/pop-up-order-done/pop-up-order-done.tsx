@@ -1,18 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 import PopUpOverlay from "@pop-up-overlay/pop-up-overlay";
-import { iconContacts } from "../../contacts";
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
-import { setIsOrderConfirm as setIsOrderConfirmAction } from "../../redux/slices/popUpSlice";
+import { setIsOrderConfirm as setIsOrderConfirmAction } from "@redux/slices/showUpSlice";
 import { clearAllData } from "@redux/slices/cartSlice";
+import SocialNetworkIcons from "@social-network-icons/social-network-icons";
 
 const PopUpOrderDone = () => {
   const dispatch = useAppDispatch();
-  const isOrderConfirm = useAppSelector((state) => state.popUp.isOrderConfirm);
+  const isOrderConfirm = useAppSelector((state) => state.showUp.isOrderConfirm);
 
   const router = useRouter();
 
@@ -31,30 +29,16 @@ const PopUpOrderDone = () => {
       }
     >
       {isOrderConfirm && (
-        <div className="flex h-[331px] w-[544px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-8">
-          <h2>Дякуємо за замовленя</h2>
-          <p className=" text-lg">З вами зв’яжуться у найближчий час</p>
+        <div className="flex h-[331px] flex-col items-center justify-center gap-8 rounded-[20px] bg-themeCaramel p-6 tablet:w-[544px]">
+          <h2>Дякуємо за замовлення</h2>
+          <p className="text-base tablet:text-lg">
+            З вами зв&apos;яжуться у найближчий час
+          </p>
           <button className="primaryButton px-8" onClick={handleConfirmOrder}>
             Повернутись на головну
           </button>
           <div className="flex gap-5">
-            {iconContacts.map((iconContact, index) => (
-              <Link
-                key={index}
-                href={iconContact.link}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="easy-in cursor-pointer duration-300 hover:scale-110"
-                title={iconContact.title}
-              >
-                <Image
-                  src={iconContact.icon}
-                  alt="messanger icon"
-                  width={32}
-                  height={32}
-                />
-              </Link>
-            ))}
+            <SocialNetworkIcons />
           </div>
         </div>
       )}

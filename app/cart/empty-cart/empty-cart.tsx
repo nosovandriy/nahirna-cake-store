@@ -1,7 +1,6 @@
-"use client";
+import Link from "next/link";
 
 import MayLikeProducts from "@may-like/may-like";
-import Link from "next/link";
 
 const EmptyCart = () => {
   return (

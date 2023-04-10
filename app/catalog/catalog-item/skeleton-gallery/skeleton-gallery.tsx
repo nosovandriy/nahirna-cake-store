@@ -1,5 +1,5 @@
 import React from "react";
-import ContentLoader, { IContentLoaderProps } from "react-content-loader";
+import ContentLoader from "react-content-loader";
 
 const SkeletonGallery = (props: any) => (
   <ContentLoader

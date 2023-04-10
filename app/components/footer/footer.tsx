@@ -1,13 +1,10 @@
 "use client";
 
-
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 import { MenuItems } from "@header/navigation/menuItems";
-import { iconContacts } from "../../contacts/default-contacts";
-import FooterLogo from "./footer-logo/footer-logo";
+import SocialNetworkIcons from "@social-network-icons/social-network-icons";
+import { Logo } from "@logo/logo";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -18,7 +15,7 @@ const Footer = () => {
       <hr className="mx-auto h-px w-full bg-themeBrown-20"></hr>
       <div className="flex flex-col py-[30px] laptop:flex-row laptop:justify-between">
         <div className="mb-12 self-center">
-          <FooterLogo />
+          <Logo className={"relative h-[55px] w-[184px]"} />
         </div>
         <div className="tablet:flex tablet:justify-between">
           <ul className="mb-12 grid h-[135px] grid-cols-2 gap-y-3 tablet:mb-0 tablet:gap-x-12 laptop:gap-x-16 desktop:gap-x-32">
@@ -33,23 +30,7 @@ const Footer = () => {
               Соціальні мережі
             </p>
             <div className="mb-6 flex gap-5">
-              {iconContacts.map((iconContact, index) => (
-                <Link
-                  key={index}
-                  href={iconContact.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="easy-in cursor-pointer duration-300 hover:scale-110"
-                  title={iconContact.title}
-                >
-                  <Image
-                    src={iconContact.icon}
-                    alt="messanger icon"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              ))}
+              <SocialNetworkIcons />
             </div>
 
             <div className="flex gap-1 self-center text-center text-sm">

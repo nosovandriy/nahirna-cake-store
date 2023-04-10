@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { Add, Remove } from "@icons/add-remove";
 import { CloseIcon } from "@icons/close";
@@ -10,8 +11,7 @@ import {
   addItemInTheCart,
   decreaseItem,
   removeItem,
-} from "../../redux/slices/cartSlice";
-import Link from "next/link";
+} from "@redux/slices/cartSlice";
 
 type Props = {
   item: ProductCart;
@@ -82,7 +82,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
           <div className="mb-4">
             <div className="flex items-center justify-between">
               <p className="text-lg">Кількість</p>
-              <div className="flex justify-between gap-2 rounded-full border border-themeBrown-20 py-1 px-2 text-base font-normal text-themeGray-100">
+              <div className="flex justify-between gap-2 rounded-full border border-themeBrown-20 px-2 py-1 text-base font-normal text-themeGray-100">
                 <button
                   onClick={handleDecreaseItem}
                   disabled={count === 1}

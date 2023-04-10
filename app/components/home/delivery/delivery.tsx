@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 import { CheckIcon } from "@icons/check";
@@ -38,7 +36,7 @@ const Delivery = () => {
             </div>
             <div className="flex gap-2">
               <CheckIcon />
-              <p className="mb-4">Кур’єром по Тернополю</p>
+              <p className="mb-4">Кур&apos;єром по Тернополю</p>
             </div>
           </div>
         </div>

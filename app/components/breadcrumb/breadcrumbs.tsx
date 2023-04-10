@@ -1,10 +1,11 @@
 "use client";
 
+import { useRouter, usePathname } from "next/navigation";
 import { Breadcrumbs as MuiBreadcrumbs } from "@mui/material";
+
 import { Home } from "@icons/home";
 import { ArrowRightSmall } from "@icons/arrow-right-small";
 
-import { useRouter, usePathname } from "next/navigation";
 
 type Props = {
   cakeTitle?: string;

@@ -1,5 +1,3 @@
-"use client";
-
 import CatalogItem from "./catalog-item/catalog-item";
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
 

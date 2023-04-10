@@ -1,10 +1,9 @@
-"use client";
+import Link from "next/link";
 
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
-import { setIsOrderConfirm } from "../../redux/slices/popUpSlice";
-import { clearAllData } from "@redux/slices/cartSlice";
 import useTelegramSend from "./hook/useTelegramSend";
-import Link from "next/link";
+import { setIsOrderConfirm } from "@redux/slices/showUpSlice";
+import { clearAllData } from "@redux/slices/cartSlice";
 
 const TotalOrderPrice = () => {
   const { sendOrderData } = useTelegramSend();
@@ -20,10 +19,11 @@ const TotalOrderPrice = () => {
     sendOrderData();
   };
 
-  const isAccessOrderButton = clientName.length >= 2 && clientPhone.length >= 10;
+  const isAccessOrderButton =
+    clientName.length >= 2 && clientPhone.length >= 10;
 
   return (
-    <div className="Tablet:border-solid sticky top-6 mt-10 h-fit border-themeBrown-50 tablet:mb-20 tablet:rounded-2xl tablet:border tablet:p-6 laptop:mt-0 laptop:ml-5 desktop:ml-14 desktopHD:ml-28">
+    <div className="Tablet:border-solid sticky top-6 mt-10 h-fit border-themeBrown-50 tablet:mb-20 tablet:rounded-2xl tablet:border tablet:p-6 laptop:ml-5 laptop:mt-0 desktop:ml-14 desktopHD:ml-28">
       <h2 className="mb-8 text-themeGray-100">Загалом</h2>
       <div className="mb-6 flex justify-between">
         <p className=" text-lg text-themeGray-40">{totalCount} шт. на суму</p>

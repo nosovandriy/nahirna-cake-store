@@ -1,23 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
+import { useEffect } from "react";
 
-import { Logo } from "@logo";
 import { MenuItems } from "./navigation/menuItems";
 import { MobileMenu } from "@icons/mobile-menu";
 import HeaderCartIcon from "./header-cart/header-cart";
 import { CloseIcon } from "@icons/close";
-import { iconContacts } from "../../contacts/default-contacts";
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
-import { setShowMobileMenu } from "@redux/slices/navigationSlice";
-import { useEffect } from "react";
+import { setShowMobileMenu } from "@redux/slices/showUpSlice";
+import SocialNetworkIcons from "@social-network-icons/social-network-icons";
+import { Logo } from "@logo/logo";
 
 const Header = () => {
   const dispatch = useAppDispatch();
-  const showMobileMenu = useAppSelector(
-    (state) => state.navigation.showMobileMenu
-  );
+  const showMobileMenu = useAppSelector((state) => state.showUp.showMobileMenu);
   const handleShowMobileMenu = () => {
     dispatch(setShowMobileMenu(!showMobileMenu));
   };
@@ -41,7 +37,11 @@ const Header = () => {
             <MobileMenu />
           </div>
           <div>
-            <Logo />
+            <Logo
+              className={
+                "relative h-[32px] w-[105px] tablet:h-[36px] tablet:w-[120px] laptop:h-[43px] laptop:w-[135px] desktopHD:w-[143px]"
+              }
+            />
           </div>
         </div>
 
@@ -78,7 +78,11 @@ const Header = () => {
                   <CloseIcon />
                 </div>
                 <div className=" ">
-                  <Logo />
+                  <Logo
+                    className={
+                      "relative h-[32px] w-[105px] tablet:h-[36px] tablet:w-[120px] laptop:h-[43px] laptop:w-[135px] desktopHD:w-[143px]"
+                    }
+                  />
                 </div>
               </div>
               <div onClick={handleShowMobileMenu}>
@@ -101,23 +105,7 @@ const Header = () => {
           <div className="flex flex-col items-center justify-center gap-4">
             <p>Зв&apos;яжіться з нами</p>
             <div className="flex gap-5 pb-10">
-              {iconContacts.map((iconContact, index) => (
-                <Link
-                  key={index}
-                  href={iconContact.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="easy-in cursor-pointer duration-300 hover:scale-110"
-                  title={iconContact.title}
-                >
-                  <Image
-                    src={iconContact.icon}
-                    alt="messanger icon"
-                    width={32}
-                    height={32}
-                  />
-                </Link>
-              ))}
+              <SocialNetworkIcons />
             </div>
           </div>
         </nav>

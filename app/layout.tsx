@@ -1,11 +1,11 @@
-import {  Sofia_Sans, Raleway } from "next/font/google";
+import { Sofia_Sans, Raleway } from "next/font/google";
+import Script from "next/script";
 
 import "@style/globals.scss";
 import Header from "@header/header";
 import Footer from "@footer/footer";
 import PopUpContacts from "@pop-up-contacts/pop-up-contacts";
 import ReduxProvider from "./redux/redux-provider";
-import Script from "next/script";
 
 const sofiaFont = Sofia_Sans({
   subsets: ["cyrillic"],

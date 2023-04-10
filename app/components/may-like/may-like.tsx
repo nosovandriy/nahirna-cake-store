@@ -1,5 +1,6 @@
-import { useCatalog } from "@cataloghooks/useCatalog";
 import React, { useEffect, useState } from "react";
+
+import { useCatalog } from "@catalog/hooks/useCatalog";
 import { Catalog } from "@type/Catalog";
 import ProductCardPreview from "@product-card-preview/product-card-preview";
 

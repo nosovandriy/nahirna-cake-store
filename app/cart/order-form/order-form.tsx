@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import {
@@ -7,7 +7,7 @@ import {
   setPayMethod,
   setDeliveryPrice,
   setClientAddress,
-} from "../../redux/slices/cartSlice";
+} from "@redux/slices/cartSlice";
 
 const OrderForm = () => {
   const dispatch = useAppDispatch();
@@ -51,12 +51,12 @@ const OrderForm = () => {
               type="text"
               name="name"
               className="formInput peer placeholder-transparent"
-              placeholder="Ім’я та прізвище"
+              placeholder="Ім&apos;я та прізвище"
               value={clientName}
               onChange={handleClientName}
             />
             <label htmlFor="name" className="formLabel cursor-text">
-              Ім’я та прізвище
+              Ім&apos;я та прізвище
             </label>
           </div>
           <div className="relative">

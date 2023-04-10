@@ -1,4 +1,3 @@
-import Image from "next/image";
 import CarouselTestimonials from "./carousel-testimonials/carousel-testimonials";
 
 const Testimonials = () => {

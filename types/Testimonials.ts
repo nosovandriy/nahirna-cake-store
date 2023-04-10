@@ -3,5 +3,5 @@ export interface Testimonials {
   data: string;
   text: string;
   imageCake: string;
-  imageСlient: string;
+  imageClient: string;
 }

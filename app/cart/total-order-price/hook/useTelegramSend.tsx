@@ -1,7 +1,6 @@
-"use client";
+import axios from "axios";
 
 import { useAppSelector } from "@type/ReduxHooks";
-import axios from "axios";
 
 const useTelegramSend = () => {
   const {

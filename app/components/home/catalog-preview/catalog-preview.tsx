@@ -1,7 +1,4 @@
-"use client";
-
 import CatalogItem from "@catalog/catalog-item/catalog-item";
-
 
 const CatalogPreview = () => {
   const isFullCatalog = false;
