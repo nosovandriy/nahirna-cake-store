@@ -18,8 +18,8 @@ const SocialNetworkIcons = () => {
           <Image
             src={iconContact.icon}
             alt="messenger icon"
-            width={32}
-            height={32}
+            width={35}
+            height={35}
           />
         </Link>
       ))}
