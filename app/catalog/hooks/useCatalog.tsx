@@ -244,10 +244,10 @@ export function useCatalog(isFullCatalog: boolean = true): {
         return a.title.localeCompare(b.title);
 
       case SortBy.priceAsc:
-        return a.price * a.weights[0] - b.price * b.weights[0];
+        return a.price - b.price;
 
       case SortBy.priceDesc:
-        return b.price * b.weights[0] - a.price * a.weights[0];
+        return b.price - a.price;
 
       default:
         return 0;
