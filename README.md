@@ -1,38 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Start development
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Documentation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Project stack
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Next.js: A popular framework for building server-rendered React applications.
+- Tailwind CSS: A highly customizable CSS framework for building modern UI components.
+- Redux Toolkit: A powerful toolset for managing state in Redux, including simplified configuration and automatic handling of common tasks.
+- Axios: A promise-based HTTP client for making API requests.
+- Google Analytics: Integrated with Google Analytics for tracking user analytics and insights.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Git branching
 
-## Learn More
+The simple convention for branch naming in *kebab-case* with component/feature/bugfix prefix.
 
-To learn more about Next.js, take a look at the following resources:
+```
+  > component/some-huge-features
+  > feature/some-feature-name
+  > bugfix/bug-name
+  > hotfix/description
+              
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Style Guidelines
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+  > components
+    > footer
+    > pages
+      > home
+        
+  > pages
+    index.tsx [all pages of the project]
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Folder           | Purpose                                                                                           |
+| -----------------| --------------------------------------------------------------------------------------------------|
+| /components       | Shared components that can be used across the whole application                                  |
+| /components/pages | Shared components that can be used in scope of one page                                          |
+| /consts     | Reusable constants                                                                                     |
+| /pages      | Main pages in the project (for now we have only one page as it is landing)                             |
+
+---
+
+## Components
+
+### 1. Barrel file
+
+We are using barrel rule for all the components. Each folder contain index.ts file which exports one or more components.
+```
+index.ts
+
+export * from './component-name.tsx';
+```
+You can read more about barrel files [here](https://medium.com/suyeonme/barrel-adding-barrel-into-typescript-7141a6ac9003).
+
+### 2. Structure
+
+Component consist with *tsx* and *scss* (if needed) files. If your component is large, you can decompose some of the parts with nested folders.
+
+```
+Structure of the component:
+
+  > hero-section.tsx
+  > hero-section.module.scss
+  > index.ts
+
+  > hero-header
+    > hero-header.tsx
+    > index.ts
+```
