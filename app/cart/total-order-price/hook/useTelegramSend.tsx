@@ -28,7 +28,7 @@ const useTelegramSend = () => {
         payMethod === "card-pay" ? "Оплата картою" : "Оплата готівкою"
       }\n`;
       newOrder += `<b>Доставка:</b> ${
-        deliveryPrice === 100 ? "Так" : "Самовивіз"
+        deliveryPrice === 100 ? "Так(+100грн)" : "Самовивіз"
       }\n`;
       {
         deliveryAddress &&
