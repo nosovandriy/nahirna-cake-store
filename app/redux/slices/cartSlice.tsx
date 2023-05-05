@@ -12,6 +12,7 @@ const initialState: CartType = {
   payMethod: "card-pay",
   deliveryPrice: 0,
   deliveryAddress: "",
+  wishesInfo: "",
 };
 
 const cartSlice = createSlice({
@@ -101,6 +102,10 @@ const cartSlice = createSlice({
       state.deliveryAddress = action.payload;
     },
 
+    setWishesInfo(state, action: PayloadAction<string>) {
+      state.wishesInfo = action.payload;
+    },
+
     clearAllData(state) {
       state.items = [];
       state.totalPrice = 0;
@@ -109,6 +114,7 @@ const cartSlice = createSlice({
       state.payMethod = "card-pay";
       state.deliveryPrice = 0;
       state.deliveryAddress = "";
+      state.wishesInfo = "";
     },
   },
 });
@@ -123,6 +129,7 @@ export const {
   setClientPhone,
   setPayMethod,
   setClientAddress,
+  setWishesInfo,
   clearAllData,
   setLocalStorageData,
 } = cartSlice.actions;

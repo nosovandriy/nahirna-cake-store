@@ -8,4 +8,5 @@ export interface CartType {
   payMethod: string;
   deliveryPrice: number;
   deliveryAddress: string;
+  wishesInfo: string;
 }

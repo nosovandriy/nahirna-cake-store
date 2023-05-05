@@ -7,11 +7,12 @@ import {
   setPayMethod,
   setDeliveryPrice,
   setClientAddress,
+  setWishesInfo,
 } from "@redux/slices/cartSlice";
 
 const OrderForm = () => {
   const dispatch = useAppDispatch();
-  const { clientName, clientPhone, payMethod, deliveryPrice, deliveryAddress } =
+  const { clientName, clientPhone, payMethod, deliveryPrice, deliveryAddress, wishesInfo } =
     useAppSelector((state) => state.cart);
 
   const handleClientName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +35,10 @@ const OrderForm = () => {
     dispatch(setClientAddress(event.target.value));
   };
 
+  const handleWishesInfo = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    dispatch(setWishesInfo(event.target.value));
+  };
+
   return (
     <>
       <h2 className="mb-4 tablet:mb-10">Оформлення замовлення</h2>
@@ -51,7 +56,7 @@ const OrderForm = () => {
               type="text"
               name="name"
               className="formInput peer placeholder-transparent"
-              placeholder="Ім&apos;я та прізвище"
+              placeholder="Ім'я та прізвище"
               value={clientName}
               onChange={handleClientName}
             />
@@ -62,9 +67,9 @@ const OrderForm = () => {
           <div className="relative">
             <input
               id="phone"
-              type="number"
+              type="tel"
               name="phone"
-              className="formInput peer placeholder-transparent [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none appearance-none"
+              className="formInput peer appearance-none placeholder-transparent [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               placeholder="Мобільний номер"
               value={clientPhone}
               onChange={handleClientPhone}
@@ -188,6 +193,28 @@ const OrderForm = () => {
             </div>
           </fieldset>
         )}
+        <fieldset className="mb-10">
+          <div className="mb-10 flex items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
+              <span className="text-xl font-medium text-white">4</span>
+            </div>
+            <h3 className="text-2xl">Додаткові побажання</h3>
+          </div>
+          <div className="relative mb-10">
+            <textarea
+              id="wishes"
+              name="wishes"
+              className="formInput peer placeholder-transparent"
+              placeholder="Дата отримання замовлення та інше..."
+              value={wishesInfo}
+              onChange={handleWishesInfo}
+              style={{ height: '150px' }}
+            />
+            <label htmlFor="wishes" className="formLabel cursor-text">
+              Дата отримання замовлення та інше...
+            </label>
+          </div>
+        </fieldset>
       </form>
     </>
   );

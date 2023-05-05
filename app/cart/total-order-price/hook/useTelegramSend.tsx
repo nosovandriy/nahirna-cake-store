@@ -11,6 +11,7 @@ const useTelegramSend = () => {
     clientPhone,
     payMethod,
     deliveryAddress,
+    wishesInfo,
   } = useAppSelector((state) => state.cart);
 
   async function sendOrderData() {
@@ -31,8 +32,9 @@ const useTelegramSend = () => {
       }\n`;
       {
         deliveryAddress &&
-          (newOrder += `<b>Адреса доставки:</b> ${deliveryAddress}\n`);
+        (newOrder += `<b>Адреса доставки:</b> ${deliveryAddress}\n`);
       }
+      newOrder += `<b>Додаткові побажання:</b> ${wishesInfo}\n`;
       newOrder += items.map((item) => {
         let cakeData = "";
         cakeData += `\n<b>Чізкейк:</b> ${item.title}\n`;
