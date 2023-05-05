@@ -1,5 +1,3 @@
-// "use client";
-
 import { useAppDispatch, useAppSelector } from "@type/ReduxHooks";
 import {
   setClientName,
@@ -196,7 +194,7 @@ const OrderForm = () => {
         <fieldset className="mb-10">
           <div className="mb-10 flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-themeBrown-50">
-              <span className="text-xl font-medium text-white">4</span>
+              <span className="text-xl font-medium text-white">{deliveryPrice ? "5" : "4"}</span>
             </div>
             <h3 className="text-2xl">Додаткові побажання</h3>
           </div>
