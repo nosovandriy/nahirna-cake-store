@@ -5,7 +5,7 @@ import Hint from "@home/delivery/hint/hint";
 
 const Delivery = () => {
   return (
-    <div
+    <section
       id="delivery"
       className="sectionMarginBottom flex scroll-mt-24 flex-col laptop:items-center justify-between gap-10 tablet:gap-0 laptop:gap-5 desktopHD:gap-x-10 laptop:flex-row"
     >
@@ -49,7 +49,7 @@ const Delivery = () => {
           height={600}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

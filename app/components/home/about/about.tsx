@@ -9,7 +9,7 @@ const AboutSection = () => {
       <div className="relative -mr-10 translate-y-[60%] grid-in-small-image tablet:mr-0 tablet:translate-y-2/4 tablet:pr-2.5 laptop:pr-0">
         <Image
           src="/assets/about-left.webp"
-          alt="cheesecake ternopil Nahirna"
+          alt="Чізкейк на замовлення"
           width={408}
           height={276}
           sizes="(max-width: 639px) 35vw,
@@ -20,7 +20,7 @@ const AboutSection = () => {
       <div className="justify-self-center grid-in-image tablet:pl-6 laptop:px-5 desktopHD:laptop:px-10">
         <Image
           src="/assets/about-center.webp"
-          alt="cheesecake ternopil Nahirna"
+          alt="Шеф кондитер, виготовлення чізкейків"
           width={600}
           height={840}
           priority

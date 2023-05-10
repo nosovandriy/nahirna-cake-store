@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className="pr-2.5 grid-in-image tablet:pr-6 laptop:pr-2.5 desktopHD:pr-8">
           <Image
             src="/assets/hero-main.webp"
-            alt="cheesecake ternopil Nahirna"
+            alt="Чізкейк в Тернополі"
             priority
             width={600}
             height={840}

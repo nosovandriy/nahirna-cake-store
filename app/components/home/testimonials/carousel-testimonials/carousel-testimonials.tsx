@@ -48,7 +48,7 @@ const CarouselTestimonials = () => {
           <div key={index}>
             <Image
               src={testimonial.imageCake}
-              alt="cheesecake image"
+              alt="Чізкейк на замовлення, відгук клієнта"
               width={408}
               height={300}
               className=" max-h-[300px] object-cover mx-auto"
@@ -60,7 +60,7 @@ const CarouselTestimonials = () => {
               <div className="flex gap-2">
                 <Image
                   src={testimonial.imageClient}
-                  alt="client image"
+                  alt="Чізкейк на замовлення, відгук клієнта"
                   width={50}
                   height={50}
                   loading="eager"

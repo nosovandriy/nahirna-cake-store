@@ -42,7 +42,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
         >
           <Image
             src={imgURL}
-            alt="cheesecake ternopil Nahirna"
+            alt={`Чізкейк ${title}`}
             width={600}
             height={450}
           />

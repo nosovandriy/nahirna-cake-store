@@ -34,7 +34,7 @@ const GalleryCarousel = () => {
             <div key={index} className="h-full w-full flex-shrink-0">
               <Image
                 src={imageUrl}
-                alt="cheesecake"
+                alt="Чізкейк в Тернополі"
                 width={367}
                 height={270}
                 loading={imageUrl.length === index + 1 ? "eager" : "lazy"}

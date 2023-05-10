@@ -66,7 +66,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                 ) : (
                   <ProductCardCarousel
                     images={selectedCard.images}
-                    imagesAlt={selectedCard.id}
+                    imagesAlt={selectedCard.title}
                   />
                 )}
               </div>

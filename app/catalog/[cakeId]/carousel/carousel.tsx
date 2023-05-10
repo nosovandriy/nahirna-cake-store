@@ -34,7 +34,7 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
       <div className="mb-5 tablet:mb-8 laptop:mb-5 desktopHD:mb-10 relative">
         <Image
           src={images[currentImageIndex]}
-          alt={`${imagesAlt} cheesecake`}
+          alt={`Чізкейк ${imagesAlt}`}
           width={632}
           height={465}
           className="w-full"
