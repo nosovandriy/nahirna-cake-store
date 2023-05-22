@@ -23,11 +23,11 @@ export function useCatalog(isFullCatalog: boolean = true): {
         "Чізкейк Нью - Йорк має багатогранний та насичений смак. Основа чізкейка, приготовлена з крем-сиру, має легку кислинку та насичений молочний смак, який поєднується зі смаком карамелі та арахісу. Солодкий смак карамелі надає чізкейку насиченості та багатогранності, а арахіс додає хрусткість.",
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, цукрова пудра, арахіс.",
-      imageTitle: "/assets/catalog/8/1.webp",
+      imageTitle: "/assets/catalog/new-york/1.webp",
       images: [
-        "/assets/catalog/8/1.webp",
-        "/assets/catalog/8/2.webp",
-        "/assets/catalog/8/3.webp",
+        "/assets/catalog/new-york/1.webp",
+        "/assets/catalog/new-york/2.webp",
+        "/assets/catalog/new-york/3.webp",
       ],
     },
     {
