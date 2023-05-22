@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+
 import { ArrowGallery } from "@icons/arrows-gallery";
 
 interface GallerySliderProps {

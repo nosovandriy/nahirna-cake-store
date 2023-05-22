@@ -1,6 +1,6 @@
 export interface Catalog {
   id: string;
-  popularity: string;
+  popularity: number;
   title: string;
   price: number;
   weights: number[];
