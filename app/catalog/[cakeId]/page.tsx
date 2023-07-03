@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import ProductCardCarousel from "@catalog/[cakeId]/carousel/carousel";
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
-import SkeletonGallery from "@catalog/catalog-item/skeleton-gallery/skeleton-gallery";
 import { useCatalog } from "@catalog/hooks/useCatalog";
 import { useAppDispatch } from "@type/ReduxHooks";
 import { Add, Remove } from "@icons/add-remove";
@@ -15,19 +14,12 @@ import MayLikeProducts from "@may-like/may-like";
 import AddToCartButton from "./button/button";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
-  const [isLoading, setIsLoading] = useState(true);
   const [productCount, setProductCount] = useState(1);
   const dispatch = useAppDispatch();
 
   const { catalog } = useCatalog();
   const selectedCard = catalog.find((item) => item.id === params.cakeId);
   const [activeWeight, setActiveWeight] = useState(selectedCard?.weights[0]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-  }, []);
 
   const handleAddProductToCart = () => {
     if (selectedCard && activeWeight) {
@@ -61,14 +53,12 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                 <h2 className="mb-4 text-themeGray-100 tabletXL:hidden">
                   {selectedCard.title}
                 </h2>
-                {isLoading ? (
-                  <SkeletonGallery />
-                ) : (
+                {
                   <ProductCardCarousel
                     images={selectedCard.images}
                     imagesAlt={selectedCard.title}
                   />
-                )}
+                }
               </div>
               <div className="">
                 <h2 className="mb-4 hidden text-themeGray-100 tabletXL:block">
