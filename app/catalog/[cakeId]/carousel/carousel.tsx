@@ -41,7 +41,7 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
           priority
           sizes="(max-width: 890px) 100vw,
           50vw"
-          className="w-full opacity-0 transition-opacity duration-[2s]"
+          className="w-full opacity-0 transition-opacity duration-[1s]"
           onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         />
         <button
@@ -72,7 +72,7 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
               sizes="(max-width: 890px) 30vw,
               15vw"
               onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-              className="opacity-0 transition-opacity duration-[2s]"
+              className="opacity-0 transition-opacity duration-[1s]"
             />
           </div>
         ))}
