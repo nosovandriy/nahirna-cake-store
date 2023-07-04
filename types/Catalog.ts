@@ -7,5 +7,6 @@ export interface Catalog {
   description: string;
   ingredients: string;
   imageTitle: string;
+  imageBlur: string;
   images: string[];
 }

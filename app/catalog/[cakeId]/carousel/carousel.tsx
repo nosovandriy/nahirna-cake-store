@@ -32,16 +32,17 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
 
   return (
     <div>
-      <div className="mb-5 tablet:mb-8 laptop:mb-5 desktopHD:mb-10 relative">
+      <div className="relative mb-5 tablet:mb-8 laptop:mb-5 desktopHD:mb-10">
         <Image
           src={images[currentImageIndex]}
           alt={`Чізкейк ${imagesAlt}`}
           width={632}
           height={465}
-          className="w-full"
           priority
           sizes="(max-width: 890px) 100vw,
           50vw"
+          className="w-full opacity-0 transition-opacity duration-[2s]"
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         />
         <button
           className="galleryButton left-2 rotate-180"
@@ -70,6 +71,8 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
               priority
               sizes="(max-width: 890px) 30vw,
               15vw"
+              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+              className="opacity-0 transition-opacity duration-[2s]"
             />
           </div>
         ))}

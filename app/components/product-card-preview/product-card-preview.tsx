@@ -22,6 +22,8 @@ const ProductCardPreview: React.FC<Props> = ({ product }) => {
             width={408}
             height={300}
             className="mb-4"
+            placeholder="blur"
+            blurDataURL={product.imageBlur}
             sizes="(max-width: 639px) 50vw,
             (max-width: 889px) 33vw,
             33vw"

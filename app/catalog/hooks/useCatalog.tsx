@@ -24,6 +24,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, цукрова пудра, арахіс.",
       imageTitle: "/assets/catalog/new-york-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/new-york-cheesecake/blur.webp",
       images: [
         "/assets/catalog/new-york-cheesecake/1.webp",
         "/assets/catalog/new-york-cheesecake/2.webp",
@@ -41,6 +42,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, арахіс, цукрова пудра, арахісова паста, карамель, молочний шоколад.",
       imageTitle: "/assets/catalog/snickers-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/snickers-cheesecake/blur.webp",
       images: [
         "/assets/catalog/snickers-cheesecake/1.webp",
         "/assets/catalog/snickers-cheesecake/2.webp",
@@ -58,6 +60,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, чорниця, лимонний сік, молоко, цедра лимона.",
       imageTitle: "/assets/catalog/lemon-blueberry-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/lemon-blueberry-cheesecake/blur.webp",
       images: [
         "/assets/catalog/lemon-blueberry-cheesecake/1.webp",
         "/assets/catalog/lemon-blueberry-cheesecake/2.webp",
@@ -75,6 +78,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно, какао, цукор, молоко, вершкове масло екстра, яйця, ванільний екстракт, вершковий крем сир, чорний, молочний, білий шоколад, вершки.",
       imageTitle: "/assets/catalog/three-chocolates-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/three-chocolates-cheesecake/blur.webp",
       images: [
         "/assets/catalog/three-chocolates-cheesecake/1.webp",
         "/assets/catalog/three-chocolates-cheesecake/2.webp",
@@ -92,6 +96,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "цукор коричневий, яйця, масло вершкове екстра, борошно, какао, шоколад, крем сир, вершки.",
       imageTitle: "/assets/catalog/illinois-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/illinois-cheesecake/blur.webp",
       images: [
         "/assets/catalog/illinois-cheesecake/1.webp",
         "/assets/catalog/illinois-cheesecake/2.webp",
@@ -109,6 +114,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно, цукор, яйця, арахіс, мигдальне борошно, вершки, кава, крем сир, арахісова паста, молоко, маскарпоне, ванільний екстракт.",
       imageTitle: "/assets/catalog/peanut-latte-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/peanut-latte-cheesecake/blur.webp",
       images: [
         "/assets/catalog/peanut-latte-cheesecake/1.webp",
         "/assets/catalog/peanut-latte-cheesecake/2.webp",
@@ -126,6 +132,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно, какао, цукор, яйця, вершкове масло екстра, крем сир, ванільний екстракт, вершки, шоколадні краплі, шоколад, цукор коричневий, натуральний кокос ( не кокосова стружка ), горіхи пекан.",
       imageTitle: "/assets/catalog/missouri-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/missouri-cheesecake/blur.webp",
       images: [
         "/assets/catalog/missouri-cheesecake/1.webp",
         "/assets/catalog/missouri-cheesecake/2.webp",
@@ -143,6 +150,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно, цукор, яйця, вершкове масло екстра,крохмаль, вершки, малина, крем сир.",
       imageTitle: "/assets/catalog/raspberry-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/raspberry-cheesecake/blur.webp",
       images: [
         "/assets/catalog/raspberry-cheesecake/1.webp",
         "/assets/catalog/raspberry-cheesecake/2.webp",
@@ -160,6 +168,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "вершковий крем сир, яйця, ванільний екстракт, цукор, вершки.",
       imageTitle: "/assets/catalog/basque-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/basque-cheesecake/blur.webp",
       images: [
         "/assets/catalog/basque-cheesecake/1.webp",
         "/assets/catalog/basque-cheesecake/2.webp",
@@ -177,6 +186,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "вершковий крем сир, цукор, матча, екстракт ванілі, яйця, вершки.",
       imageTitle: "/assets/catalog/basque-matcha-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/basque-matcha-cheesecake/blur.webp",
       images: [
         "/assets/catalog/basque-matcha-cheesecake/1.webp",
         "/assets/catalog/basque-matcha-cheesecake/2.webp",
@@ -194,6 +204,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно, цукор, вершкове масло екстра, яйця, крем сир, вершки, пюре манго, матча, вершки, цедра лимона.",
       imageTitle: "/assets/catalog/hawaii-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/hawaii-cheesecake/blur.webp",
       images: [
         "/assets/catalog/hawaii-cheesecake/1.webp",
         "/assets/catalog/hawaii-cheesecake/2.webp",
@@ -211,6 +222,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "кисломолочний сир, яйця, цукор, крохмаль, ванільний екстракт, цедра лимона, темні родзинки, шоколад.",
       imageTitle: "/assets/catalog/lviv-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/lviv-cheesecake/blur.webp",
       images: [
         "/assets/catalog/lviv-cheesecake/1.webp",
         "/assets/catalog/lviv-cheesecake/2.webp",
@@ -228,6 +240,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, какао алкалізоване, цукрова пудра, вершкове масло екстра, яйця, крем сир, банани, цукор, вершки, молочний шоколад, кукурудзяний крохмаль.",
       imageTitle: "/assets/catalog/chocolate-with-bananas-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/chocolate-with-bananas-cheesecake/blur.webp",
       images: [
         "/assets/catalog/chocolate-with-bananas-cheesecake/1.webp",
         "/assets/catalog/chocolate-with-bananas-cheesecake/2.webp",
@@ -245,6 +258,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, цукрова пудра, манго, маракуя.",
       imageTitle: "/assets/catalog/mango-passion-fruit-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/mango-passion-fruit-cheesecake/blur.webp",
       images: [
         "/assets/catalog/mango-passion-fruit-cheesecake/1.webp",
         "/assets/catalog/mango-passion-fruit-cheesecake/2.webp",
@@ -262,6 +276,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, кокосова олія, сік і цедра Лайма, кокосова стружка, кисломолочний сир, кокосове молоко.",
       imageTitle: "/assets/catalog/lime-coconut-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/lime-coconut-cheesecake/blur.webp",
       images: [
         "/assets/catalog/lime-coconut-cheesecake/1.webp",
         "/assets/catalog/lime-coconut-cheesecake/2.webp",
@@ -279,6 +294,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "вершкове масло екстра, алкалізоване какао, цукрова пудра, борошно пшеничне, яйця, крем сир, молочний шоколад, молоко,пюре маракуї, манго.",
       imageTitle: "/assets/catalog/tropical-chocolate-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/tropical-chocolate-cheesecake/blur.webp",
       images: [
         "/assets/catalog/tropical-chocolate-cheesecake/1.webp",
         "/assets/catalog/tropical-chocolate-cheesecake/2.webp",
@@ -296,6 +312,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, фундук, пудра, алкалізоване какао, молочний шоколад.",
       imageTitle: "/assets/catalog/chocolate-ferrero-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/chocolate-ferrero-cheesecake/blur.webp",
       images: [
         "/assets/catalog/chocolate-ferrero-cheesecake/1.webp",
         "/assets/catalog/chocolate-ferrero-cheesecake/2.webp",
@@ -313,6 +330,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, алкалізоване какао, цукрова пудра, кокосова стружка, згущене молоко, молочний шоколад.",
       imageTitle: "/assets/catalog/bounty-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/bounty-cheesecake/blur.webp",
       images: [
         "/assets/catalog/bounty-cheesecake/1.webp",
         "/assets/catalog/bounty-cheesecake/2.webp",
@@ -330,6 +348,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, цукрова пудра, вишня, ром.",
       imageTitle: "/assets/catalog/drunk-cherry-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/drunk-cherry-cheesecake/blur.webp",
       images: [
         "/assets/catalog/drunk-cherry-cheesecake/1.webp",
         "/assets/catalog/drunk-cherry-cheesecake/2.webp",
@@ -347,6 +366,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "мигдаль, фініки, кориця, чорниця, крохмаль, цукор, кеш'ю, кокосове молоко, кокосова олія, лимонний сік, лимонна цедра.",
       imageTitle: "/assets/catalog/frozen-blueberry-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/frozen-blueberry-cheesecake/blur.webp",
       images: [
         "/assets/catalog/frozen-blueberry-cheesecake/1.webp",
         "/assets/catalog/frozen-blueberry-cheesecake/2.webp",
@@ -364,6 +384,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, суміш горіхів, лаванда, смородина.",
       imageTitle: "/assets/catalog/lavender-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/lavender-cheesecake/blur.webp",
       images: [
         "/assets/catalog/lavender-cheesecake/1.webp",
         "/assets/catalog/lavender-cheesecake/2.webp",
@@ -381,6 +402,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ingredients:
         "борошно пшеничне, цукор, яйця, вершкове масло екстра, крем сир, вершки, крохмаль кукурудзяний, цукрова пудра, кунжут, малина, червоний болгарський перець, молоко, пармезан.",
       imageTitle: "/assets/catalog/raspberries-parmesan-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/raspberries-parmesan-cheesecake/blur.webp",
       images: [
         "/assets/catalog/raspberries-parmesan-cheesecake/1.webp",
         "/assets/catalog/raspberries-parmesan-cheesecake/2.webp",
