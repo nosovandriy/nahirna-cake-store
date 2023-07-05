@@ -41,6 +41,8 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
           priority
           sizes="(max-width: 890px) 100vw,
           50vw"
+          className="opacity-0 transition-opacity duration-[1s]"
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         />
         <button
           className="galleryButton left-2 rotate-180"
@@ -69,6 +71,8 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
               priority
               sizes="(max-width: 890px) 30vw,
               15vw"
+              className="opacity-0 transition-opacity duration-[1s]"
+              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
             />
           </div>
         ))}
