@@ -14,7 +14,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
 
   const fullCatalog = [
     {
-      id: "new-york-cheesecake",
+      id: "new-york",
       popularity: 1,
       title: "Нью - Йорк",
       price: 0.68,
@@ -32,7 +32,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "snickers-cheesecake",
+      id: "snickers",
       popularity: 2,
       title: "Снікерс",
       price: 0.7,
@@ -50,7 +50,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "lemon-blueberry-cheesecake",
+      id: "lemon-blueberry",
       popularity: 3,
       title: "Лимонно - чорничний",
       price: 0.7,
@@ -68,7 +68,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "three-chocolates-cheesecake",
+      id: "three-chocolates",
       popularity: 4,
       title: "Три шоколади",
       price: 0.75,
@@ -86,7 +86,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "illinois-cheesecake",
+      id: "illinois",
       popularity: 5,
       title: "Іллінойс",
       price: 0.81,
@@ -104,7 +104,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "peanut-latte-cheesecake",
+      id: "peanut-latte",
       popularity: 6,
       title: "Арахісове латте",
       price: 0.72,
@@ -122,7 +122,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "missouri-cheesecake",
+      id: "missouri",
       popularity: 7,
       title: "Міссурі",
       price: 0.85,
@@ -140,7 +140,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "raspberry-cheesecake",
+      id: "raspberry",
       popularity: 8,
       title: "Малиновий",
       price: 0.69,
@@ -158,7 +158,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "basque-cheesecake",
+      id: "basque",
       popularity: 9,
       title: "Баскський",
       price: 0.59,
@@ -176,7 +176,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "basque-matcha-cheesecake",
+      id: "basque-matcha",
       popularity: 11,
       title: "Баскський матча",
       price: 0.59,
@@ -194,7 +194,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "hawaii-cheesecake",
+      id: "hawaii",
       popularity: 12,
       title: "Гаваї",
       price: 0.7,
@@ -230,7 +230,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "chocolate-with-bananas-cheesecake",
+      id: "chocolate-with-bananas",
       popularity: 14,
       title: "Шоколадний з бананами",
       price: 0.7,
@@ -248,7 +248,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "mango-passion-fruit-cheesecake",
+      id: "mango-passion-fruit",
       popularity: 15,
       title: "Манго - маракуя",
       price: 0.75,
@@ -266,7 +266,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "lime-coconut-cheesecake",
+      id: "lime-coconut",
       popularity: 16,
       title: "Лайм - кокос",
       price: 0.75,
@@ -284,7 +284,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "tropical-chocolate-cheesecake",
+      id: "tropical-chocolate",
       popularity: 17,
       title: "Тропічний шоколад",
       price: 0.74,
@@ -302,7 +302,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "chocolate-ferrero-cheesecake",
+      id: "chocolate-ferrero",
       popularity: 18,
       title: "Шоколадний ферреро",
       price: 0.7,
@@ -320,7 +320,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "bounty-cheesecake",
+      id: "bounty",
       popularity: 19,
       title: "Баунті",
       price: 0.75,
@@ -338,7 +338,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "drunk-cherry-cheesecake",
+      id: "drunk-cherry",
       popularity: 20,
       title: "П'яна вишня",
       price: 0.69,
@@ -356,7 +356,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "frozen-blueberry-cheesecake",
+      id: "frozen-blueberry",
       popularity: 21,
       title: "Заморожений чорничний",
       price: 0.85,
@@ -374,7 +374,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "lavender-cheesecake",
+      id: "lavender",
       popularity: 22,
       title: "Лавандовий",
       price: 0.73,
@@ -392,7 +392,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "raspberries-parmesan-cheesecake",
+      id: "raspberries-parmesan",
       popularity: 23,
       title: "Малина - пармезан",
       price: 0.75,
