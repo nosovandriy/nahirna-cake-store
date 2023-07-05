@@ -47,10 +47,15 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
         <button
           className="galleryButton left-2 rotate-180"
           onClick={handlePrevClick}
+          aria-label="Попереднє зображення"
         >
           <ArrowGallery />
         </button>
-        <button className="galleryButton right-2" onClick={handleNextClick}>
+        <button
+          className="galleryButton right-2"
+          onClick={handleNextClick}
+          aria-label="Наступне зображення"
+        >
           <ArrowGallery />
         </button>
       </div>

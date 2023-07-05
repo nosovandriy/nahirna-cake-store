@@ -78,6 +78,7 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                           : "notActiveSizeButton text-sm"
                       }`}
                       onClick={() => handleSetProductWeight(weight)}
+                      aria-label="Вибрати вагу чізкейку"
                     >
                       {`${weight / 1000} кг`}
                     </button>
@@ -93,12 +94,14 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                       onClick={() => setProductCount((prev) => (prev -= 1))}
                       disabled={productCount === 1}
                       className={`${productCount < 2 && `fill-themeGray-20`}`}
+                      aria-label="Зменшити кількість товарів"
                     >
                       <Remove />
                     </button>
                     <p className="text-themeGray-100">{productCount}</p>
                     <button
                       onClick={() => setProductCount((prev) => (prev += 1))}
+                      aria-label="Збільшити кількість товарів"
                     >
                       <Add />
                     </button>

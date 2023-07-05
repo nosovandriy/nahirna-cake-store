@@ -31,7 +31,10 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
           href={"/catalog"}
           className="mx-auto mt-6 tablet:mt-8 desktop:mt-10"
         >
-          <button className="secondaryButton h-[42px] text-center">
+          <button
+            className="secondaryButton h-[42px] text-center"
+            aria-label="Перейти в каталог товарів"
+          >
             Більше
           </button>
         </Link>

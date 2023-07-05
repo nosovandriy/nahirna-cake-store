@@ -31,7 +31,10 @@ const NotFoundPage = () => {
         Вибачте, такої сторінки не знайдено...
       </h3>
       <a href={"/"} className="py-3">
-        <button className="primaryButton px-8">
+        <button
+          className="primaryButton px-8"
+          aria-label="Повернутись на головну сторінку"
+        >
           Повернутись на головну
         </button>
       </a>

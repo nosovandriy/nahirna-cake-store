@@ -32,6 +32,7 @@ const AddToCartButton: React.FC<Props> = ({ handleAddProductToCart }) => {
         }`}
         onClick={handleClick}
         disabled={isAdded}
+        aria-label="Додати товар в кошик"
       >
         <span className="add-to-cart">Додати в кошик</span>
         <span className="added ml-3 flex gap-3">

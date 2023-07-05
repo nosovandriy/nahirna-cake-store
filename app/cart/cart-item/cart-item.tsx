@@ -65,7 +65,10 @@ const CartItem: React.FC<Props> = ({ item }) => {
           <div className="mb-4">
             <div className="flex items-center justify-between">
               <p className="text-lg">Вага</p>
-              <button className="activeSizeButton cursor-default">
+              <button
+                className="activeSizeButton cursor-default"
+                aria-label="Вибрати вагу чізкейку"
+              >
                 {`${weight / 1000} кг`}
               </button>
             </div>
@@ -89,11 +92,15 @@ const CartItem: React.FC<Props> = ({ item }) => {
                   className={`${
                     count === 1 && `cursor-default fill-themeGray-20`
                   }`}
+                  aria-label="Зменшити кількість товару"
                 >
                   <Remove />
                 </button>
                 <p className="text-themeGray-100">{count}</p>
-                <button onClick={handleIncreaseItem}>
+                <button
+                  onClick={handleIncreaseItem}
+                  aria-label="Збільшити кількість товару"
+                >
                   <Add />
                 </button>
               </div>

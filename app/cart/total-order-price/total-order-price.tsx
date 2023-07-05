@@ -52,11 +52,15 @@ const TotalOrderPrice = () => {
           }`}
           onClick={handleOrderConfirm}
           disabled={!isAccessOrderButton}
+          aria-label="Підтвердити замовлення"
         >
           Підтвердити замовлення
         </button>
         <Link href={"/catalog"}>
-          <button className="secondaryButton mb-20 w-full tablet:mb-0">
+          <button
+            className="secondaryButton mb-20 w-full tablet:mb-0"
+            aria-label="Продовжити покупку"
+          >
             Продовжити покупку
           </button>
         </Link>

@@ -31,7 +31,10 @@ const HeroSection = () => {
         </p>
         <div>
           <Link href={"/catalog"}>
-            <button className="primaryButton w-full laptop:w-[300px]">
+            <button
+              className="primaryButton w-full laptop:w-[300px]"
+              aria-label="Перейти в каталог товарів"
+            >
               Перейти в каталог
             </button>
           </Link>

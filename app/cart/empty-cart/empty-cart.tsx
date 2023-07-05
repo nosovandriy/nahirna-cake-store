@@ -9,7 +9,12 @@ const EmptyCart = () => {
         <h2>Твоя корзина порожня</h2>
 
         <Link href={"/catalog"}>
-          <button className="primaryButton">Перейти в каталог </button>
+          <button
+            className="primaryButton"
+            aria-label="Перейти в каталог товарів"
+          >
+            Перейти в каталог
+          </button>
         </Link>
       </div>
       <MayLikeProducts />

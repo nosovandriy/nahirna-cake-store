@@ -34,7 +34,11 @@ const PopUpOrderDone = () => {
           <p className="text-base tablet:text-lg">
             З вами зв&apos;яжуться у найближчий час
           </p>
-          <button className="primaryButton px-8" onClick={handleConfirmOrder}>
+          <button
+            className="primaryButton px-8"
+            onClick={handleConfirmOrder}
+            aria-label="Повернутись на головну сторінку"
+          >
             Повернутись на головну
           </button>
           <div className="flex gap-5">
