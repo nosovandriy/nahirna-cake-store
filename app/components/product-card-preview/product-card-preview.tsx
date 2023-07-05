@@ -25,6 +25,8 @@ const ProductCardPreview: React.FC<Props> = ({ product }) => {
             sizes="(max-width: 639px) 50vw,
             (max-width: 889px) 33vw,
             33vw"
+            placeholder="blur"
+            blurDataURL={product.imageBlur}
           />
           <h3 className="mb-2 self-start">{product.title}</h3>
           <h4 className="self-start text-themeBrown-100">

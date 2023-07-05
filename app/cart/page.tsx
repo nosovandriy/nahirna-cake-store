@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import BreadCrumbs from "@breadcrumb/breadcrumbs";
 import CartItem from "./cart-item/cart-item";
@@ -24,7 +24,7 @@ const Cart = () => {
       {items.length > 0 ? (
         <div className="flex flex-col laptop:grid laptop:grid-cols-[60%_40%]">
           <div className="">
-            <div className="mb-4 tablet:mb-8 desktop:mb-10 flex items-center justify-between">
+            <div className="mb-4 flex items-center justify-between tablet:mb-8 desktop:mb-10">
               <h2 className="">Корзина</h2>
               <div className="relative fill-themeGray-30">
                 <div
@@ -33,7 +33,7 @@ const Cart = () => {
                 >
                   <DeleteIcon />
                 </div>
-                <div className="absolute -top-8 left-1/2 hidden max-w-fit -translate-y-1/2 -translate-x-1/2 animate-fadeIn whitespace-nowrap rounded-lg bg-white p-[10px] peer-hover:block">
+                <div className="absolute -top-8 left-1/2 hidden max-w-fit -translate-x-1/2 -translate-y-1/2 animate-fadeIn whitespace-nowrap rounded-lg bg-white p-[10px] peer-hover:block">
                   <p>Очистити корзину</p>
                 </div>
               </div>
