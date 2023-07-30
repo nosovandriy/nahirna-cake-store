@@ -1,11 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 const NotFoundPage = () => {
-  const router = useRouter();
-
   return (
     <div className="my-auto flex flex-col items-center justify-center">
       <div className="flex items-center justify-center gap-5 tablet:gap-8">

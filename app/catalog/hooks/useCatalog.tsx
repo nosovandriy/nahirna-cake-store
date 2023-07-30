@@ -32,8 +32,26 @@ export function useCatalog(isFullCatalog: boolean = true): {
       ],
     },
     {
-      id: "snickers",
+      id: "cheesecake-on-a-stick",
       popularity: 2,
+      title: "Чізкейк на паличці",
+      price: 0.99,
+      weights: [450, 720, 900],
+      description:
+        "Формую коробочки мікс: +-450г - 5шт, +-720г - 8шт, 900г - 10шт. Вага приблизна, кожен кусочок може мати різну вагу. Кожна порція цього десерту - це окреме задоволення. Дуже схоже на морозиво + зручно брати з собою до кави чи будь - якого іншого напою. Різноманітна пісочна основа власного виробництва. класична та шоколадна. Сирна маса на основі ніжного крем сиру з різними наповненнями, з додаванням желатину. Так, ці чізкейки без випічки, окрім пісочної основи. Зверху кожен чізкейк покривається шоколадною глазур'ю - це білий або молочний шоколад.",
+      ingredients:
+        "вершкове масло 82%, цукрова пудра, цукор, жовток, мука, какао, крем сир, кокосова манна, молоко, вершки, желатин. В залежності від виду може додаватися : манго, кокосова стружка, шоколад, фісташка, малина, арахісова паста, ягоди, арахіс, печиво орео.",
+      imageTitle: "/assets/catalog/sticks-cheesecake/1.webp",
+      imageBlur: "/assets/catalog/sticks-cheesecake/blur.webp",
+      images: [
+        "/assets/catalog/sticks-cheesecake/1.webp",
+        "/assets/catalog/sticks-cheesecake/2.webp",
+        "/assets/catalog/sticks-cheesecake/3.webp",
+      ],
+    },
+    {
+      id: "snickers",
+      popularity: 3,
       title: "Снікерс",
       price: 0.7,
       weights: [1700, 2000],
@@ -51,7 +69,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "lemon-blueberry",
-      popularity: 3,
+      popularity: 4,
       title: "Лимонно - чорничний",
       price: 0.7,
       weights: [1600, 1800, 2000],
@@ -69,7 +87,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "three-chocolates",
-      popularity: 4,
+      popularity: 5,
       title: "Три шоколади",
       price: 0.75,
       weights: [1400, 1600, 1800, 2000],
@@ -87,7 +105,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "illinois",
-      popularity: 5,
+      popularity: 6,
       title: "Іллінойс",
       price: 0.81,
       weights: [1500, 2000],
@@ -105,7 +123,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "peanut-latte",
-      popularity: 6,
+      popularity: 7,
       title: "Арахісове латте",
       price: 0.72,
       weights: [1500, 1800, 2000],
@@ -123,7 +141,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "missouri",
-      popularity: 7,
+      popularity: 8,
       title: "Міссурі",
       price: 0.85,
       weights: [2000],
@@ -141,7 +159,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "raspberry",
-      popularity: 8,
+      popularity: 9,
       title: "Малиновий",
       price: 0.69,
       weights: [1200, 1500, 1800, 2000],
@@ -159,7 +177,7 @@ export function useCatalog(isFullCatalog: boolean = true): {
     },
     {
       id: "basque",
-      popularity: 9,
+      popularity: 10,
       title: "Баскський",
       price: 0.59,
       weights: [800],

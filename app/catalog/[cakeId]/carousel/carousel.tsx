@@ -39,6 +39,7 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
           width={632}
           height={465}
           priority
+          loading={"eager"}
           sizes="(max-width: 890px) 100vw,
           50vw"
           className="opacity-0 transition-opacity duration-[1s]"
@@ -74,6 +75,7 @@ const ProductCardCarousel: React.FC<GallerySliderProps> = ({
               width={250}
               height={135}
               priority
+              loading={"eager"}
               sizes="(max-width: 890px) 30vw,
               15vw"
               className="opacity-0 transition-opacity duration-[1s]"
