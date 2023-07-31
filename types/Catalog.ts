@@ -4,6 +4,7 @@ export interface Catalog {
   title: string;
   price: number;
   weights: number[];
+  sellingOptions: string;
   description: string;
   ingredients: string;
   imageTitle: string;
