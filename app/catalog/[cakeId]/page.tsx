@@ -80,7 +80,9 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                       onClick={() => handleSetProductWeight(weight)}
                       aria-label="Вибрати вагу чізкейку"
                     >
-                      {`${weight / 1000} кг`}
+                      {weight < 100
+                        ? `${weight} г`
+                        : `${weight / 1000} кг`}
                     </button>
                   ))}
                 </div>

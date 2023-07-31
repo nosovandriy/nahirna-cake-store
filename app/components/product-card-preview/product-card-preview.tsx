@@ -30,7 +30,9 @@ const ProductCardPreview: React.FC<Props> = ({ product }) => {
           />
           <h3 className="mb-2 self-start">{product.title}</h3>
           <h4 className="self-start text-themeBrown-100">
-            {`${(product.price * 1000).toFixed()} грн/кг`}
+            {product.weights[0] < 100
+              ? `${(product.price * product.weights[0]).toFixed()} грн/шт`
+              : `${(product.price * 1000).toFixed()} грн/кг`}
           </h4>
           <div className="absolute inset-[-4%] border border-transparent hover:border-themeBrown-20"></div>
         </div>
