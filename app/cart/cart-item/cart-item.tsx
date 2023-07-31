@@ -69,7 +69,7 @@ const CartItem: React.FC<Props> = ({ item }) => {
                 className="activeSizeButton cursor-default"
                 aria-label="Вибрати вагу чізкейку"
               >
-                {`${weight / 1000} кг`}
+                {weight < 100 ? `${weight} г` : `${weight / 1000} кг`}
               </button>
             </div>
           </div>
