@@ -1,13 +1,12 @@
-import Image from "next/image";
-
 import { CheckIcon } from "@icons/check";
 import Hint from "@home/delivery/hint/hint";
+import GoogleLocation from "./map/map";
 
 const Delivery = () => {
   return (
     <section
       id="delivery"
-      className="sectionMarginBottom flex scroll-mt-24 flex-col laptop:items-center justify-between gap-10 tablet:gap-0 laptop:gap-5 desktopHD:gap-x-10 laptop:flex-row"
+      className="sectionMarginBottom flex scroll-mt-24 flex-col justify-between gap-10 tablet:gap-0 laptop:flex-row laptop:items-center laptop:gap-5 desktopHD:gap-x-10"
     >
       <div className="laptop:shrink-0">
         <h2 className="mb-6 tablet:mb-8 laptop:mb-10">Оплата та доставка</h2>
@@ -41,14 +40,7 @@ const Delivery = () => {
           </div>
         </div>
       </div>
-      <div className="tablet:self-center">
-        <Image
-          src="/assets/map.webp"
-          alt="cheesecake-Nahirna map location"
-          width={943}
-          height={600}
-        />
-      </div>
+      <GoogleLocation />
     </section>
   );
 };
