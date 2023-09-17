@@ -12,6 +12,7 @@ import { ProductCart } from "@type/ProductCart";
 import NotFoundPage from "../../not-found";
 import MayLikeProducts from "@may-like/may-like";
 import AddToCartButton from "./button/button";
+import Delivery from "@home/delivery/delivery";
 
 const ProductCard = ({ params }: { params: { cakeId: string } }) => {
   const [productCount, setProductCount] = useState(1);
@@ -129,13 +130,14 @@ const ProductCard = ({ params }: { params: { cakeId: string } }) => {
                   Термін виконання замовлення
                 </p>
                 <p className="pb-6">
-                  Замовлення виконується 1-3 дні. Після оформлення замовлення з
+                  Замовлення виконується 2-3 дні. Після оформлення замовлення з
                   вами зв&apos;яжеться менеджер для уточнення дати.
                 </p>
               </div>
             </div>
           </section>
           <MayLikeProducts selectedId={params.cakeId} />
+          <Delivery />
         </>
       ) : (
         <NotFoundPage />
