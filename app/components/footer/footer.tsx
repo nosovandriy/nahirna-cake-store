@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-1 self-center text-center text-sm">
-              <p className="text-xs text-themeGray-30">
+              <p className="text-xs text-themeGray-40">
                 © NahirnaCake 2023 Всі права захищені.
               </p>
             </div>

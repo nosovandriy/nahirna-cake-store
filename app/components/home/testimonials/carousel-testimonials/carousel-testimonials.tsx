@@ -67,7 +67,7 @@ const CarouselTestimonials = () => {
                 />
                 <div className="flex flex-col justify-center">
                   <p className="text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-themeGray-30">
+                  <p className="text-xs text-themeGray-40">
                     {testimonial.data}
                   </p>
                 </div>
