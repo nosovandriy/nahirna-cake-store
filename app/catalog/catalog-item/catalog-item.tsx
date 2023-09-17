@@ -33,7 +33,7 @@ const CatalogItem: React.FC<Props> = ({ isFullCatalog }) => {
         >
           <button
             className="secondaryButton h-[42px] text-center"
-            aria-label="Перейти в каталог товарів"
+            aria-label="Більше"
           >
             Більше
           </button>
