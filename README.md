@@ -1,80 +1,50 @@
-# Start development
 
-```sh
-npm run dev
-```
+# Nahirna CheeseCakes
 
-
-# Documentation
-
-Project stack
-
-- Next.js: A popular framework for building server-rendered React applications.
-- Tailwind CSS: A highly customizable CSS framework for building modern UI components.
-- Redux Toolkit: A powerful toolset for managing state in Redux, including simplified configuration and automatic handling of common tasks.
-- Axios: A promise-based HTTP client for making API requests.
-- Google Analytics: Integrated with Google Analytics for tracking user analytics and insights.
-
-# Git branching
-
-The simple convention for branch naming in *kebab-case* with component/feature/bugfix prefix.
-
-```
-  > component/some-huge-features
-  > feature/some-feature-name
-  > bugfix/bug-name
-  > hotfix/description
-              
-```
-
-# Style Guidelines
-## Project structure
-
-```
-  > components
-    > footer
-    > pages
-      > home
-        
-  > pages
-    index.tsx [all pages of the project]
-```
+This is an e-commerce shop that has been built using technologies like NextJS, Tailwind, and Redux toolkit.
+This framework has integrated Image Optimization, handy Routing, and SSR which improves performance and SEO.
+Also, I applied Tailwind, Redux toolkit, and Axios.
+I implemented the ability to receive order data in the Telegram bot and integrated the Google Analytics service.
 
 
+## Link
 
-| Folder           | Purpose                                                                                           |
-| -----------------| --------------------------------------------------------------------------------------------------|
-| /components       | Shared components that can be used across the whole application                                  |
-| /components/pages | Shared components that can be used in scope of one page                                          |
-| /consts     | Reusable constants                                                                                     |
-| /pages      | Main pages in the project (for now we have only one page as it is landing)                             |
+[https://nahirna-cake.com.ua/](https://nahirna-cake.com.ua/)
 
----
 
-## Components
+![Logo](https://serving.photos.photobox.com/3388673699b82c42ee9da8eb08b38f87f8a62caffc1336ac3b1c90a89d8b0a09d756d7a0.jpg)
 
-### 1. Barrel file
 
-We are using barrel rule for all the components. Each folder contain index.ts file which exports one or more components.
-```
-index.ts
+## 🛠 Tech Stack
 
-export * from './component-name.tsx';
-```
-You can read more about barrel files [here](https://medium.com/suyeonme/barrel-adding-barrel-into-typescript-7141a6ac9003).
+Next.js, TypeScript, HTML, Tailwind CSS, Redux, Swiper, Vercel, Google Analytics, Telegram bot.
 
-### 2. Structure
+## Features
 
-Component consist with *tsx* and *scss* (if needed) files. If your component is large, you can decompose some of the parts with nested folders.
+- Built the project based on the Next.js;
+- The website features a responsive design with a mobile-first approach;
+- Navigation is implemented using the Next.js App router;
+- In the website implemented a Gallery page with sorting options, a Product page, Cart page;
+- Integrated the ability to receive information about customer orders via Telegram bot;
+- Enhanced SEO optimization and Core Web Vitals for the web stores;
+- Deployed projects on the Vercel platform.
 
-```
-Structure of the component:
+## Optimizations
 
-  > hero-section.tsx
-  > hero-section.module.scss
-  > index.ts
+![Logo](https://serving.photos.photobox.com/68831782f69cbeec1dd3b5b7c39085b1d0951a1c387f23907fd776a698417bee3278bedb.jpg)
 
-  > hero-header
-    > hero-header.tsx
-    > index.ts
-```
+
+## Screenshots
+
+![Main page](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmVweTRsaHk2ejR5YnVjMDFmemtiMzFzNzE0cWt5NGhwZGdxOXV6dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XhIzu8Rlo0HlLm01Yj/giphy.gif)
+
+![Gallery page](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW12YnhlNG5qNHE4aXUzdjg5bzR5d3BiMDVmdGwyaTEzZzI5bmNiNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NAieEHaR2qabXWoExE/giphy.gif)
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://andriynosov.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andriy-nosov/)
+
+
+## Authors
+
+- [Andriy Nosov [Frontend developer]](https://www.linkedin.com/in/andriy-nosov/)
